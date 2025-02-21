@@ -21,7 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 import Link from "next/link";
 import { Phone } from "lucide-react";
-import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
@@ -165,10 +165,10 @@ const ContactUs = () => {
               <FaFacebook />
             </Button>
             <Button type="button" size={"icon"}>
-              <FaFacebook />
+              <FaInstagram />
             </Button>
             <Button type="button" size={"icon"}>
-              <FaFacebook />
+              <FaTwitter />
             </Button>
           </div>
         </div>
