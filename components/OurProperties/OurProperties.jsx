@@ -17,33 +17,28 @@ const OurProperties = () => {
       link: '#', // Replace with your link
     },
     {
-        image: '/home-card.jpg', 
-        title: 'Willow Lane',
-        description: 'Lush townhouses built with love',
+        image: '/home-card (4).jpg', 
+        title: 'Le Jardin Symphonique',
+        description: 'Spacious houses in great community',
         link: '#', // Replace with your link
       },
       {
-        image: '/hero-home-1 (1).jpg', 
-        title: 'AlphabetCity',
-        description: 'Modern apartment in Tema',
+        image: '/home-card (4).jpg', 
+        title: 'Vista del Mare',
+        description: 'Luxurious houses near airport',
         link: '#', // Replace with your link
       },
   ];
 
   return (
-    <section className="bg-[#1A202C] py-12 px-6 md:px-24 text-white"> 
+    <section className="bg-[#1A202C] py-12 px-6 md:px-24 text-white">
       <div className="container mx-auto">
-        {/* Our Properties Section */}
-        <div className="mt-16">
-          <h3 className="text-3xl font-light relative inline-block">
-            Our Properties
-            <span className="block w-full border-t border-yellow-300 mt-2"></span>
-          </h3>
+        <div className="border-b border-gray-600 pb-4 mb-8"> 
+          <h2 className="text-3xl font-bold">Our Properties</h2>
         </div>
-        <br />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
           {properties.map((property, index) => (
-            <div key={index} className="bg-[#242F3F] rounded-lg shadow-lg p-6 hover:-translate-y-2 hover:shadow-xl">
+            <div key={index} className="bg-[#242F3F] rounded-lg shadow-lg p-6"> {/* Property card */}
               <Image
                 src={property.image}
                 alt={property.title}
@@ -53,13 +48,13 @@ const OurProperties = () => {
               />
               <h3 className="text-2xl font-semibold mb-2">{property.title}</h3>
               <p className="text-lg mb-4">{property.description}</p>
-              <div className="flex justify-between items-center"> {/* Flex for button and message */}
+              <div className="flex justify-between items-center">
                 <Link href={property.link}>
                   <button className="bg-[#A7795D] hover:bg-[#91644A] text-white font-bold py-2 px-4 rounded-md">
                     More Details
                   </button>
                 </Link>
-                
+               
               </div>
             </div>
           ))}
