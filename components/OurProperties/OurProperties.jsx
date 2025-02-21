@@ -9,26 +9,26 @@ const OurProperties = () => {
       image: '/home-card.jpg', 
       title: 'Willow Lane',
       description: 'Lush townhouses built with love',
-      link: '#', // Replace with your link
+      link: '#',
     },
     {
       image: '/hero-home-1 (1).jpg', 
       title: 'AlphabetCity',
       description: 'Modern apartment in Tema',
-      link: '#', // Replace with your link
+      link: '#',
     },
     {
-        image: '/home-card (4).jpg', 
-        title: 'Le Jardin Symphonique',
-        description: 'Spacious houses in great community',
-        link: '#', // Replace with your link
-      },
-      {
-        image: '/home-card (4).jpg', 
-        title: 'Vista del Mare',
-        description: 'Luxurious houses near airport',
-        link: '#', // Replace with your link
-      },
+      image: '/home-card (4).jpg', 
+      title: 'Le Jardin Symphonique',
+      description: 'Spacious houses in great community',
+      link: '#',
+    },
+    {
+      image: '/home-card (4).jpg', 
+      title: 'Vista del Mare',
+      description: 'Luxurious houses near airport',
+      link: '#',
+    },
   ];
 
   return (
@@ -37,9 +37,11 @@ const OurProperties = () => {
         <div className="border-b border-gray-600 pb-4 mb-8"> 
           <h2 className="text-3xl font-bold">Our Properties</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
+        
+        {/* Grid layout for properties */}
+        <div className="grid grid-cols-2 gap-8"> 
           {properties.map((property, index) => (
-            <div key={index} className="bg-[#242F3F] rounded-lg shadow-lg p-6"> {/* Property card */}
+            <div key={index} className="bg-[#242F3F] rounded-lg shadow-lg p-6"> 
               <Image
                 src={property.image}
                 alt={property.title}
@@ -55,7 +57,6 @@ const OurProperties = () => {
                     More Details
                   </button>
                 </Link>
-               
               </div>
             </div>
           ))}
@@ -66,4 +67,3 @@ const OurProperties = () => {
 };
 
 export default OurProperties;
-
