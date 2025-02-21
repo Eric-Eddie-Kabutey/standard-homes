@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const properties = [
   {
@@ -9,7 +10,8 @@ const properties = [
   },
   {
     name: "October 31, 2024",
-    description: "Waylead Properties Unveil 'Willow Lane' Our Latest Housing Project.",
+    description:
+      "Waylead Properties Unveil 'Willow Lane' Our Latest Housing Project.",
   },
   {
     name: "October 23, 2024",
@@ -19,7 +21,7 @@ const properties = [
 
 const NewsAndMedia = () => {
   return (
-    <div className="bg-[#c9a14c] py-12 px-4 text-white">
+    <div className="bg-[#dbd1c2] py-12 px-4 text-white">
       <div className="container mx-auto">
         {/* Heading */}
         <div className="flex items-center mb-8">
@@ -38,9 +40,11 @@ const NewsAndMedia = () => {
               <div className="p-6 text-white">
                 <h2 className="text-2xl font-bold mb-4">{property.name}</h2>
                 <p className="text-md mb-6">{property.description}</p>
-                <Button className="bg-[#c9a14c] hover:bg-[#B58541] transition-colors duration-300">
-                  Read More &gt;
-                </Button>
+                <Link href={"/#"}>
+                  <Button className="bg-[#c9a14c] hover:bg-[#B58541] transition-colors duration-300">
+                    Read More &gt;
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
