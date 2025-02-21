@@ -60,7 +60,7 @@ export default function GoogleMapComponent() {
 
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-        <div className="relative mx-28">
+        <div className="relative md:mx-28 ">
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}
@@ -72,7 +72,7 @@ export default function GoogleMapComponent() {
           </GoogleMap>
 
           {/* Card with additional information */}
-          <div className="absolute top-2 right-2 bg-white p-5 shadow-lg rounded-xl max-w-xs w-full">
+          <div className="absolute top-2 right-2 bg-white p-2 shadow-lg rounded-xl ">
             <h2 className="text-lg font-semibold">
               Directions from Bijilo MSJ Plaza
             </h2>
