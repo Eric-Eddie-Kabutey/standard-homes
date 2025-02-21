@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   // };
 
   return (
-    <div className={`bg-white py-3 sticky top-0 ${className}`}>
+    <div className={`bg-white py-3 sticky top-0  z-50 ${className}`}>
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <div className="flex items-center space-x-4">
