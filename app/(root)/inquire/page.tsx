@@ -26,7 +26,9 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 const ContactUs = () => {
-  const [phoneNumber, setPhoneNumber] = React.useState();
+  const [phoneNumber, setPhoneNumber] = React.useState<string | undefined>(
+    undefined
+  );
 
   return (
     <div className="flex max-w-screen-lg mx-auto px-4 gap-10 py-8">
@@ -36,7 +38,7 @@ const ContactUs = () => {
           <CardTitle>Contact Us</CardTitle>
           <CardDescription>
             For more information, sales, and availability of our units, please
-            drop us a note. We'll get back to you as soon as possible.
+            drop us a note. We&apos;ll get back to you as soon as possible.
           </CardDescription>
         </CardHeader>
         <CardContent>
