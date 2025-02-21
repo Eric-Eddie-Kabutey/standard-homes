@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -7,7 +8,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-
 import {
   Card,
   CardContent,
@@ -22,16 +22,19 @@ import React from "react";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 const ContactUs = () => {
+  const [phoneNumber, setPhoneNumber] = React.useState();
+
   return (
-    <div className="flex  max-w-screen-lg mx-auto px-4 gap-10 py-8 ">
+    <div className="flex max-w-screen-lg mx-auto px-4 gap-10 py-8">
       {/* Left Column: Form */}
       <Card className="w-full md:w-1/2 md:pr-8 bg-gray-50">
         <CardHeader>
           <CardTitle>Contact Us</CardTitle>
           <CardDescription>
-            {" "}
             For more information, sales, and availability of our units, please
             drop us a note. We'll get back to you as soon as possible.
           </CardDescription>
@@ -40,11 +43,9 @@ const ContactUs = () => {
           <div>
             <form className="space-y-4">
               {/* First Name */}
-
               <Input type="text" placeholder="First Name (Optional)" />
 
               {/* Last Name */}
-
               <Input
                 type="text"
                 id="lastName"
@@ -52,16 +53,25 @@ const ContactUs = () => {
               />
 
               {/* Email */}
-
               <Input type="email" placeholder="Email (required)" />
 
               {/* Phone */}
-
-              <Input type="tel" id="phone" placeholder="Phone (Optional)" />
+              <div>
+                <Label htmlFor="phone">Phone (Optional)</Label>
+                <PhoneInput
+                  international
+                  defaultCountry="US"
+                  value={phoneNumber}
+                  onChange={setPhoneNumber}
+                  id="phone"
+                  placeholder="Enter phone number"
+                  className="mt-1 border py-2 px-3 w-full rounded-md"
+                  style={{ width: "100%" }}
+                />
+              </div>
 
               {/* Interested In */}
               <div className="flex items-center gap-1">
-                {/* <p className="text-sm text-muted-foreground">Interested in</p> */}
                 <Select>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Interested in" />
@@ -81,7 +91,7 @@ const ContactUs = () => {
                   id="message"
                   name="message"
                   required
-                  placeholder=" Your message (required)"
+                  placeholder="Your message (required)"
                 />
               </div>
 
@@ -126,7 +136,7 @@ const ContactUs = () => {
           <Link
             href={"#"}
             type=""
-            className="  text-yellow-600 font-extrabold flex items-center gap-2"
+            className="text-yellow-600 font-extrabold flex items-center gap-2"
           >
             <Phone className="w-5 h-5" />
             +233-30-341-1109
@@ -134,7 +144,7 @@ const ContactUs = () => {
           <Link
             href={"#"}
             type=""
-            className="  text-yellow-600 font-extrabold flex items-center gap-2"
+            className="text-yellow-600 font-extrabold flex items-center gap-2"
           >
             <Phone className="w-5 h-5" />
             +233-50-140-8803
@@ -142,7 +152,7 @@ const ContactUs = () => {
           <Link
             href={"#"}
             type=""
-            className="  text-yellow-600 font-extrabold flex items-center gap-2"
+            className="text-yellow-600 font-extrabold flex items-center gap-2"
           >
             <FaWhatsapp className="w-5 h-5" />
             +233-55-140-8804
@@ -160,7 +170,7 @@ const ContactUs = () => {
           </p>
 
           {/* Social Media Links */}
-          <div className=" space-x-4 mt-4">
+          <div className="space-x-4 mt-4">
             <Button type="button" size={"icon"}>
               <FaFacebook />
             </Button>
