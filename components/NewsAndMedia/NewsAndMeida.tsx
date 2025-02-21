@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -21,11 +22,11 @@ const properties = [
 
 const NewsAndMedia = () => {
   return (
-    <div className="bg-[#dbd1c2] py-12 px-4 text-white">
+    <div className="bg-[#FDF6EB] py-12 px-4">
       <div className="container mx-auto">
         {/* Heading */}
         <div className="flex items-center mb-8">
-          <h1 className="text-3xl font-semibold">News & Media</h1>
+          <h1 className="text-3xl text-[#1A293F] font-semibold">News & Media</h1>
           <div className="flex-grow border-t border-[#B58541] ml-4"></div>
         </div>
 
@@ -34,14 +35,18 @@ const NewsAndMedia = () => {
           {properties.map((property, index) => (
             <div
               key={index}
-              className="bg-[#e7ac58] rounded-lg hover:bg-[#0D2A47] cursor-pointer overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105"
+              className="bg-[#FAEEDC] rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-[#0D2A47] group cursor-pointer"
             >
               {/* Event Details */}
-              <div className="p-6 text-white">
-                <h2 className="text-2xl font-bold mb-4">{property.name}</h2>
-                <p className="text-md mb-6">{property.description}</p>
+              <div className="p-6 group-hover:text-white">
+                <h2 className="text-2xl text-[#B58541] font-bold mb-4 group-hover:text-white">
+                  {property.name}
+                </h2>
+                <p className="text-md text-[#1A293F] font-semibold mb-6 group-hover:text-white">
+                  {property.description}
+                </p>
                 <Link href={"/#"}>
-                  <Button className="bg-[#c9a14c] hover:bg-[#B58541] transition-colors duration-300">
+                  <Button className="bg-[#FAEEDC] border border-[#B58541] text-[#B58541] text-lg hover:bg-[#666666] transition-colors duration-300">
                     Read More &gt;
                   </Button>
                 </Link>
