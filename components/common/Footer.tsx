@@ -1,5 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -8,14 +10,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Left Column: Logo + Description */}
           <div>
-            {/* If you have a logo image, uncomment and replace the src below:
-                <img
-                  src="/path/to/waylead-logo.png"
-                  alt="Waylead"
-                  className="mb-2 h-auto w-28"
-                />
-            */}
-            <h2 className="mb-2 text-2xl font-bold">Waylead</h2>
+            <Image
+              width={112}
+              height={112}
+              src="/logo-waylead-inverted copy.png"
+              alt="Waylead"
+              className="mb-2 h-auto w-28"
+            />
+            {/* <h2 className="mb-2 text-2xl font-bold">Waylead</h2> */}
             <p className="max-w-sm text-sm md:text-base">
               As a leading registered developer in Ghana, Waylead is committed
               to building high quality and honest homes from new to brand new.
@@ -32,7 +34,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-300"
               >
-                <FaFacebook size={20} />
+                <Button size={"sm"}>
+                  <FaFacebook size={20} />
+                </Button>
               </a>
               <a
                 href="https://www.instagram.com"
@@ -40,15 +44,18 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-300"
               >
-                <FaInstagram size={20} />
+                <Button size={"sm"}>
+                  <FaInstagram size={20} />
+                </Button>
               </a>
               <a
                 href="https://wa.me/233501408803"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-300"
               >
-                <FaWhatsapp size={20} />
+                <Button size={"sm"}>
+                  <FaWhatsapp size={20} />
+                </Button>
               </a>
             </div>
           </div>
