@@ -33,7 +33,14 @@ const OurProperties = () => {
   return (
     <section className="bg-[#1A202C] py-12 px-6 md:px-24 text-white"> 
       <div className="container mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Our Properties</h1>
+        {/* Our Properties Section */}
+        <div className="mt-16">
+          <h3 className="text-3xl font-light relative inline-block">
+            Our Properties
+            <span className="block w-full border-t border-yellow-300 mt-2"></span>
+          </h3>
+        </div>
+        <br />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
           {properties.map((property, index) => (
             <div key={index} className="bg-[#242F3F] rounded-lg shadow-lg p-6 hover:-translate-y-2 hover:shadow-xl">
