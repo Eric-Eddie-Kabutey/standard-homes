@@ -10,7 +10,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <div className="w-full border-b border-slate-200 bg-[#FBF9F5] h-[35vh] flex items-end">
+      <div className="w-full border-b border-slate-200 bg-gradient-to-b from-white via-[#fff] to-[#F2ECE4] h-[35vh] flex items-end">
         <p className="mb-10 text-5xl font-extralight md:pl-[7%] text-[#1A3850] p-2">
           AlphabetCity
         </p>
@@ -28,7 +28,7 @@ const page = () => {
       </div>
 
       <div className="">
-        <div className="grid grid-cols-3 max-md:2 max-sm:1 gap-4 mx-28">
+        <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:1 gap-4 md:mx-28">
           <div className="col-span-3 md:col-span-1 p-4">
             <Image
               src="https://www.waylead.org/assets/images/properties/alphabet-city/feature-main-entrance-tn.jpg"
