@@ -11,6 +11,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
+
       <AboutHeroSection />
       <AboutPageWelcome />
       <AboutTrustedHomeBuilders />
@@ -20,6 +21,9 @@ const page = () => {
       <OurProperties />
       <NewsAndMedia />
     </div>
+
+    </>
+
   );
 };
 

@@ -27,7 +27,7 @@ const AboutTrustedHomeBuilders = () => {
     <div className="flex flex-col items-center p-4">
       {/* Logo */}
       <Image
-        src={"/about/logo-waylead-tagline.png"}
+        src={"/standardLogo.png"}
         alt="logo"
         width={500}
         height={500}
