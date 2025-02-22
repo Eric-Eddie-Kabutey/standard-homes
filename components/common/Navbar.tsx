@@ -9,12 +9,12 @@ export const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   {
-    href: "/properties",
+    href: "#",
     label: "Properties",
     submenu: [
-      { href: "/properties/alphabet-city", label: "Alphabet City" },
+      { href: "/properties/alphabetcity", label: "Alphabet City" },
       {
-        href: "/properties/le-jardin-symphonique",
+        href: "/properties/symphonique",
         label: "Le Jardin Symphonique",
       },
       { href: "/properties/vista-del-mare", label: "Vista del Mare" },
