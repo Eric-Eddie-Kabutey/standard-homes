@@ -9,7 +9,7 @@ export const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   {
-    href: "/properties",
+    href: "#",
     label: "Properties",
     submenu: [
       { href: "/properties/alphabetcity", label: "Alphabet City" },

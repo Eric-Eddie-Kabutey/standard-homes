@@ -1,27 +1,32 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const properties = [
   {
     name: "Willow Lane",
     description: "Lush townhouses built with love",
     img: "/about/home-card.jpg",
+    link: "properties/willow-lane",
   },
   {
     name: "AlphabetCity",
     description: "Modern apartment in Tema",
     img: "/about/home-card (1).jpg",
+    link: "properties/alphabetcity",
   },
   {
     name: "Le Jardin Symphonique",
     description: "Spacious houses in great community",
     img: "/about/home-card (3).jpg",
+    link: "properties/symphonique",
   },
   {
     name: "Vista del Mare",
     description: "Luxurious houses near airport",
     img: "/about/home-card (4).jpg",
+    link: "properties/vista-del-mare",
   },
 ];
 
@@ -30,7 +35,7 @@ const OurProperties = () => {
     <div className="bg-[#0D2A47] py-12 px-4 text-white">
       <div className="container mx-auto">
         {/* Heading */}
-        
+
         <div className="flex items-center mb-6">
           <h1 className="text-3xl font-semibold">Our Properties</h1>
           <div className="flex-grow border-t border-[#B58541] ml-4"></div>
@@ -58,9 +63,11 @@ const OurProperties = () => {
               <div className="p-4 text-white">
                 <h2 className="text-2xl font-bold mb-2">{property.name}</h2>
                 <p className="text-lg mb-4">{property.description}</p>
-                <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
-                  More Details &gt;
-                </Button>
+                <Link href={property.link}>
+                  <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
+                    More Details &gt;
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}

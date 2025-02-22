@@ -189,7 +189,7 @@ const Archive = () => {
                             <Drawer>
                                 <DrawerTrigger className='text-[#B78C4C] border border-[#B78C4C] px-8 py-2 font-medium rounded hover:bg-[#666666] hover:border-[#666666] hover:text-slate-100 transition-all duration-500 ease-in-out'>Read More</DrawerTrigger>
                                 <DrawerContent>
-                                    <div className="flex flex-col overflow-y-auto h-[60vh] pb-7 border-b border-slate-400 mb-8 mx-[6%]">
+                                    <div className="flex flex-col overflow-y-auto h-[60vh] pb-2 border-b border-slate-400 mx-[6%]">
                                         <h3 className="text-[1.6rem] font-bold text-[#B78C4C]">{news.title}</h3>
                                         <p className="text-lg text-gray-500 italic mb-6">{news.date}</p>
                                         <p className="mt-2 mb-8 text-[1.1rem] text-[#334E63]">{news.description}</p>
@@ -204,7 +204,7 @@ const Archive = () => {
                                         )}
                                     </div>
                                     <DrawerClose>
-                                        <Button className='text-[#B78C4C] border border-[#B78C4C] px-8 py-2 font-medium rounded hover:bg-[#666666] hover:border-[#666666] hover:text-slate-100 transition-all duration-500 ease-in-out mb-5' variant="outline">Close</Button>
+                                        <Button className='text-[#B78C4C] border border-[#B78C4C] px-8 py-2 font-medium rounded hover:bg-[#666666] hover:border-[#666666] hover:text-slate-100 transition-all duration-500 ease-in-out my-1' variant="outline">Close</Button>
                                     </DrawerClose>
                                 </DrawerContent>
                             </Drawer>
