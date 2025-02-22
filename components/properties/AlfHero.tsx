@@ -36,7 +36,7 @@ const AlfHero: React.FC<Images> = ({ images }) => {
   }, [api]);
 
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
   return (
