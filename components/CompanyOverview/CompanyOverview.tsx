@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Route, ShieldCheck, Trophy, Building, Lightbulb } from "lucide-react";
 
