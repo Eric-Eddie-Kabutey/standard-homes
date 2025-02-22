@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { Card } from "@/components/ui/card";
@@ -38,8 +37,8 @@ const AboutTrustedHomeBuilders = () => {
       <div className="w-full py-8">
         <Card className="p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {images.map((image, index) => (
-              <div key={index} className="relative h-60 w-full">
+            {images?.map((image) => (
+              <div key={image.name} className="relative h-60 w-full">
                 <Image
                   src={image.img}
                   alt={image.name}

@@ -29,7 +29,7 @@ interface NavbarProps {
   className?: string; // Add className prop
 }
 
-const Navbar: React.FC<NavbarProps> = ({ className }) => {
+const Navbar: React.FC<NavbarProps> = () => {
   const pathname = usePathname();
   const [isPropertiesHovered, setIsPropertiesHovered] = useState(false);
   // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu visibility
@@ -40,10 +40,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   // };
 
   return (
-
     <div className={`bg-white py-3 sticky top-0  z-50  `}>
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4 ">
-
         {/* Logo */}
         <div className="flex items-center space-x-4">
           <Image
@@ -67,6 +65,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               <Link
                 href={link.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  link.label === "Inquire" ? "border-yellow-600 border" : ""
+                } ${
                   pathname === link.href
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
                     <Link
                       key={subLink.href}
                       href={subLink.href}
-                      className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                      className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground  ${
                         pathname === subLink.href ? "bg-blue-50" : ""
                       }`}
                     >

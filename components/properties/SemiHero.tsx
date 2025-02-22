@@ -21,13 +21,13 @@ interface Images {
 
 const SemiHero: React.FC<Images> = ({ images }) => {
   const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
+  const [current, setCurrent] = React.useState<null | number | undefined>(0);
+  const [count, setCount] = React.useState<null | number | undefined>(0);
 
   React.useEffect(() => {
     if (!api) return;
 
-    setCount(api.scrollSnapList().length);
+    setCount(api.scrollSnapList()?.length);
     setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {

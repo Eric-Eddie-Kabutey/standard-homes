@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Route, ShieldCheck, Trophy, Building, Lightbulb } from "lucide-react";
 
@@ -34,11 +33,16 @@ const CompanyOverview = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-16 max-w-7xl w-full">
-        {Overviews.map((overview, index) => (
-          <div key={index} className="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-lg">
+        {Overviews?.map((overview, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-4 bg-white p-8 rounded-lg shadow-lg"
+          >
             {overview.icon}
             <h2 className="text-2xl mb-6 text-[#344F64]">{overview.title}</h2>
-            <p className="text-justify font-semibold text-gray-700">{overview.body}</p>
+            <p className="text-justify font-semibold text-gray-700">
+              {overview.body}
+            </p>
           </div>
         ))}
       </div>

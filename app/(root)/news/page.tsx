@@ -1,14 +1,14 @@
-import React from 'react'
-import NewsBanner from '@/components/News/NewsBanner'
-import Archive from '@/components//News/Archive'
+import React from "react";
+import Archive from "@/components//News/Archive";
+import NewsBanner from "@/components/News/Banner";
 
 const page = () => {
   return (
     <div>
-      <NewsBanner />
+      <NewsBanner title="News" />
       <Archive />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
