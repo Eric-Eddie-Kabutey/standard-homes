@@ -13,7 +13,7 @@ const Footer = () => {
             <Image
               width={112}
               height={112}
-              src="/logo-waylead-inverted copy.png"
+              src="/standardLogo.png"
               alt="Waylead"
               className="mb-2 h-auto w-28"
             />
@@ -35,7 +35,7 @@ const Footer = () => {
                 className="hover:text-gray-300"
               >
                 <Button size={"sm"}>
-                  <FaFacebook size={20} />
+                  <FaFacebook className="text-white" size={20} />
                 </Button>
               </a>
               <a
@@ -45,7 +45,7 @@ const Footer = () => {
                 className="hover:text-gray-300"
               >
                 <Button size={"sm"}>
-                  <FaInstagram size={20} />
+                  <FaInstagram className="text-white" size={20} />
                 </Button>
               </a>
               <a
@@ -54,7 +54,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <Button size={"sm"}>
-                  <FaWhatsapp size={20} />
+                  <FaWhatsapp className="text-white" size={20} />
                 </Button>
               </a>
             </div>
@@ -77,7 +77,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 z-50 flex items-center space-x-2 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg transition-colors hover:bg-green-600"
       >
-        <FaWhatsapp size={20} />
+        <FaWhatsapp size={20} className="" />
         <span className="font-semibold">Message us</span>
       </a>
     </footer>
