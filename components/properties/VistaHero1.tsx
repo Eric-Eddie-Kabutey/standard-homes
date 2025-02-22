@@ -69,8 +69,6 @@ const VistaHero: React.FC<Images> = ({ images }) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
         <div className="py-2 text-center font-bold text-sm text-slate-200">
           Picture {current} of {count}

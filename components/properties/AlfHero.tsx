@@ -6,8 +6,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Image from "next/image";
@@ -38,15 +36,15 @@ const AlfHero: React.FC<Images> = ({ images }) => {
   }, [api]);
 
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   return (
     <div>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto md:max-w-7xl ">
         <Carousel
           setApi={setApi}
-          className="w-full max-w-7xl"
+          className="w-full md:max-w-7xl"
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
