@@ -150,38 +150,24 @@ const ContactUs = () => {
               <strong>Phone:</strong>
             </Label>
             <div className="space-y-1">
-              <Link
-                href="#"
+              <Button
+                variant={"outline"}
                 className="text-yellow-600 font-extrabold flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 +233-30-341-1109
-              </Link>
-              <Link
-                href="#"
+              </Button>
+              <Button
+                variant={"outline"}
                 className="text-yellow-600 font-extrabold flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 +233-50-140-8803
-              </Link>
-              <Link
-                href="#"
-                className="text-yellow-600 font-extrabold flex items-center gap-2"
-              >
-                <FaWhatsapp className="w-5 h-5" />
-                +233-55-140-8804
-              </Link>
+              </Button>
             </div>
 
             <p>
               <strong>Email:</strong> info@waylead.org
-            </p>
-            <p className="mt-2">
-              <strong>Open 7 days a week</strong>
-              <br />
-              Monday - Friday: 12:00 - 18:00
-              <br />
-              Saturday &amp; Sunday: 12:00 - 17:00
             </p>
 
             {/* Social Media Links */}
