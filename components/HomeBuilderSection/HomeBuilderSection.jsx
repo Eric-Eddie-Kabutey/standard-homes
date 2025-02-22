@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TrustedHomebuilder() {
   return (
@@ -31,17 +32,23 @@ export default function TrustedHomebuilder() {
             </p>
 
             {/* Read More Button */}
-            <button className="mt-6 px-6 py-3 border border-yellow-500 text-yellow-500 rounded-md hover:bg-yellow-500 hover:text-black transition">
-              Read More →
-            </button>
+            <Link href="/about">
+              <button className="mt-6 px-6 py-3 border border-yellow-500 text-yellow-500 rounded-md hover:bg-yellow-500 hover:text-black transition">
+                Read More →
+              </button>
+            </Link>
           </div>
         </div>
 
-      
         {/* WhatsApp Button */}
         <div className="fixed bottom-6 right-6 flex items-center space-x-2 bg-white text-black px-4 py-2 rounded-full shadow-md hover:bg-gray-200 transition">
           <span className="font-medium">Message us 👋</span>
-          <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width={24} height={24} />
+          <Image
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp"
+            width={24}
+            height={24}
+          />
         </div>
       </div>
     </div>
