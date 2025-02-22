@@ -61,7 +61,7 @@ export default function Hero() {
   }, [activeIndex]);
 
   return (
-    <section className="relative w-screen bg-blue-950 h-screen overflow-hidden">
+    <section className="relative w-screen bg-blue-950 h-[85vh] overflow-hidden">
       <Carousel className="w-screen h-screen">
         <CarouselContent
           className="flex transition-transform duration-700 ease-in-out"
@@ -95,7 +95,7 @@ export default function Hero() {
         </p>
 
         <Link href="#">
-          <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
+          <button className="mt-6 bg-[#06386E] hover:bg-[#06386E]/80 text-white px-6 py-3 text-lg">
             {slides[activeIndex % slides.length].button}
           </button>
         </Link>
