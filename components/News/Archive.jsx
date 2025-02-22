@@ -1,15 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import {
     Drawer,
     DrawerClose,
     DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import { Button } from '../ui/button';
@@ -177,7 +172,7 @@ const Archive = () => {
     const totalNewsCount = Object.values(newsData).reduce((sum, newsArray) => sum + newsArray.length, 0);
 
     return (
-        <div className="mt-6 flex flex-col md:flex-row gap-[10%] p-6 max-w-[90%] mx-auto">
+        <div className="mt-6 flex flex-col md:flex-row gap-[10%] p-6 md:max-w-[90%] mx-auto">
             <div className="w-full md:w-3/4">
                 <div className="flex flex-col md:flex-row items-center gap-4 mb-2">
                     <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
