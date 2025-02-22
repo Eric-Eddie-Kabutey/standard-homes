@@ -42,11 +42,7 @@ export default function TrustedHomebuilder() {
         </div>
 
       
-        {/* WhatsApp Button */}
-        <div className="fixed bottom-6 right-6 flex items-center space-x-2 bg-white text-black px-4 py-2 rounded-full shadow-md hover:bg-gray-200 transition">
-          <span className="font-medium">Message us 👋</span>
-          <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width={24} height={24} />
-        </div>
+       
       </div>
     </div>
   );
