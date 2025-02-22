@@ -20,4 +20,10 @@
   ];
 
   
+  export const imageArray3 = [
+    { alt: "Image 1", src: "https://www.waylead.org/assets/images/properties/le-jardin-symphonique/hero-01.jpg" },
+    { alt: "Image 2", src: "https://www.waylead.org/assets/images/properties/le-jardin-symphonique/hero-02.jpg" },
+    { alt: "Image 3", src: "https://www.waylead.org/assets/images/properties/le-jardin-symphonique/hero-03.jpg" },
+    { alt: "Image 4", src: "https://www.waylead.org/assets/images/properties/le-jardin-symphonique/hero-04.jpg" },
+  ];
 
