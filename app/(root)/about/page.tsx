@@ -10,7 +10,8 @@ import React from "react";
 
 const page = () => {
   return (
-    <>
+    <div>
+
       <AboutHeroSection />
       <AboutPageWelcome />
       <AboutTrustedHomeBuilders />
@@ -19,7 +20,10 @@ const page = () => {
       <OurClients />
       <OurProperties />
       <NewsAndMedia />
+    </div>
+
     </>
+
   );
 };
 
