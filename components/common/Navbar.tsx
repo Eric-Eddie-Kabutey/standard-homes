@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <div className={`bg-white py-3 sticky top-0  z-50  `}>
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4 ">
         {/* Logo */}
-        <div className="flex items-center space-x-4">
+        <Link href="/" className="flex items-center space-x-4">
           <Image
             width={100}
             height={300}
@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             alt="logo"
             className=""
           />
-        </div>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-4 relative">

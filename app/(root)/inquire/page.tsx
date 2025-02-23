@@ -72,7 +72,7 @@ const ContactUs = () => {
                 <Label htmlFor="phone">Phone (Optional)</Label>
                 <PhoneInput
                   international
-                  defaultCountry="US"
+                  defaultCountry="GM"
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   id="phone"
@@ -89,12 +89,15 @@ const ContactUs = () => {
                     <SelectValue placeholder="Interested in" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="alphabetCity">Alphabet City</SelectItem>
+                    <SelectItem value="alphabetCity">Buying Land</SelectItem>
                     <SelectItem value="leJardin">
-                      Le Jardin Symphonique
+                      Renting house
                     </SelectItem>
-                    <SelectItem value="vistaDelMare">Vista del Mare</SelectItem>
-                    <SelectItem value="willowLane">Willow Lane</SelectItem>
+                    <SelectItem value="vistaDelMare">Residential construction</SelectItem>
+                    <SelectItem value="willowLane">Commercial construction</SelectItem>
+                    <SelectItem value="willowLane">Borehole drilling</SelectItem>
+                    <SelectItem value="willowLane">Property management</SelectItem>
+
                   </SelectContent>
                 </Select>
               </div>
