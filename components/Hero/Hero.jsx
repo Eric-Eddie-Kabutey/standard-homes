@@ -62,7 +62,7 @@ export default function Hero() {
   }, [activeIndex]);
 
   return (
-    <section className="relative w-screen bg-blue-950 h-[85vh] overflow-hidden">
+    <section className="relative w-screen bg-blue-950 h-[50vh] md:h-[85vh] overflow-hidden">
       <Carousel className="w-screen h-screen">
         <CarouselContent
           className="flex transition-transform duration-700 ease-in-out"

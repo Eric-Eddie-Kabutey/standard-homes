@@ -5,109 +5,253 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import MobileMenue from "./MobileMenue";
 
-export const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  {
-    href: "#",
-    label: "Properties",
-    submenu: [
-      { href: "/properties/alphabetcity", label: "Alphabet City" },
-      {
-        href: "/properties/symphonique",
-        label: "Le Jardin Symphonique",
-      },
-      { href: "/properties/vista-del-mare", label: "Vista del Mare" },
-      { href: "/properties/willow-lane", label: "Willow Lane" },
-    ],
-  },
-  { href: "/news", label: "News" },
-  { href: "/inquire", label: "Inquire" },
-];
+// Import lucide-react icons
+import { Building, HandCoins, Droplets } from "lucide-react";
 
-interface NavbarProps {
-  className?: string; // Add className prop
-}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const [isPropertiesHovered, setIsPropertiesHovered] = useState(false);
-  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu visibility
-
-  // Toggle mobile menu
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  // };
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   return (
-    <div className={`bg-white py-3 sticky top-0  z-50  `}>
-      <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4 ">
+    <div className="bg-white py-3 sticky top-0 z-50">
+      <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-4">
-          <Image
-            width={100}
-            height={300}
-            src="/standardLogo.png"
-            alt="logo"
-            className=""
-          />
+          <Image width={100} height={300} src="/standardLogo.png" alt="logo" />
         </Link>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-4 relative">
-          {links.map((link) => (
-            <div
-              key={link.href}
-              className="relative"
-              onMouseEnter={() => link.submenu && setIsPropertiesHovered(true)}
-              onMouseLeave={() => link.submenu && setIsPropertiesHovered(false)}
+          {/* Home Link */}
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu(null)}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="/"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
-              <Link
-                href={link.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  link.label === "Inquire" ? "border-yellow-600 border" : ""
-                } ${
-                  pathname === link.href
-                    ? "bg-primary text-white"
-                    : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
-              >
-                {link.label}
-              </Link>
-              {link.submenu && isPropertiesHovered && (
-                <div className="absolute top-full left-0 -mt-0 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
-                  {link.submenu.map((subLink) => (
-                    <Link
-                      key={subLink.href}
-                      href={subLink.href}
-                      className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground  ${
-                        pathname === subLink.href ? "bg-blue-50" : ""
-                      }`}
-                    >
-                      {subLink.label}
-                    </Link>
-                  ))}
+              Home
+            </Link>
+          </div>
+
+          {/* About Link */}
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu(null)}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="/about"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/about" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              About
+            </Link>
+          </div>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu("Services")}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="#"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              Services
+            </Link>
+            {hoveredMenu === "Services" && (
+              <div className="absolute top-full -left-[290px] transform -translate-x-1/2 mt-1 w-[100vw] bg-primary shadow-lg rounded-md border border-gray-200 p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-x-auto">
+                {/* General Construction Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <Building className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
+                  </div>
+                  <Link
+                    href="/services/web-development"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Assets Management
+                  </Link>
+                  <Link
+                    href="/services/app-development"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Architectural Design
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Commercial & Residential Construction
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Construction Project Management
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Interior Decoration
+                  </Link>
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Sales & Supply Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
+                  </div>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Sales & Leasing
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Property Maintainance
+                  </Link>
+                </div>
+
+                {/* Water Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <Droplets className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">WATER</h3>
+                  </div>
+                  <Link
+                    href="/services/cloud-solutions"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Borehole Drilling
+                  </Link>
+                  <Link
+                    href="/services/cyber-security"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Water Extension
+                  </Link>
+                  <Link
+                    href="/services/it-consulting"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Irrigational Dam Construction
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+
+          {/* Properties Link with Submenu */}
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu("Properties")}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="#"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              Properties
+            </Link>
+            {hoveredMenu === "Properties" && (
+              <div className="absolute top-full left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
+                <Link
+                  href="/properties/alphabetcity"
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
+                  }`}
+                >
+                  Alphabet City
+                </Link>
+                <Link
+                  href="/properties/symphonique"
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/symphonique" ? "bg-blue-50" : ""
+                  }`}
+                >
+                  Le Jardin Symphonique
+                </Link>
+                <Link
+                  href="/properties/vista-del-mare"
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
+                  }`}
+                >
+                  Vista del Mare
+                </Link>
+                <Link
+                  href="/properties/willow-lane"
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
+                  }`}
+                >
+                  Willow Lane
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* News Link */}
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu(null)}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="/news"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/news" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              News
+            </Link>
+          </div>
+          {/* Inquire Link */}
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu(null)}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="/inquire"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${
+                pathname === "/inquire" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              Inquire
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle Button */}
         <div className="md:hidden flex items-center gap-3">
           <Link
             href="/inquire"
-            className="bg-primary text-white px-4 py-2  shadow-lg flex items-center justify-center"
+            className="bg-primary text-white px-4 py-2 shadow-lg flex items-center justify-center"
           >
             Inquire
           </Link>
           <MobileMenue />
         </div>
       </div>
-
-      {/* Mobile Menu */}
-
-      {/* Inquire Button for Mobile */}
     </div>
   );
 };
