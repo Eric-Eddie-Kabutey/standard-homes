@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const slides = [
   {
@@ -61,13 +62,16 @@ export default function Hero() {
   }, [activeIndex]);
 
   return (
-    <section className="relative w-screen bg-blue-950 h-screen overflow-hidden">
+    <section className="relative w-screen bg-blue-950 h-[85vh] overflow-hidden">
       <Carousel className="w-screen h-screen">
         <CarouselContent
           className="flex transition-transform duration-700 ease-in-out"
           style={{
             transform: `translateX(-${activeIndex * 100}%)`,
-            transition: activeIndex >= slides.length ? "none" : "transform 0.7s ease-in-out",
+            transition:
+              activeIndex >= slides.length
+                ? "none"
+                : "transform 0.7s ease-in-out",
           }}
         >
           {extendedSlides.map((slide, index) => (
@@ -95,9 +99,9 @@ export default function Hero() {
         </p>
 
         <Link href="#">
-          <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
+          <Button className="mt-6  text-white px-6 py-3 text-lg">
             {slides[activeIndex % slides.length].button}
-          </button>
+          </Button>
         </Link>
       </div>
     </section>

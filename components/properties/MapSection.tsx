@@ -22,7 +22,7 @@ const center = {
 // Declare global window for Google Maps
 declare global {
   interface Window {
-    google: any;
+    google: typeof google;
   }
 }
 
@@ -46,9 +46,9 @@ export default function GoogleMapComponent() {
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
             setDirections(result);
-            const route = result.routes[0].legs[0];
-            setDistance(route.distance.text);
-            setDuration(route.duration.text);
+            const route = result?.routes[0].legs[0];
+            setDistance(route?.distance?.text || null);
+            setDuration(route?.duration?.text || null);
           } else {
             console.error("Error fetching directions:", status);
           }
@@ -59,29 +59,30 @@ export default function GoogleMapComponent() {
   }, []);
 
   return (
-    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-        <div className="relative md:mx-28 ">
-          <GoogleMap
-            mapContainerStyle={mapContainerStyle}
-            center={center}
-            zoom={14}
-            
-          >
-            <Marker position={center} />
-            {directions && <DirectionsRenderer directions={directions} />}
-          </GoogleMap>
+    <LoadScript
+      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+    >
+      <div className="relative md:mx-28 ">
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={14}
+        >
+          <Marker position={center} />
+          {directions && <DirectionsRenderer directions={directions} />}
+        </GoogleMap>
 
-          {/* Card with additional information */}
-          <div className="absolute top-2 right-2 bg-white p-2 shadow-lg rounded-xl ">
-            <h2 className="text-lg font-semibold">
-              Directions from Bijilo MSJ Plaza
-            </h2>
-            <p className="text-sm mt-2">Destination: Kololi</p>
-            <p className="text-sm mt-1">Distance: {distance}</p>
-            <p className="text-sm mt-1">Estimated Travel Time: {duration}</p>
-            <p className="text-xs mt-2 text-gray-500">
-              Powered by Google Maps API
-            </p>
+        {/* Card with additional information */}
+        <div className="absolute top-2 right-2 bg-white p-2 shadow-lg rounded-xl ">
+          <h2 className="text-lg font-semibold">
+            Directions from Bijilo MSJ Plaza
+          </h2>
+          <p className="text-sm mt-2">Destination: Kololi</p>
+          <p className="text-sm mt-1">Distance: {distance}</p>
+          <p className="text-sm mt-1">Estimated Travel Time: {duration}</p>
+          <p className="text-xs mt-2 text-gray-500">
+            Powered by Google Maps API
+          </p>
         </div>
       </div>
     </LoadScript>
