@@ -7,5 +7,4 @@ const NewsBanner = () => {
     </div>
   )
 }
-
 export default NewsBanner
