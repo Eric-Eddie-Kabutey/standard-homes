@@ -1,0 +1,149 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import MobileMenue from "./MobileMenue";
+
+// Import lucide-react icons
+import { Building, HandCoins, Droplets } from "lucide-react";
+
+export const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  {
+    href: "#",
+    label: "Properties",
+    submenu: [
+      { href: "/properties/alphabetcity", label: "Alphabet City" },
+      { href: "/properties/symphonique", label: "Le Jardin Symphonique" },
+      { href: "/properties/vista-del-mare", label: "Vista del Mare" },
+      { href: "/properties/willow-lane", label: "Willow Lane" },
+    ],
+  },
+  { href: "/news", label: "News" },
+  {
+    href: "#",
+    label: "Services",
+    megaMenu: [
+      {
+        category: "GENERAL CONSTRUCTION",
+        icon: <Building className="w-6 h-6 mb-5 text-slate-100" />, // Use lucide-react icon
+        services: [
+          { href: "/services/web-development", label: "Assets Management" },
+          { href: "/services/app-development", label: "Architectural Design" },
+          { href: "/services/seo", label: "Commercial & Residential Construction" },
+          { href: "/services/seo", label: "Construction Project Management" },
+          { href: "/services/seo", label: "Interior Decoration" },
+        ],
+      },
+      {
+        category: "SALES & SUPPLY",
+        icon: <HandCoins className="w-6 h-6 mb-5 text-slate-100" />, // Use lucide-react icon
+        services: [
+          { href: "/services/seo", label: "Sales & Leasing" },
+          { href: "/services/seo", label: "Property Maintainance" },
+        ],
+      },
+      {
+        category: "WATER",
+        icon: <Droplets className="w-6 h-6 mb-5 text-slate-100" />, // Use lucide-react icon
+        services: [
+          { href: "/services/cloud-solutions", label: "Borehole Drilling" },
+          { href: "/services/cyber-security", label: "Water Extension" },
+          { href: "/services/it-consulting", label: "Irrigational Dam Construction" },
+        ],
+      },
+    ],
+  },
+  { href: "/inquire", label: "Inquire" },
+];
+
+const Navbar: React.FC = () => {
+  const pathname = usePathname();
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+
+  return (
+    <div className="bg-white py-3 sticky top-0 z-50">
+      <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-4">
+          <Image width={100} height={300} src="/standardLogo.png" alt="logo" />
+        </Link>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center space-x-4 relative">
+          {links.map((link) => (
+            <div
+              key={link.href}
+              className="relative"
+              onMouseEnter={() => (link.submenu || link.megaMenu) && setHoveredMenu(link.label)}
+              onMouseLeave={() => (link.submenu || link.megaMenu) && setHoveredMenu(null)}
+            >
+              <Link
+                href={link.href}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${link.label === "Inquire" ? "border-yellow-600 border" : ""
+                  } ${pathname === link.href
+                    ? "bg-primary text-white"
+                    : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                  }`}
+              >
+                {link.label}
+              </Link>
+              {/* Submenu Dropdown */}
+              {link.submenu && hoveredMenu === link.label && (
+                <div className="absolute top-full left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
+                  {link.submenu.map((subLink) => (
+                    <Link
+                      key={subLink.href}
+                      href={subLink.href}
+                      className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === subLink.href ? "bg-blue-50" : ""
+                        }`}
+                    >
+                      {subLink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {/* Mega Menu Dropdown */}
+              {link.megaMenu && hoveredMenu === link.label && (
+                <div className="absolute top-full -left-[450px] transform -translate-x-1/2 mt-1 w-[100vw] bg-primary shadow-lg rounded-md border border-gray-200 p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-x-auto">
+                  {link.megaMenu.map((category, index) => (
+                    <div key={index}>
+                      <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                        {category.icon} {/* Render the lucide-react icon */}
+                        <h3 className="text-white font-semibold">{category.category}</h3>
+                      </div>
+                      {category.services.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Menu Toggle Button */}
+        <div className="md:hidden flex items-center gap-3">
+          <Link
+            href="/inquire"
+            className="bg-primary text-white px-4 py-2 shadow-lg flex items-center justify-center"
+          >
+            Inquire
+          </Link>
+          <MobileMenue />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
