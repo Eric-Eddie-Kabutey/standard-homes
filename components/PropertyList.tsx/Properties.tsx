@@ -1,4 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from '../ui/button';
 
 const Properties = () => {
   const properties = [
@@ -37,7 +45,7 @@ const Properties = () => {
   ];
 
   return (
-    <div className='mx-[5%] py-12'>      
+    <div className='mx-[7%] py-12'>      
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {properties.map((property) => (
           <div
@@ -45,11 +53,13 @@ const Properties = () => {
             className='bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300'
           >
             {/* Property Image */}
-            <div className='relative h-48'>
-              <img
+            <div className='relative h-[240px]'>
+              <Image
                 src={property.image}
                 alt={property.title}
-                className='w-full h-full object-cover'
+                layout='fill'
+                objectFit='cover'
+                className='w-full h-full'
               />
               {property.new && (
                 <div className='absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium'>
@@ -59,7 +69,7 @@ const Properties = () => {
             </div>
 
             {/* Rest of the card remains the same */}
-            <div className='p-6'>
+            <div className='p-2'>
               <div className='flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-semibold text-gray-900'>{property.price}</h3>
                 <span className='text-sm text-gray-600'>For Sale</span>
@@ -89,15 +99,30 @@ const Properties = () => {
                 </div>
               </div>
               
-              <button className='mt-6 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300'>
+              {/* <button className='mt-6 w-full bg-[#CA8A04] text-white py-2 px-4 rounded-lg hover:bg-[#ca9d3b] transition-colors duration-300'>
                 View Details
-              </button>
+              </button> */}
+              <Drawer>
+                <DrawerTrigger className="mt-6 w-full bg-[#CA8A04] text-white py-2 px-4 rounded-lg hover:bg-[#ca9d3b] transition-colors duration-300">
+                View Details
+                </DrawerTrigger>
+                <DrawerContent>
+                  <DrawerClose>
+                    <Button
+                      className="text-[#B78C4C] border border-[#B78C4C] px-8 py-2 font-medium rounded hover:bg-[#666666] hover:border-[#666666] hover:text-slate-100 transition-all duration-500 ease-in-out my-1"
+                      variant="outline"
+                    >
+                      Close
+                    </Button>
+                  </DrawerClose>
+                </DrawerContent>
+              </Drawer>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Properties
+export default Properties;
