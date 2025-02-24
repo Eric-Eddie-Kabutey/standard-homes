@@ -94,7 +94,7 @@ export default function Hero() {
           {slides[activeIndex % slides.length].description}
         </p>
 
-        <Link href="/connect">
+        <Link href="#">
           <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg">
             {slides[activeIndex % slides.length].button}
           </button>
