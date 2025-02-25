@@ -109,13 +109,13 @@ const Navbar: React.FC = () => {
                         <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
                       </div>
                       <Link
-                        href="/services/seo"
+                        href="/sales-supply#sales"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Sales & Leasing
                       </Link>
                       <Link
-                        href="/services/seo"
+                        href="/sales-supply#property"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Property Maintainance
@@ -129,22 +129,16 @@ const Navbar: React.FC = () => {
                         <h3 className="text-white font-semibold">WATER</h3>
                       </div>
                       <Link
-                        href="/services/cloud-solutions"
+                        href="/water#borehole"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Borehole Drilling
                       </Link>
                       <Link
-                        href="/services/cyber-security"
+                        href="/water#extension"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Water Extension
-                      </Link>
-                      <Link
-                        href="/services/it-consulting"
-                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                      >
-                        Irrigational Dam Construction
                       </Link>
                     </div>
                   </div>

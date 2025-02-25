@@ -9,14 +9,14 @@ const page = () => {
     return (
         <div className='mb-[5%]'>
             <NewsBanner title="Water" />
-            <ConstructionCategory title={"Borehole Drilling"} />
+            <ConstructionCategory title={"Borehole Drilling"} id='borehole' />
             <FeatureSection
                 title="Do you want to drill"
                 imageSrc="https://img.freepik.com/premium-photo/man-wearing-hard-hat-is-using-machine-that-has-yellow-hard-hat-it_1107779-27153.jpg?w=1800"
                 imageAlt="borehole"
                 description="At Standard Homes, we go beyond transactions—we build trust and deliver value. Our goal is to make every sales or leasing experience seamless, efficient, and rewarding for our clients, setting new standards of excellence in The Gambia’s property market."
             />
-            <ConstructionCateory2 title={"Water Extension"} />
+            <ConstructionCateory2 title={"Water Extension"} id='extension' />
             <FeatureSection2
                 title="Do you want to transform you house?"
                 imageSrc="https://img.freepik.com/premium-photo/maintenance-pressure-reducing-valve-water-treatment-plant-thailand_38039-625.jpg?w=1380"
