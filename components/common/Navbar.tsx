@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                         <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
                       </div>
                       <Link
-                        href="/services/web-development"
+                        href=""
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Assets Management
