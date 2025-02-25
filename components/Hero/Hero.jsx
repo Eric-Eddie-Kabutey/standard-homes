@@ -12,13 +12,13 @@ import { Button } from "@/components/ui/button";
 
 const slides = [
   {
-    image: "/hero-home-1 (1).jpg",
+    image: "/hero-home-1.jpg",
     title: "Your Next Perfect Home",
     description: "We handle all Projects with love and care",
     button: "Discuss Your Project",
   },
   {
-    image: "/hero-home-1.jpg",
+    image: "/hero-home-1 (1).jpg",
     title: "Smart Investment Choice",
     description:
       "We give you value for your money, let's help you make the right choice",
@@ -31,7 +31,7 @@ const slides = [
     button: "Rent a Safe Home Now",
   },
   {
-    image: "/hero-home-2 (1).jpg",
+    image: "/office.jpg",
     title: "Definition New Luxury Offices",
     description: "We are your go to for morden Office spaces, furnished or unfurnished",
     button: "Rent an Office space Now",
