@@ -89,7 +89,7 @@ export default function Hero() {
       </Carousel>
 
       {/* Overlay Content */}
-      <div className="absolute  sm:mt-2 top-[46%] left-5 sm:left-10 transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 w-[50%] py-[6%] px-[2%] rounded-xl">
+      <div className="absolute  sm:mt-2 top-[46%] left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 w-[50%] py-[6%] px-[2%] rounded-xl">
         <h1 className="text-5xl  mb-4">
           {slides[activeIndex % slides.length].title}
         </h1>
