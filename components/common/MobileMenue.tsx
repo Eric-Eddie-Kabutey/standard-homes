@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Building, HandCoins, Droplets } from "lucide-react";
 
 const MobileMenue = () => {
   const pathname = usePathname();
@@ -51,7 +52,83 @@ const MobileMenue = () => {
               <AccordionItem className="border-b border-slate-300" value="item-1">
                 <AccordionTrigger className="ml-2.5 text-lg">Services</AccordionTrigger>
                 <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
+                  {/* constructions */}
+                  <div className="flex flex-col mb-2 ml-2 py-5">
+                    <Building className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold flex justify-start">GENERAL CONSTRUCTION</h3>
+                  </div>
+                  <Link
+                    href="/services/web-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Assets Management
+                  </Link>
+                  <Link
+                    href="/services/app-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Architectural Design
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Commercial & Residential Construction
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Construction Project Management
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Interior Decoration
+                  </Link>
+
+                  {/* sales and supply */}
+                  <div className="flex flex-col mb-2 ml-2 py-5">
+                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
+                  </div>
+                  <Link
+                    href="/services/web-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Sales & Leasing
+                  </Link>
+                  <Link
+                    href="/services/app-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Property Maintainance
+                  </Link>
+
+                  <div className="flex flex-col mb-2 ml-2 py-5">
+                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
+                  </div>
+                  <Link
+                    href="/services/web-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    
+                  </Link>
+                  <Link
+                    href="/services/app-development"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    
+                  </Link>
+
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem className="border-b border-slate-300" value="item-2">
