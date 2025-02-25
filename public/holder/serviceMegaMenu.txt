@@ -54,6 +54,109 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
+          <div
+            className="relative"
+            onMouseEnter={() => setHoveredMenu("Services")}
+            onMouseLeave={() => setHoveredMenu(null)}
+          >
+            <Link
+              href="#"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
+            >
+              Services
+            </Link>
+            {hoveredMenu === "Services" && (
+              <div className="absolute top-full -left-[290px] transform -translate-x-1/2 mt-1 w-[100vw] bg-primary shadow-lg rounded-md border border-gray-200 p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-x-auto">
+                {/* General Construction Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <Building className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
+                  </div>
+                  <Link
+                    href="/services/web-development"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Assets Management
+                  </Link>
+                  <Link
+                    href="/services/app-development"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Architectural Design
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Commercial & Residential Construction
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Construction Project Management
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Interior Decoration
+                  </Link>
+                </div>
+
+                {/* Sales & Supply Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
+                  </div>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Sales & Leasing
+                  </Link>
+                  <Link
+                    href="/services/seo"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Property Maintainance
+                  </Link>
+                </div>
+
+                {/* Water Category */}
+                <div>
+                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                    <Droplets className="w-6 h-6 mb-5 text-slate-100" />
+                    <h3 className="text-white font-semibold">WATER</h3>
+                  </div>
+                  <Link
+                    href="/services/cloud-solutions"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Borehole Drilling
+                  </Link>
+                  <Link
+                    href="/services/cyber-security"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Water Extension
+                  </Link>
+                  <Link
+                    href="/services/it-consulting"
+                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                  >
+                    Irrigational Dam Construction
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+
           {/* Properties Link with Submenu */}
           <div
             className="relative"
