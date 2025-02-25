@@ -25,7 +25,7 @@ const MobileMenue = () => {
       </SheetTrigger>
       <SheetContent className="w-full bg-[#1A3850]">
         <div className="text-white mt-2 text-right">
-          <div className="px-4 py-2">
+          <div className=" py-2">
             {/* Home Link */}
             <div className="flex border-b border-slate-300 justify-end text-start">
               <Link
@@ -53,6 +53,7 @@ const MobileMenue = () => {
                 <AccordionTrigger className="ml-2.5 text-lg">Services</AccordionTrigger>
                 <AccordionContent>
                   <Accordion type="single" collapsible className="w-full">
+
                     {/* CONSTRUCTION */}
                     <AccordionItem className="border-b border-slate-300 ml-5" value="item-1-1">
                       <AccordionTrigger className="text-lg">
@@ -63,31 +64,31 @@ const MobileMenue = () => {
                       </AccordionTrigger>
                       <AccordionContent>
                         <Link
-                          href="/services/web-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Assets Management
                         </Link>
                         <Link
-                          href="/services/app-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Architectural Design
                         </Link>
                         <Link
-                          href="/services/seo"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Commercial & Residential Construction
                         </Link>
                         <Link
-                          href="/services/seo"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Construction Project Management
                         </Link>
                         <Link
-                          href="/services/seo"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Interior Decoration
@@ -105,13 +106,13 @@ const MobileMenue = () => {
                       </AccordionTrigger>
                       <AccordionContent>
                         <Link
-                          href="/services/web-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Sales & Leasing
                         </Link>
                         <Link
-                          href="/services/app-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Property Maintainance
@@ -129,25 +130,26 @@ const MobileMenue = () => {
                       </AccordionTrigger>
                       <AccordionContent>
                         <Link
-                          href="/services/web-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Borehole Drilling
                         </Link>
                         <Link
-                          href="/services/app-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Water Extension
                         </Link>
                         <Link
-                          href="/services/app-development"
+                          href="#"
                           className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                         >
                           Irrigational Dam Construction
                         </Link>
                       </AccordionContent>
                     </AccordionItem>
+
                   </Accordion>
                 </AccordionContent>
               </AccordionItem>
