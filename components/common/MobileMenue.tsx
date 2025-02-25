@@ -52,83 +52,103 @@ const MobileMenue = () => {
               <AccordionItem className="border-b border-slate-300" value="item-1">
                 <AccordionTrigger className="ml-2.5 text-lg">Services</AccordionTrigger>
                 <AccordionContent>
-                  {/* constructions */}
-                  <div className="flex flex-col mb-2 ml-2 py-5">
-                    <Building className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold flex justify-start">GENERAL CONSTRUCTION</h3>
-                  </div>
-                  <Link
-                    href="/services/web-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Assets Management
-                  </Link>
-                  <Link
-                    href="/services/app-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Architectural Design
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Commercial & Residential Construction
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Construction Project Management
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Interior Decoration
-                  </Link>
+                  <Accordion type="single" collapsible className="w-full">
+                    {/* CONSTRUCTION */}
+                    <AccordionItem className="border-b border-slate-300 ml-5" value="item-1-1">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <Building className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">GENERAL CONSTRUCTION</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="/services/web-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Assets Management
+                        </Link>
+                        <Link
+                          href="/services/app-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Architectural Design
+                        </Link>
+                        <Link
+                          href="/services/seo"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Commercial & Residential Construction
+                        </Link>
+                        <Link
+                          href="/services/seo"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Construction Project Management
+                        </Link>
+                        <Link
+                          href="/services/seo"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Interior Decoration
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
 
-                  {/* sales and supply */}
-                  <div className="flex flex-col mb-2 ml-2 py-5">
-                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
-                  </div>
-                  <Link
-                    href="/services/web-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Sales & Leasing
-                  </Link>
-                  <Link
-                    href="/services/app-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Property Maintainance
-                  </Link>
+                    {/* SALES AND SUPPLY */}
+                    <AccordionItem className="border-b border-slate-300 ml-5" value="item-1-2">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <HandCoins className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="/services/web-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Sales & Leasing
+                        </Link>
+                        <Link
+                          href="/services/app-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Property Maintainance
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
 
-                  <div className="flex flex-col mb-2 ml-2 py-5">
-                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
-                  </div>
-                  <Link
-                    href="/services/web-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    
-                  </Link>
-                  <Link
-                    href="/services/app-development"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    
-                  </Link>
-
+                    {/* WATER CATEGORY */}
+                    <AccordionItem className="border-none ml-5" value="item-1-3">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <Droplets className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">WATER</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="/services/web-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Borehole Drilling
+                        </Link>
+                        <Link
+                          href="/services/app-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Water Extension
+                        </Link>
+                        <Link
+                          href="/services/app-development"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Irrigational Dam Construction
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem className="border-b border-slate-300" value="item-2">
