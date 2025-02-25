@@ -71,31 +71,31 @@ const Navbar: React.FC = () => {
                         <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
                       </div>
                       <Link
-                        href=""
+                        href="/general-construction#assets"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Assets Management
                       </Link>
                       <Link
-                        href="/services/app-development"
+                        href="/general-construction#architect"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Architectural Design
                       </Link>
                       <Link
-                        href="/services/seo"
+                        href="/general-construction#commerce"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Commercial & Residential Construction
                       </Link>
                       <Link
-                        href="/services/seo"
+                        href="/general-construction#construction"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Construction Project Management
                       </Link>
                       <Link
-                        href="/services/seo"
+                        href="/general-construction#interior"
                         className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
                       >
                         Interior Decoration
