@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           <NavigationMenu className="">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:bg-[#CA8A04]">Services</NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-[#CA8A04]">
                   <div className="grid w-[400px] gap-3 p-4 md:w-[650px] md:grid-cols-3 lg:w-[750px] ">
                     <div>
