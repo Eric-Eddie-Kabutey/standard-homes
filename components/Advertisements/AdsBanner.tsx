@@ -63,7 +63,7 @@ const AdsBanner = () => {
                                                     priority={index === 0} // Only for first image
                                                 />
                                                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-[95%]">
-                                                    <Button className="w-full bg-[#CD8F0F] hover:bg-[#b87d0d] text-white font-bold py-6 px-4 rounded-lg shadow-lg">
+                                                    <Button className="w-full bg-[#FF4757] hover:bg-[#c03944] text-white font-bold py-6 px-4 rounded-lg shadow-lg">
                                                         Book Now
                                                     </Button>
                                                 </div>
