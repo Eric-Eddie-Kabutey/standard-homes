@@ -14,27 +14,27 @@ const slides = [
   {
     image: "/hero-home-1 (1).jpg",
     title: "Your Next Perfect Home",
-    description: "Lush townhouses built with love",
-    button: "Discover Willow Lane",
+    description: "We handle all Projects with love and care",
+    button: "Discuss Your Project",
   },
   {
     image: "/hero-home-1.jpg",
     title: "Smart Investment Choice",
     description:
-      "Easy Bill Payments (Cash Power, Water Bills, Internet Subscriptions etc.)",
-    button: "Discover Willow Lane",
+      "We give you value for your money, let's help you make the right choice",
+    button: "Buy and Build With Us",
   },
   {
     image: "/hero-home-2.jpg",
     title: "Built for Families",
-    description: "Lush townhouses built with love",
-    button: "Discover AlphabetCity",
+    description: "We provive you the best residentisal setting for long and short stays",
+    button: "Rent a Safe Home Now",
   },
   {
     image: "/hero-home-2 (1).jpg",
-    title: "Definition of New Luxury",
-    description: "Lush townhouses built with love",
-    button: "Discover Willow Lane",
+    title: "Definition New Luxury Offices",
+    description: "We are your go to for morden Office spaces, furnished or unfurnished",
+    button: "Rent an Office space Now",
   },
 ];
 
