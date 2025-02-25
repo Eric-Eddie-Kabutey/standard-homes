@@ -8,7 +8,7 @@ interface Props {
 const ConstructionCategory: React.FC<Props> = ({ title, id }) => {
     return (
         <div>
-            <div id={id} className="flex flex-col md:flex-row mx-[7%] items-center gap-4 mt-[2%]">
+            <div id={id} className="flex flex-col md:flex-row mx-[8%] items-center gap-4 mt-[2%]">
                 <h2 className="text-[#1A3850] text-[2.2rem] font-semibold mb-4">
                     {title}
                 </h2>

@@ -10,7 +10,7 @@ interface Props {
 
 const FeatureSection2: React.FC<Props> = ({ title, imageSrc, imageAlt, description }) => {
     return (
-        <div className='mx-[7%]'>
+        <div className='mx-[8%]'>
             <section className="bg-white dark:bg-gray-900">
                 <div className="container mx-auto">
                     <div className="items-center lg:flex">
