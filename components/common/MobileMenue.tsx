@@ -5,6 +5,13 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Building, HandCoins, Droplets } from "lucide-react";
 
 const MobileMenue = () => {
   const pathname = usePathname();
@@ -18,108 +25,163 @@ const MobileMenue = () => {
       </SheetTrigger>
       <SheetContent className="w-full bg-[#1A3850]">
         <div className="text-white mt-2 text-right">
-          <div className="px-4 py-2">
+          <div className=" py-2">
             {/* Home Link */}
-            <div>
+            <div className="flex border-b border-slate-300 justify-end text-start">
               <Link
                 href="/"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "/" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
+                className={`w-full block px-3 py-2 rounded-md text-lg font-medium transition-colors mt-2 ${pathname === "/" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
+                  }`}
               >
                 Home
               </Link>
             </div>
 
             {/* About Link */}
-            <div>
+            <div className="flex border-b border-slate-300 justify-end text-start">
               <Link
                 href="/about"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "/about" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
+                className={`block px-3 py-2 rounded-md w-full text-lg font-medium transition-colors mt-2 ${pathname === "/about" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
+                  }`}
               >
                 About
               </Link>
             </div>
 
-            {/* Properties Link with Submenu */}
-            <div>
-              <Link
-                href="#"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "#" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
-              >
-                Properties
-              </Link>
-              <div className="pl-4 mr-4">
-                <Link
-                  href="/properties/alphabetcity"
-                  className={`block px-3 py-2 text-sm text-white/80 hover:bg-primary hover:text-gray-800 ${
-                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
-                  }`}
-                >
-                  Alphabet City
-                </Link>
-                <Link
-                  href="/properties/symphonique"
-                  className={`block px-3 py-2 text-sm text-white/80 hover:bg-primary hover:text-gray-800 ${
-                    pathname === "/properties/symphonique" ? "bg-blue-50" : ""
-                  }`}
-                >
-                  Le Jardin Symphonique
-                </Link>
-                <Link
-                  href="/properties/vista-del-mare"
-                  className={`block px-3 py-2 text-sm text-white/80 hover:bg-primary hover:text-gray-800 ${
-                    pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
-                  }`}
-                >
-                  Vista del Mare
-                </Link>
-                <Link
-                  href="/properties/willow-lane"
-                  className={`block px-3 py-2 text-sm text-white/80 hover:bg-primary hover:text-gray-800 ${
-                    pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
-                  }`}
-                >
-                  Willow Lane
-                </Link>
-              </div>
-            </div>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem className="border-b border-slate-300" value="item-1">
+                <AccordionTrigger className="ml-2.5 text-lg">Services</AccordionTrigger>
+                <AccordionContent>
+                  <Accordion type="single" collapsible className="w-full">
 
+                    {/* CONSTRUCTION */}
+                    <AccordionItem className="border-b border-slate-300 ml-5" value="item-1-1">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <Building className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">GENERAL CONSTRUCTION</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Assets Management
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Architectural Design
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Commercial & Residential Construction
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Construction Project Management
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Interior Decoration
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    {/* SALES AND SUPPLY */}
+                    <AccordionItem className="border-b border-slate-300 ml-5" value="item-1-2">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <HandCoins className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">SALES & SUPPLY</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Sales & Leasing
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Property Maintainance
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                    {/* WATER CATEGORY */}
+                    <AccordionItem className="border-none ml-5" value="item-1-3">
+                      <AccordionTrigger className="text-lg">
+                        <div className="flex flex-col ">
+                          <Droplets className="w-6 h-6 mb-3 text-slate-100" />
+                          <h3 className="text-white font-semibold flex justify-start">WATER</h3>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Borehole Drilling
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Water Extension
+                        </Link>
+                        <Link
+                          href="#"
+                          className="flex justify-start px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                        >
+                          Irrigational Dam Construction
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
+
+                  </Accordion>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem className="border-b border-slate-300" value="item-2">
+                <AccordionTrigger className="ml-2.5 text-lg">Properties</AccordionTrigger>
+                <AccordionContent className="text-start">
+                  <ul className="ml-4 font-semibold space-y-3">
+                    <li><Link href="/properties/alphabetcity">Alphabet City</Link></li>
+                    <li><Link href="/properties/symphonique">Le Jardin Symphonique</Link></li>
+                    <li><Link href="/properties/vista-del-mare">Vista del Mare</Link></li>
+                    <li><Link href="/properties/willow-lane">Willow Lane</Link></li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
             {/* News Link */}
-            <div>
+            <div className="flex border-b border-slate-300 justify-end text-start">
               <Link
                 href="/news"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "/news" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
+                className={`block px-3 py-2 w-full rounded-md text-lg font-medium transition-colors mt-2 ${pathname === "/news" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
+                  }`}
               >
                 News
               </Link>
             </div>
 
-            {/* Services Link */}
-            <div>
-              <Link
-                href="#"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "#" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
-              >
-                Services
-              </Link>
-            </div>
-
             {/* Inquire Link */}
-            <div>
+            <div className="flex border-b border-slate-300 justify-end text-start">
               <Link
                 href="/inquire"
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors mt-2 ${
-                  pathname === "/inquire" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
-                }`}
+                className={`block px-3 w-full py-2 rounded-md text-lg font-medium transition-colors mt-2 ${pathname === "/inquire" ? "bg-primary text-white" : "text-white hover:bg-primary hover:text-gray-800"
+                  }`}
               >
                 Inquire
               </Link>

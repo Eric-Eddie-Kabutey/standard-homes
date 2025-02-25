@@ -222,17 +222,5 @@ export const properties = [
     description: "Modern apartment in Tema",
     img: "/about/home-card (1).jpg",
     link: "properties/alphabetcity",
-  },
-  {
-    name: "Le Jardin Symphonique",
-    description: "Spacious houses in great community",
-    img: "/about/home-card (3).jpg",
-    link: "properties/symphonique",
-  },
-  {
-    name: "Vista del Mare",
-    description: "Luxurious houses near airport",
-    img: "/about/home-card (4).jpg",
-    link: "properties/vista-del-mare",
-  },
+  }
 ];

@@ -11,6 +11,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			highlight: '#ff4757',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -50,12 +51,43 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			  animation: {
+				borderFlash: 'borderFlash 1.5s infinite',
+			  },
+			  keyframes: {
+				borderFlash: {
+				  '0%, 100%': { 'box-shadow': '0 0 0 0 rgba(255,71,87,0.5)' },
+				  '50%': { 'box-shadow': '0 0 0 5px rgba(255,71,87,0.5)' },
+				}
+			  }
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

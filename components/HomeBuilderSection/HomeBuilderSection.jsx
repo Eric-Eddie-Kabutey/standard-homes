@@ -21,15 +21,12 @@ export default function TrustedHomebuilder() {
 
           {/* Text Section */}
           <div className="w-full md:w-1/2">
-            <h2 className="text-4xl font-light relative inline-block">
-              Ghana’s Trusted Homebuilder
+            <h2 className="text-4xl font-light relative font-semibold inline-block">
+            Gambia’s No. 1 Homebuilder
               <span className="block w-full border-t border-yellow-300 mt-2"></span>
             </h2>
             <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-              As a leading residential developer in Ghana, Waylead is committed
-              to building high-quality and modern homes for Ghanaians. From
-              luxurious houses to modern apartments, we are always driven to
-              create rich living experiences for you and your family.
+            From luxurious homes to modern commercial spaces, land sales, leasing, and efficient borehole drilling solutions, we are dedicated to creating exceptional living, working, and investment environments for you and your community.
             </p>
 
             {/* Read More Button */}

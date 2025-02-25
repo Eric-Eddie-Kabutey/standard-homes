@@ -4,9 +4,17 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import MobileMenue from "./MobileMenue";
-
-// Import lucide-react icons
+import { cn } from "@/lib/utils"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 import { Building, HandCoins, Droplets } from "lucide-react";
+
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -30,9 +38,8 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                pathname === "/" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
             >
               Home
             </Link>
@@ -46,116 +53,99 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/about"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                pathname === "/about" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/about" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
             >
               About
             </Link>
           </div>
+          <NavigationMenu className="">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="hover:bg-[#CA8A04]">Services</NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#CA8A04]">
+                  <div className="grid w-[400px] gap-3 p-4 md:w-[650px] md:grid-cols-3 lg:w-[750px] ">
+                    <div>
+                      <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                        <Building className="w-6 h-6 mb-5 text-slate-100" />
+                        <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
+                      </div>
+                      <Link
+                        href="/general-construction#assets"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Assets Management
+                      </Link>
+                      <Link
+                        href="/general-construction#architect"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Architectural Design
+                      </Link>
+                      <Link
+                        href="/general-construction#commerce"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Commercial & Residential Construction
+                      </Link>
+                      <Link
+                        href="/general-construction#construction"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Construction Project Management
+                      </Link>
+                      <Link
+                        href="/general-construction#interior"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Interior Decoration
+                      </Link>
+                    </div>
 
-          <div
-            className="relative"
-            onMouseEnter={() => setHoveredMenu("Services")}
-            onMouseLeave={() => setHoveredMenu(null)}
-          >
-            <Link
-              href="#"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
-            >
-              Services
-            </Link>
-            {hoveredMenu === "Services" && (
-              <div className="absolute top-full -left-[290px] transform -translate-x-1/2 mt-1 w-[100vw] bg-primary shadow-lg rounded-md border border-gray-200 p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-x-auto">
-                {/* General Construction Category */}
-                <div>
-                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
-                    <Building className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
+                    {/* Sales & Supply Category */}
+                    <div>
+                      <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                        <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
+                        <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
+                      </div>
+                      <Link
+                        href="/sales-supply#sales"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Sales & Leasing
+                      </Link>
+                      <Link
+                        href="/sales-supply#property"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Property Maintainance
+                      </Link>
+                    </div>
+
+                    {/* Water Category */}
+                    <div>
+                      <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
+                        <Droplets className="w-6 h-6 mb-5 text-slate-100" />
+                        <h3 className="text-white font-semibold">WATER</h3>
+                      </div>
+                      <Link
+                        href="/water#borehole"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Borehole Drilling
+                      </Link>
+                      <Link
+                        href="/water#extension"
+                        className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
+                      >
+                        Water Extension
+                      </Link>
+                    </div>
                   </div>
-                  <Link
-                    href="/services/web-development"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Assets Management
-                  </Link>
-                  <Link
-                    href="/services/app-development"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Architectural Design
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Commercial & Residential Construction
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Construction Project Management
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Interior Decoration
-                  </Link>
-                </div>
-
-                {/* Sales & Supply Category */}
-                <div>
-                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
-                    <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
-                  </div>
-                  <Link
-                    href="/services/seo"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Sales & Leasing
-                  </Link>
-                  <Link
-                    href="/services/seo"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Property Maintainance
-                  </Link>
-                </div>
-
-                {/* Water Category */}
-                <div>
-                  <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
-                    <Droplets className="w-6 h-6 mb-5 text-slate-100" />
-                    <h3 className="text-white font-semibold">WATER</h3>
-                  </div>
-                  <Link
-                    href="/services/cloud-solutions"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Borehole Drilling
-                  </Link>
-                  <Link
-                    href="/services/cyber-security"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Water Extension
-                  </Link>
-                  <Link
-                    href="/services/it-consulting"
-                    className="block px-4 py-2 text-sm text-white hover:bg-primary-foreground"
-                  >
-                    Irrigational Dam Construction
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Properties Link with Submenu */}
           <div
@@ -165,9 +155,8 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="#"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
             >
               Properties
             </Link>
@@ -175,33 +164,29 @@ const Navbar: React.FC = () => {
               <div className="absolute top-full left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
                 <Link
                   href="/properties/alphabetcity"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
-                  }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
+                    }`}
                 >
                   Alphabet City
                 </Link>
                 <Link
                   href="/properties/symphonique"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                    pathname === "/properties/symphonique" ? "bg-blue-50" : ""
-                  }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/symphonique" ? "bg-blue-50" : ""
+                    }`}
                 >
                   Le Jardin Symphonique
                 </Link>
                 <Link
                   href="/properties/vista-del-mare"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                    pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
-                  }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
+                    }`}
                 >
                   Vista del Mare
                 </Link>
                 <Link
                   href="/properties/willow-lane"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                    pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
-                  }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
+                    }`}
                 >
                   Willow Lane
                 </Link>
@@ -217,9 +202,8 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/news"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                pathname === "/news" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/news" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
             >
               News
             </Link>
@@ -232,9 +216,8 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/inquire"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${
-                pathname === "/inquire" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-              }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${pathname === "/inquire" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
             >
               Inquire
             </Link>
@@ -257,3 +240,29 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
