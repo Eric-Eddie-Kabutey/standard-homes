@@ -7,8 +7,8 @@ import { properties } from "@/constants/arraydata";
 
 const OurProperties = () => {
   return (
-    <div className="bg-[#0D2A47] py-12 px-4 text-white">
-      <div className="container mx-auto">
+    <div className="bg-[#0D2A47] py-12 px-[7%] text-white">
+      <div className="container mx-auto ">
         {/* Heading */}
 
         <div className="flex items-center mb-6">
@@ -17,7 +17,7 @@ const OurProperties = () => {
         </div>
 
         {/* Property Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {properties?.map((property) => (
             <div
               key={property.name}
