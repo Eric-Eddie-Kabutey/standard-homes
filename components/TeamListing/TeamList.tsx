@@ -15,79 +15,58 @@ const TeamList = () => {
             }
         },
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Ramatoulie Fatty',
+            position: 'Sales & Marketing Manager',
+            image: '/sales-manager.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Kadijatou Jallow',
+            position: 'Marketer',
+            image: '/marketer.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Ismaila Sillah',
+            position: 'Rent Manager',
+            image: '/rent-manager.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Abasa Njie',
+            position: 'Secretary',
+            image: '/sect.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Rohey John',
+            position: 'Marketer',
+            image: '/marketer-2.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
-        {
-            name: '',
-            position: '',
-            image: '',
-            social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
-            }
-        },
-        {
-            name: '',
-            position: '',
-            image: '',
-            social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
-            }
-        },
-
     ];
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 py-8 mb-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {members.map((member, index) => (
                     <div key={index} className="flex cursor-pointer hover:shadow-lg flex-col items-center border shadow-md bg-[#F9FAFB] rounded-lg text-center px-6 py-8 transition-all duration-500 ease-in-out">
