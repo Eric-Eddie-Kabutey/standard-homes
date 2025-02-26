@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, ShieldCheck, Trophy, Building, Lightbulb } from "lucide-react";
+import { Route, ShieldCheck, Trophy, Building} from "lucide-react";
 
 const Overviews = [
   {
