@@ -19,8 +19,7 @@ const Footer = () => {
             />
             {/* <h2 className="mb-2 text-2xl font-bold">Waylead</h2> */}
             <p className="max-w-sm text-sm md:text-base">
-              As a leading registered developer in Ghana, Waylead is committed
-              to building high quality and honest homes from new to brand new.
+            At Standard Homes, we’re a trusted developer in The Gambia, creating high-quality, honest homes for fresh starts and brand-new beginnings.
             </p>
           </div>
 
@@ -63,7 +62,7 @@ const Footer = () => {
           {/* Right Column: Copyright */}
           <div className="flex flex-col items-start md:items-end">
             <p className="text-sm md:text-base">
-              &copy; {new Date().getFullYear()} Waylead Co. Ltd. All rights
+              &copy; {new Date().getFullYear()} Standard Homes Co. Ltd. All rights
               reserved.
             </p>
           </div>

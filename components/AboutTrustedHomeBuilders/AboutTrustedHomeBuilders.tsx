@@ -5,15 +5,15 @@ import { Card } from "@/components/ui/card";
 const images = [
   {
     name: "logo",
-    img: "/about/about-01.jpg",
+    img: "/standard-1.jpg",
   },
   {
     name: "logo",
-    img: "/about/about-02.jpg",
+    img: "/standard-2.jpg",
   },
   {
     name: "logo",
-    img: "/about/about-03.jpg",
+    img: "/standard-3.jpg",
   },
 ];
 

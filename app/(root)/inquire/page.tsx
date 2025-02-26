@@ -125,7 +125,7 @@ const ContactUs = () => {
               </div>
 
               {/* Submit Button */}
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full text-white">
                 Submit
               </Button>
             </form>
@@ -145,8 +145,8 @@ const ContactUs = () => {
 
           <div className="space-y-2">
             <h3 className="text-xl font-bold">Sales Office</h3>
-            <p>1 Waylead Drive, Lashibi</p>
-            <p>Sakumono, Ghana</p>
+            <p>2nd Floor Office 8 MSJ Plaza</p>
+            <p>Bertil Harding Highway Brusubi, The Gambia</p>
 
             <Label htmlFor="email" className="mt-2">
               <strong>Phone:</strong>
@@ -157,31 +157,24 @@ const ContactUs = () => {
                 className="text-yellow-600 font-extrabold flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                +233-30-341-1109
-              </Button>
-              <Button
-                variant={"outline"}
-                className="text-yellow-600 font-extrabold flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                +233-50-140-8803
+                +220 7922004
               </Button>
             </div>
 
             <p>
-              <strong>Email:</strong> info@waylead.org
+              <strong>Email:</strong> standardhomesgambia@gmail.com
             </p>
 
             {/* Social Media Links */}
             <div className="flex space-x-4 mt-4">
               <Button type="button" size="icon">
-                <FaFacebook />
+                <FaFacebook className="text-white" />
               </Button>
               <Button type="button" size="icon">
-                <FaInstagram />
+                <FaInstagram className="text-white" />
               </Button>
               <Button type="button" size="icon">
-                <FaTwitter />
+                <FaTwitter className="text-white" />
               </Button>
             </div>
           </div>
