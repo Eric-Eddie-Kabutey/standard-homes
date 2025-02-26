@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -70,7 +71,7 @@ const Footer = () => {
       </div>
 
       {/* WhatsApp Floating Button */}
-      <a
+      <Link
         href="https://wa.me/+2207922004"
         target="_blank"
         rel="noopener noreferrer"
@@ -78,7 +79,7 @@ const Footer = () => {
       >
         <FaWhatsapp size={20} className="" />
         <span className="font-semibold">Message us</span>
-      </a>
+      </Link>
     </footer>
   );
 };
