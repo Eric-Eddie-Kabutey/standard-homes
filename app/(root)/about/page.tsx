@@ -10,6 +10,7 @@ import OurProperties from "@/components/OurProperties/OurProperties";
 import TeamList from "@/components/TeamListing/TeamList";
 import React from "react";
 
+
 const page = () => {
   return (
     <div>
