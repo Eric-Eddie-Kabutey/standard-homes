@@ -23,6 +23,7 @@ import {
   CheckCircle,
   Phone,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Properties = () => {
   const properties = [
@@ -243,8 +244,15 @@ const Properties = () => {
 
                       {/* Description Section */}
                       <div>
-                        <h3 className="text-xl font-semibold mb-4">Property Description</h3>
-                        <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                        <div className="flex justify-between relative">
+                          <h3 className="text-xl font-semibold mb-4">Property Description</h3>
+                          <Link href="https://wa.me/+2207922004"
+                            className="sticky right-0 flex flex-row items-center top-0 rounded-lg px-4 animate-bounce  bg-[#CA8A04] hover:text-white text-white hover:bg-[#B78C4C]"
+                          >
+                            <Phone className="w-4 h-4 mr-2 text-white" />
+                            <p>Contact Agent</p>
+                          </Link>
+                        </div>                        <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                           {property.description}
                         </p>
 
@@ -260,15 +268,6 @@ const Properties = () => {
                           </ul>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Contact Section */}
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <h3 className="text-xl font-semibold mb-4">Schedule a Viewing</h3>
-                      <Button variant="outline" className='rounded-lg animate-bounce p-5 bg-[#CA8A04] hover:text-white text-white hover:bg-[#B78C4C]'>
-                        <Phone className="w-4 h-4 mr-2 text-white" />
-                        Contact Agent
-                      </Button>
                     </div>
                   </div>
 
