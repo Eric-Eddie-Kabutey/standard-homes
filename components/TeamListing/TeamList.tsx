@@ -5,13 +5,13 @@ import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 const TeamList = () => {
     const members = [
         {
-            name: '',
-            position: '',
-            image: '',
+            name: 'Kebba Sanneh',
+            position: 'CEO',
+            image: '/ceo.jpg',
             social: {
-                linkedin: '',
-                facebook: '',
-                twitter: ''
+                linkedin: '#',
+                facebook: '#',
+                twitter: '#'
             }
         },
         {
@@ -90,20 +90,20 @@ const TeamList = () => {
         <div className="max-w-7xl mx-auto px-4 py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {members.map((member, index) => (
-                    <div key={index} className="flex flex-col items-center text-center p-6">
+                    <div key={index} className="flex cursor-pointer hover:shadow-lg flex-col items-center border shadow-md bg-[#F9FAFB] rounded-lg text-center px-6 py-8 transition-all duration-500 ease-in-out">
                         {/* Image */}
-                        <div className="relative w-32 h-32 mb-4">
+                        <div className="relative  w-40 h-40 mb-4">
                             <Image
                                 src={member.image}
                                 alt={member.name}
                                 layout="fill"
                                 objectFit="cover"
-                                className="rounded-full"
+                                className="rounded-full cursor-pointer transition-all duration-500 ease-in-out"
                             />
                         </div>
 
                         {/* Name */}
-                        <h3 className="text-xl font-bold mb-2">{member.name}</h3>
+                        <h3 className="text-xl text-slate-800 font-bold mb-2">{member.name}</h3>
 
                         {/* Position */}
                         <p className="text-gray-600 mb-4">{member.position}</p>

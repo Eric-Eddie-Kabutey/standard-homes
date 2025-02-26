@@ -7,6 +7,7 @@ import NewsBanner from "@/components/News/Banner";
 import NewsAndMedia from "@/components/NewsAndMedia/NewsAndMeida";
 import OurClients from "@/components/OurClients/OurClients";
 import OurProperties from "@/components/OurProperties/OurProperties";
+import TeamList from "@/components/TeamListing/TeamList";
 import React from "react";
 
 const page = () => {
@@ -18,6 +19,7 @@ const page = () => {
       title="Our Team"
       id="team"
       />
+      <TeamList />
       <AboutTrustedHomeBuilders />
       <CompanyOverview />
       <JoinMessage />
