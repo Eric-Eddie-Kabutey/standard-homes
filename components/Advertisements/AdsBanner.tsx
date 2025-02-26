@@ -19,6 +19,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from 'next/image'
+import { MoveRight } from 'lucide-react'
 
 const AdsBanner = () => {
     const [isOpen, setIsOpen] = useState(true)
@@ -39,7 +40,9 @@ const AdsBanner = () => {
             <p>🚨 Limited Time Offer! Click Here for Special Discount</p>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
-                    <Button variant="outline" className="border-none px-2 py-1 rounded-lg bg-[#CD8F0F]">See property</Button>
+                    <Button variant="outline" className="border-none rounded-lg bg-[#ee404e]">
+                        <MoveRight />
+                    </Button>
                 </DialogTrigger>
                 <DialogContent className='bg-[#7FB5E3] p-0'>
                     <Carousel

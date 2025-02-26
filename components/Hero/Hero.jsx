@@ -14,7 +14,7 @@ const slides = [
   {
     image: "/hero-home-1.jpg",
     title: "Your Next Perfect Home",
-    description: "We handle all Projects with love and care",
+    description: "We handle all projects with love, care, and dedicated attention.",
     button: "Discuss Your Project",
   },
   {
@@ -60,7 +60,6 @@ export default function Hero() {
       }, 500); // Quick reset without visual glitch
     }
   }, [activeIndex]);
-
   return (
     <section className="relative w-screen bg-blue-950 h-[50vh] md:h-[85vh] overflow-hidden">
       <Carousel className="w-screen h-screen">
@@ -87,10 +86,9 @@ export default function Hero() {
           ))}
         </CarouselContent>
       </Carousel>
-
       {/* Overlay Content */}
-      <div className="absolute  sm:mt-2 top-[46%] left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 w-[50%] py-[6%] px-[2%] rounded-xl">
-        <h1 className="text-5xl  mb-4">
+      <div className="absolute  sm:mt-2 top-[46%] left-[4.5%] md:left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 md:w-[50%] py-[6%] px-[2%] rounded-xl">
+        <h1 className="text-2xl md:text-5xl  mb-4">
           {slides[activeIndex % slides.length].title}
         </h1>
 

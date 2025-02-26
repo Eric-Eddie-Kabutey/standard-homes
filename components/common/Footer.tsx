@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -19,8 +20,7 @@ const Footer = () => {
             />
             {/* <h2 className="mb-2 text-2xl font-bold">Waylead</h2> */}
             <p className="max-w-sm text-sm md:text-base">
-              As a leading registered developer in Ghana, Waylead is committed
-              to building high quality and honest homes from new to brand new.
+            At Standard Homes, we’re a trusted developer in The Gambia, creating high-quality, honest homes for fresh starts and brand-new beginnings.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
           {/* Right Column: Copyright */}
           <div className="flex flex-col items-start md:items-end">
             <p className="text-sm md:text-base">
-              &copy; {new Date().getFullYear()} Waylead Co. Ltd. All rights
+              &copy; {new Date().getFullYear()} Standard Homes Co. Ltd. All rights
               reserved.
             </p>
           </div>
@@ -71,15 +71,15 @@ const Footer = () => {
       </div>
 
       {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/233501408803"
+      <Link
+        href="https://wa.me/+2207922004"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 z-50 flex items-center space-x-2 rounded-full bg-green-500 px-4 py-2 text-white shadow-lg transition-colors hover:bg-green-600"
       >
         <FaWhatsapp size={20} className="" />
         <span className="font-semibold">Message us</span>
-      </a>
+      </Link>
     </footer>
   );
 };

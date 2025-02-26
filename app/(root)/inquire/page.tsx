@@ -125,7 +125,7 @@ const ContactUs = () => {
               </div>
 
               {/* Submit Button */}
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full text-white">
                 Submit
               </Button>
             </form>
@@ -137,7 +137,7 @@ const ContactUs = () => {
           {/* Embedded Google Map */}
           <iframe
             title="Waylead Company Ghana Limited"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31711.555926956284!2d-0.06394997937502705!3d5.660905219117441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9f049020308b%3A0x9c2f4ac95a2625df!2sWaylead%20Company%20Ghana%20Ltd!5e0!3m2!1sen!2sgh!4v1617812323702!5m2!1sen!2sgh"
+            src="https://maps.google.com/maps?q=AU+Summit+Highway+near+Africmed+at+MSJ+Plaza,+Brusubi,+The+Gambia&z=15&output=embed"
             className="w-full h-64 border-0 mb-4"
             allowFullScreen
             loading="lazy"
@@ -145,8 +145,8 @@ const ContactUs = () => {
 
           <div className="space-y-2">
             <h3 className="text-xl font-bold">Sales Office</h3>
-            <p>1 Waylead Drive, Lashibi</p>
-            <p>Sakumono, Ghana</p>
+            <p>2nd Floor Office 8 MSJ Plaza</p>
+            <p>Bertil Harding Highway Brusubi, The Gambia</p>
 
             <Label htmlFor="email" className="mt-2">
               <strong>Phone:</strong>
@@ -157,31 +157,24 @@ const ContactUs = () => {
                 className="text-yellow-600 font-extrabold flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                +233-30-341-1109
-              </Button>
-              <Button
-                variant={"outline"}
-                className="text-yellow-600 font-extrabold flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                +233-50-140-8803
+                +220 7922004
               </Button>
             </div>
 
             <p>
-              <strong>Email:</strong> info@waylead.org
+              <strong>Email:</strong> standardhomesgambia@gmail.com
             </p>
 
             {/* Social Media Links */}
             <div className="flex space-x-4 mt-4">
               <Button type="button" size="icon">
-                <FaFacebook />
+                <FaFacebook className="text-white" />
               </Button>
               <Button type="button" size="icon">
-                <FaInstagram />
+                <FaInstagram className="text-white" />
               </Button>
               <Button type="button" size="icon">
-                <FaTwitter />
+                <FaTwitter className="text-white" />
               </Button>
             </div>
           </div>
