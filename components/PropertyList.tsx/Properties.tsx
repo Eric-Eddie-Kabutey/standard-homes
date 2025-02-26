@@ -158,7 +158,7 @@ const Properties = () => {
                       spaceBetween={10}
                       slidesPerView={1}
                       navigation
-                      pagination={{ clickable: true }}
+                      pagination={{ clickable: true, }}
                       className="w-full h-[430px]"
                       loop={true}
                       autoplay={{
