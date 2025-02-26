@@ -12,7 +12,7 @@ const OurProperties = () => {
         {/* Heading */}
 
         <div className="flex items-center mb-6">
-          <h1 className="text-3xl font-semibold">Our Properties</h1>
+          <h1 className="text-3xl font-semibold">Hot Sales</h1>
           <div className="flex-grow border-t border-[#B58541] ml-4"></div>
         </div>
 

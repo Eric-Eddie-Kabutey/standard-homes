@@ -137,7 +137,7 @@ const ContactUs = () => {
           {/* Embedded Google Map */}
           <iframe
             title="Waylead Company Ghana Limited"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31711.555926956284!2d-0.06394997937502705!3d5.660905219117441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9f049020308b%3A0x9c2f4ac95a2625df!2sWaylead%20Company%20Ghana%20Ltd!5e0!3m2!1sen!2sgh!4v1617812323702!5m2!1sen!2sgh"
+            src="https://maps.google.com/maps?q=AU+Summit+Highway+near+Africmed+at+MSJ+Plaza,+Brusubi,+The+Gambia&z=15&output=embed"
             className="w-full h-64 border-0 mb-4"
             allowFullScreen
             loading="lazy"
