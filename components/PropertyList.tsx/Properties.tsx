@@ -1,6 +1,11 @@
 "use client"
 
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Image from 'next/image';
 import {
   Drawer,
@@ -17,7 +22,6 @@ import {
   Square,
   CheckCircle,
   Phone,
-  CalendarDays,
 } from 'lucide-react';
 
 const Properties = () => {
@@ -36,7 +40,12 @@ const Properties = () => {
       garage: 1,
       lotSize: '0.25 acres',
       amenities: ['Swimming Pool', 'Gym', 'Security System', 'Balcony', 'Smart Home'],
-      image: 'https://usvintagewood.com/wp-content/uploads/2021/05/image1.jpg',
+      image: [
+        'https://usvintagewood.com/wp-content/uploads/2021/05/image1.jpg',
+        'https://static.vecteezy.com/system/resources/thumbnails/023/307/449/small_2x/ai-generative-exterior-of-modern-luxury-house-with-garden-and-beautiful-sky-photo.jpg',
+        'https://static.vecteezy.com/system/resources/previews/026/586/056/non_2x/beautiful-modern-house-exterior-with-carport-modern-residential-district-and-minimalist-building-concept-by-ai-generated-free-photo.jpg'
+
+      ],
       description: "This modern downtown apartment features floor-to-ceiling windows with panoramic city views. The open-concept living area includes high-end finishes: quartz countertops, hardwood flooring, and smart home technology. Master suite boasts walk-in closet and spa-like bathroom with heated floors. Building amenities include 24/7 concierge, fitness center, and rooftop lounge."
     },
     {
@@ -52,7 +61,11 @@ const Properties = () => {
       garage: 2,
       lotSize: '0.5 acres',
       amenities: ['Swimming Pool', 'Home Theater', 'Wine Cellar', 'Smart Home', 'Garden'],
-      image: 'https://img.huffingtonpost.com/asset/5818bdd01700001c005bb02c.jpg?ops=scalefit_500_noupscale',
+      image: [
+        'https://img.huffingtonpost.com/asset/5818bdd01700001c005bb02c.jpg?ops=scalefit_500_noupscale',
+        'https://i.pinimg.com/736x/e8/bd/a5/e8bda551ab2397aade35e6cbd08c6444.jpg',
+        'https://i.pinimg.com/736x/d4/1f/1a/d41f1acc62dcc9e03e7fc699c058d426.jpg'
+      ],
       description: 'This luxury villa offers unparalleled elegance with 5 spacious bedrooms, 4 modern bathrooms, and 3500 sqft of living space. The property features a state-of-the-art kitchen, a private swimming pool, and a beautifully landscaped garden. Perfect for entertaining, the villa includes a home theater and wine cellar. Located in the heart of Beverly Hills, it provides easy access to top restaurants and shopping.'
     },
     {
@@ -69,7 +82,11 @@ const Properties = () => {
       garage: 1,
       lotSize: '0.2 acres',
       amenities: ['Backyard', 'Patio', 'Fireplace', 'Energy Efficient', 'Storage Shed'],
-      image: 'https://www.vmcdn.ca/f/files/glaciermedia/import/lmp-all/1269659-shaughnessy-uber-cool-modern-house-main.jpg',
+      image: [
+        'https://www.vmcdn.ca/f/files/glaciermedia/import/lmp-all/1269659-shaughnessy-uber-cool-modern-house-main.jpg',
+        'https://images.surferseo.art/fdb08e2e-5d39-402c-ad0c-8a3293301d9e.png',
+        'https://img.huffingtonpost.com/asset/5818bdd01700001c005bb02c.jpg?ops=scalefit_500_noupscale'
+      ],
       description: 'This cozy suburban home is perfect for small families or first-time buyers. It features 2 bedrooms, 2 bathrooms, and a spacious backyard with a patio. The home includes modern appliances, a fireplace, and energy-efficient windows. Located in a quiet neighborhood, it offers a peaceful retreat while being close to schools, parks, and shopping centers.'
     },
   ];
@@ -85,7 +102,7 @@ const Properties = () => {
             {/* Property Image */}
             <div className='relative h-[240px]'>
               <Image
-                src={property.image}
+                src={property.image[0]}
                 alt={property.title}
                 layout='fill'
                 objectFit='cover'
@@ -136,23 +153,36 @@ const Properties = () => {
                 </DrawerTrigger>
                 <DrawerContent>
                   <div className="p-6 overflow-y-auto max-h-[80vh]">
-                    {/* Enlarged Property Image */}
-                    <div className="relative h-[300px]">
-                      <Image
-                        src={property.image}
-                        alt={property.title}
-                        layout='fill'
-                        objectFit='cover'
-                        className='rounded-lg'
-                      />
-                      {property.new && (
-                        <div className='absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium'>
-                          New
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Enhanced Details Section */}
+                    <Swiper
+                      modules={[Navigation, Pagination, Autoplay]}
+                      spaceBetween={10}
+                      slidesPerView={1}
+                      navigation
+                      pagination={{ clickable: true }}
+                      className="w-full h-[430px]"
+                      loop={true}
+                      autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                      }}
+                      breakpoints={{
+                        640: {
+                          slidesPerView: 2,
+                        },
+                      }}
+                    >
+                      {property.image.map((imgSrc, index) => (
+                        <SwiperSlide key={index} className="relative w-full h-full">
+                          <Image
+                            src={imgSrc}
+                            alt={property.title}
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-lg"
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
                     <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <h2 className="text-3xl font-bold text-gray-900 mb-2">{property.title}</h2>
@@ -235,10 +265,10 @@ const Properties = () => {
                     {/* Contact Section */}
                     <div className="mt-8 pt-6 border-t border-gray-200">
                       <h3 className="text-xl font-semibold mb-4">Schedule a Viewing</h3>
-                        <Button variant="outline" className='rounded-lg animate-bounce p-5 bg-[#CA8A04] hover:text-white text-white hover:bg-[#B78C4C]'>
-                          <Phone className="w-4 h-4 mr-2 text-white" />
-                          Contact Agent
-                        </Button>
+                      <Button variant="outline" className='rounded-lg animate-bounce p-5 bg-[#CA8A04] hover:text-white text-white hover:bg-[#B78C4C]'>
+                        <Phone className="w-4 h-4 mr-2 text-white" />
+                        Contact Agent
+                      </Button>
                     </div>
                   </div>
 
