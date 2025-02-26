@@ -1,6 +1,7 @@
 import AboutPageWelcome from "@/components/AboutPageWelcome/AboutPageWelcome";
 import AboutTrustedHomeBuilders from "@/components/AboutTrustedHomeBuilders/AboutTrustedHomeBuilders";
 import CompanyOverview from "@/components/CompanyOverview/CompanyOverview";
+import ConstructionCategory from "@/components/GeneralConstructiton/ConstructionCategory";
 import JoinMessage from "@/components/JoinMessage/JoinMessage";
 import NewsBanner from "@/components/News/Banner";
 import NewsAndMedia from "@/components/NewsAndMedia/NewsAndMeida";
@@ -13,6 +14,10 @@ const page = () => {
     <div>
       <NewsBanner title="About" />
       <AboutPageWelcome />
+      <ConstructionCategory
+      title="Our Team"
+      id="team"
+      />
       <AboutTrustedHomeBuilders />
       <CompanyOverview />
       <JoinMessage />
