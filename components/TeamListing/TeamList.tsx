@@ -5,15 +5,86 @@ import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 const TeamList = () => {
     const members = [
         {
-            name: 'John Doe',
-            position: 'CEO',
-            image: '/images/john-doe.jpg',
+            name: '',
+            position: '',
+            image: '',
             social: {
-                linkedin: '#',
-                facebook: '#',
-                twitter: '#'
+                linkedin: '',
+                facebook: '',
+                twitter: ''
             }
         },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+        {
+            name: '',
+            position: '',
+            image: '',
+            social: {
+                linkedin: '',
+                facebook: '',
+                twitter: ''
+            }
+        },
+
     ];
     return (
         <div className="max-w-7xl mx-auto px-4 py-8">
