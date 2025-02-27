@@ -40,9 +40,9 @@ const AdsBanner = () => {
             <p>🚨 Limited Time Offer! Click Here for Special Discount</p>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
-                    <Button variant="outline" className="border-none rounded-lg bg-[#ee404e]">
+                    <p className="border-none p-1 cursor-pointer rounded-lg bg-[#ee404e]">
                         <MoveRight />
-                    </Button>
+                    </p>
                 </DialogTrigger>
                 <DialogContent className='bg-[#7FB5E3] p-0'>
                     <Carousel
