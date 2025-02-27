@@ -36,7 +36,7 @@ const AdsBanner = () => {
     ]
 
     return (
-        <div className="flex gap-3 items-center justify-center bg-[#ff4757] text-white py-2.5 text-center">
+        <div className="flex gap-3 items-center justify-between md:justify-center bg-[#ff4757] text-white py-2.5 px-[1%] text-center">
             <p>🚨 Limited Time Offer! Click Here for Special Discount</p>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
