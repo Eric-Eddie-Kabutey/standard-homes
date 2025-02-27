@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/carousel"
 import Image from 'next/image'
 import { MoveRight } from 'lucide-react'
+import Link from 'next/link'
 
 const AdsBanner = () => {
     const [isOpen, setIsOpen] = useState(true)
@@ -36,13 +37,13 @@ const AdsBanner = () => {
     ]
 
     return (
-        <div className="flex gap-3 items-center justify-center bg-[#ff4757] text-white py-2.5 text-center">
+        <div className="flex gap-3 mt-[-11.7px] items-center justify-between md:justify-center bg-[#ff4757] text-white py-2.5 px-[1%] text-center">
             <p>🚨 Limited Time Offer! Click Here for Special Discount</p>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
-                    <Button variant="outline" className="border-none rounded-lg bg-[#ee404e]">
+                    <p className="border-none p-1 cursor-pointer rounded-lg bg-[#ee404e]">
                         <MoveRight />
-                    </Button>
+                    </p>
                 </DialogTrigger>
                 <DialogContent className='bg-[#7FB5E3] p-0'>
                     <Carousel
@@ -65,11 +66,11 @@ const AdsBanner = () => {
                                                     className="w-full h-full object-cover rounded-lg"
                                                     priority={index === 0} // Only for first image
                                                 />
-                                                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-[95%]">
+                                                <Link href="https://wa.me/+2207922004" className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-[95%]">
                                                     <Button className="w-full bg-[#FF4757] hover:bg-[#c03944] text-white font-bold py-6 px-4 rounded-lg shadow-lg">
                                                         Book Now
                                                     </Button>
-                                                </div>
+                                                </Link>
                                             </CardContent>
                                         </Card>
                                     </div>

@@ -27,7 +27,7 @@ const Overviews = [
 const CompanyOverview = () => {
   return (
     <div className="flex justify-center items-center  bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-16 max-w-[90%] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-16 mx-[4%] md:mx-[8%] w-full">
         {Overviews?.map((overview, index) => (
           <div
             key={index}

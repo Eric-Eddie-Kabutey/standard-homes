@@ -14,6 +14,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Building, HandCoins, Droplets } from "lucide-react";
+import AdsBanner from "../Advertisements/AdsBanner";
 
 
 const Navbar: React.FC = () => {
@@ -22,6 +23,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="bg-white py-3 sticky top-0 z-50">
+      <AdsBanner />
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-4">
