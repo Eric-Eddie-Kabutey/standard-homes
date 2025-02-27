@@ -35,7 +35,6 @@ export default function RootLayout({
         <AdsBanner />
         <Navbar />
         {/* Pass className to Navbar */}
-
         {children}
         <Footer />
       </body>
