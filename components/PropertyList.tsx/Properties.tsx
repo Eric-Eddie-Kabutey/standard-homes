@@ -19,9 +19,9 @@ import {
   Home,
   Calendar,
   Car,
-  Square,
   CheckCircle,
   Phone,
+  Bed,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -29,43 +29,37 @@ const Properties = () => {
   const properties = [
     {
       id: 1,
-      price: '$450,000',
+      price: 'D10,000',
       title: 'Modern Downtown Apartment',
       location: 'Downtown, New York',
       beds: 3,
       baths: 2,
-      sqft: 1800,
+      kitchen: 1,
       new: true,
       type: 'Apartment',
       yearBuilt: 2022,
       garage: 1,
-      lotSize: '0.25 acres',
       amenities: ['Swimming Pool', 'Gym', 'Security System', 'Balcony', 'Smart Home'],
       image: [
-        'https://usvintagewood.com/wp-content/uploads/2021/05/image1.jpg',
-        'https://static.vecteezy.com/system/resources/thumbnails/023/307/449/small_2x/ai-generative-exterior-of-modern-luxury-house-with-garden-and-beautiful-sky-photo.jpg',
-        'https://static.vecteezy.com/system/resources/previews/026/586/056/non_2x/beautiful-modern-house-exterior-with-carport-modern-residential-district-and-minimalist-building-concept-by-ai-generated-free-photo.jpg'
-
+        '',
       ],
       description: "This modern downtown apartment features floor-to-ceiling windows with panoramic city views. The open-concept living area includes high-end finishes: quartz countertops, hardwood flooring, and smart home technology. Master suite boasts walk-in closet and spa-like bathroom with heated floors. Building amenities include 24/7 concierge, fitness center, and rooftop lounge."
     },
     {
       id: 2,
-      price: '$799,000',
+      price: 'D15,000',
       title: 'Luxury Villa with Pool',
       location: 'Beverly Hills, LA',
       beds: 5,
       baths: 4,
-      sqft: 3500,
+      kitchen: 1,
+      new: true,
       type: 'Villa',
       yearBuilt: 2018,
       garage: 2,
-      lotSize: '0.5 acres',
       amenities: ['Swimming Pool', 'Home Theater', 'Wine Cellar', 'Smart Home', 'Garden'],
       image: [
-        'https://img.huffingtonpost.com/asset/5818bdd01700001c005bb02c.jpg?ops=scalefit_500_noupscale',
-        'https://i.pinimg.com/736x/e8/bd/a5/e8bda551ab2397aade35e6cbd08c6444.jpg',
-        'https://i.pinimg.com/736x/d4/1f/1a/d41f1acc62dcc9e03e7fc699c058d426.jpg'
+        '',
       ],
       description: 'This luxury villa offers unparalleled elegance with 5 spacious bedrooms, 4 modern bathrooms, and 3500 sqft of living space. The property features a state-of-the-art kitchen, a private swimming pool, and a beautifully landscaped garden. Perfect for entertaining, the villa includes a home theater and wine cellar. Located in the heart of Beverly Hills, it provides easy access to top restaurants and shopping.'
     },
@@ -76,17 +70,14 @@ const Properties = () => {
       location: 'Suburbs, Austin',
       beds: 2,
       baths: 2,
-      sqft: 1500,
+      kitchen: 1,
       new: true,
       type: 'Single Family Home',
       yearBuilt: 2020,
       garage: 1,
-      lotSize: '0.2 acres',
       amenities: ['Backyard', 'Patio', 'Fireplace', 'Energy Efficient', 'Storage Shed'],
       image: [
-        'https://www.vmcdn.ca/f/files/glaciermedia/import/lmp-all/1269659-shaughnessy-uber-cool-modern-house-main.jpg',
-        'https://images.surferseo.art/fdb08e2e-5d39-402c-ad0c-8a3293301d9e.png',
-        'https://img.huffingtonpost.com/asset/5818bdd01700001c005bb02c.jpg?ops=scalefit_500_noupscale'
+        '',
       ],
       description: 'This cozy suburban home is perfect for small families or first-time buyers. It features 2 bedrooms, 2 bathrooms, and a spacious backyard with a patio. The home includes modern appliances, a fireplace, and energy-efficient windows. Located in a quiet neighborhood, it offers a peaceful retreat while being close to schools, parks, and shopping centers.'
     },
@@ -129,21 +120,25 @@ const Properties = () => {
               <div className='flex justify-between border-t pt-4'>
                 <div className='flex items-center'>
                   <svg className='w-5 h-5 text-gray-600 mr-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                  <span className='text-sm'>{property.beds} Beds</span>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 20v-8a2 2 0 012-2h16a2 2 0 012 2v8M2 20h20M6 20v-4m12 4v-4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 12h4v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2zM16 12h4v-2a1 1 0 00-1-1h-2a1 1 0 00-1 1v2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 16h12" />
+                  </svg>                  <span className='text-sm'>{property.beds} Beds</span>
                 </div>
                 <div className='flex items-center'>
                   <svg className='w-5 h-5 text-gray-600 mr-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                  <span className='text-sm'>{property.baths} Baths</span>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4M4 12V6a2 2 0 012-2h12a2 2 0 012 2v6M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6m-8-6h.01M12 12h.01M12 18h.01M16 6h.01M16 12h.01M16 18h.01" />
+                  </svg>                  <span className='text-sm'>{property.baths} Baths</span>
                 </div>
                 <div className='flex items-center'>
                   <svg className='w-5 h-5 text-gray-600 mr-1' fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                  </svg>
-                  <span className='text-sm'>{property.sqft} sqft</span>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 20h18v-4H3v4zM3 4v12h18V4H3z" />
+                    <circle cx="7" cy="8" r="1.5" strokeWidth={2} />
+                    <circle cx="17" cy="8" r="1.5" strokeWidth={2} />
+                    <circle cx="7" cy="14" r="1.5" strokeWidth={2} />
+                    <circle cx="17" cy="14" r="1.5" strokeWidth={2} />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-4m0 0h-2m2 0h2" />
+                  </svg>                  <span className='text-sm'>{property.kitchen} kitchen</span>
                 </div>
               </div>
 
@@ -217,10 +212,10 @@ const Properties = () => {
                             </div>
                           </div>
                           <div className="flex items-center">
-                            <Square className="w-5 h-5 mr-2 text-gray-600" />
+                            <Bed className="w-5 h-5 mr-2 text-gray-600" />
                             <div>
-                              <p className="text-sm text-gray-500">Lot Size</p>
-                              <p className="font-medium">{property.lotSize}</p>
+                              <p className="text-sm text-gray-500">Bedrooms</p>
+                              <p className="font-medium">{property.beds}</p>
                             </div>
                           </div>
                         </div>

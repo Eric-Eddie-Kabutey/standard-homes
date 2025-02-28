@@ -169,28 +169,28 @@ const Navbar: React.FC = () => {
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
                     }`}
                 >
-                  Alphabet City
+                  Lands
                 </Link>
                 <Link
                   href="/properties/symphonique"
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/symphonique" ? "bg-blue-50" : ""
                     }`}
                 >
-                  Le Jardin Symphonique
+                  Homes
                 </Link>
                 <Link
                   href="/properties/vista-del-mare"
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
                     }`}
                 >
-                  Vista del Mare
+                  Offices
                 </Link>
                 <Link
                   href="/properties/willow-lane"
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
                     }`}
                 >
-                  Willow Lane
+                  Warehouses
                 </Link>
               </div>
             )}
