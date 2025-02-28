@@ -41,7 +41,7 @@ const Properties = () => {
       garage: 1,
       amenities: ['Swimming Pool', 'Gym', 'Security System', 'Balcony', 'Smart Home'],
       image: [
-        '',
+        '/apartment.jpg','/apartment11.jpg', '/apartment12.jpg','/apartment13.jpg','/apartment14.jpg'
       ],
       description: "This modern downtown apartment features floor-to-ceiling windows with panoramic city views. The open-concept living area includes high-end finishes: quartz countertops, hardwood flooring, and smart home technology. Master suite boasts walk-in closet and spa-like bathroom with heated floors. Building amenities include 24/7 concierge, fitness center, and rooftop lounge."
     },
@@ -59,7 +59,7 @@ const Properties = () => {
       garage: 2,
       amenities: ['Swimming Pool', 'Home Theater', 'Wine Cellar', 'Smart Home', 'Garden'],
       image: [
-        '',
+        '/apart.jpg','/apart11.jpg', '/apart12.jpg','/apart13.jpg','/apart14.jpg'
       ],
       description: 'This luxury villa offers unparalleled elegance with 5 spacious bedrooms, 4 modern bathrooms, and 3500 sqft of living space. The property features a state-of-the-art kitchen, a private swimming pool, and a beautifully landscaped garden. Perfect for entertaining, the villa includes a home theater and wine cellar. Located in the heart of Beverly Hills, it provides easy access to top restaurants and shopping.'
     },
@@ -77,7 +77,7 @@ const Properties = () => {
       garage: 1,
       amenities: ['Backyard', 'Patio', 'Fireplace', 'Energy Efficient', 'Storage Shed'],
       image: [
-        '',
+        '/apar.jpg','/apar11.jpg', '/apar12.jpg','/apar13.jpg','/apar14.jpg'
       ],
       description: 'This cozy suburban home is perfect for small families or first-time buyers. It features 2 bedrooms, 2 bathrooms, and a spacious backyard with a patio. The home includes modern appliances, a fireplace, and energy-efficient windows. Located in a quiet neighborhood, it offers a peaceful retreat while being close to schools, parks, and shopping centers.'
     },
