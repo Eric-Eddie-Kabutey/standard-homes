@@ -212,9 +212,9 @@ export const newsData = {
 
 export const properties = [
   {
-    name: "Willow Lane",
-    description: "Lush townhouses built with love",
-    img: "/about/home-card.jpg",
+    name: "4 BR/ 4.5 BA House at Brufut Gardens ",
+    description: "Experience luxury in this stunning home",
+    img: "/modern-house-1.jpg",
     link: "properties/willow-lane",
   },
   {

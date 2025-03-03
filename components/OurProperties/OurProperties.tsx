@@ -24,7 +24,7 @@ const OurProperties = () => {
               className="bg-[#B58541] rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300"
             >
               {/* Image with Hover Effect */}
-              <div className="relative h-74 overflow-hidden">
+              <div className="relative h-[520px] overflow-hidden">
                 <Image
                   src={property?.img}
                   alt={property?.name}
