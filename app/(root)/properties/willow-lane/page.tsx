@@ -9,8 +9,8 @@ const page = () => {
   return (
     <div>
       <div className="w-full border-b border-slate-200 bg-gradient-to-b from-white via-[#fff] to-[#F2ECE4] h-[23vh] flex items-end">
-        <p className="mb-10 text-5xl font-extralight md:pl-[7%] text-[#1A3850]">
-        Willow Lane
+        <p className="mb-10 text-3xl md:text-4xl font-extralight md:pl-[7%] text-[#1A3850]">
+          4 BR/ 4.5 BA House at Brufut Gardens
         </p>
       </div>
 

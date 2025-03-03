@@ -1,7 +1,13 @@
 export const imageArray = [
-  { alt: "Image 1", src: "/hero-01.jpg" },
-  { alt: "Image 2", src: "/hero-02.jpg" },
-  { alt: "Image 3", src: "/hero-03.jpg" },
+  { alt: "Image 1", src: "/modern-house-2.jpg"},
+  {alt: "Image 2", src: "/modern-house-3.jpg"},
+  {alt: "Image 4", src: "/modern-house-4.jpg"},
+  {alt: "Image 5", src: "/modern-house-5.jpg"},
+  {alt: "Image 6", src: "/modern-house-6.jpg"},
+  {alt: "Image 7", src: "/modern-house-7.jpg"},
+  {alt: "Image 8", src: "/modern-house-8.jpg"},
+  {alt: "Image 9", src: "/modern-house-9.jpg"},
+  {alt: "Image 10", src: "/modern-house-10.jpg"},
 ];
 
 export const imageArray1 = [
