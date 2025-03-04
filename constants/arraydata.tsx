@@ -7,6 +7,7 @@ export const imageArray = [
   { alt: "Image 6", src: "/modern-6.jpg"},
   { alt: "Image 7", src: "/modern-7.jpg"},
   { alt: "Image 8", src: "/modern-8.jpg"},
+  { alt: "Image 9", src: "/modern-9.jpg"},
 ];
 
 export const imageArray1 = [
