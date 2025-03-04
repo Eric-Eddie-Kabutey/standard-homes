@@ -45,7 +45,7 @@ const TeamList = () => {
             }
         },
         {
-            name: 'Abasa Njie',
+            name: 'Absa Njie',
             position: 'Secretary',
             image: '/sect.jpg',
             social: {
