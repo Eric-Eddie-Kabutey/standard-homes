@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <div className="m-auto">
       <div className="container max-w-[89rem] mx-auto p-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Community Amenities & Features */}
           <div>
             <h2 className="text-xl font-semibold mb-4">
@@ -14,19 +14,15 @@ const Features = () => {
             </h2>
             <ul className="space-y-2">
               {[
-                "Gated community",
-                "Police station",
-                "24/7 security",
-                "Picnic garden",
-                "Swimming pool",
-                "Children’s playground",
-                "Backup water supply",
-                "Multipurpose Sports Court",
-                "Internal road networks",
-                "3-tier security system",
-                "Community parks and gardens",
-                "Backup power supply",
-                "On-site facility management office",
+                "Tranquil spacious back yard/picnic area",
+                "2-car detached garage",
+                "Pet-friendly community",
+                "5-minute walk to the beach at Old Sheraton",
+                "Ample yard parking",
+                "Internet/WiFi",
+                "Water",
+                "Electricity",
+                "Gated estate"
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-yellow-500 mr-2"><Check strokeWidth={3} /></span> {item}
@@ -40,16 +36,15 @@ const Features = () => {
             <h2 className="text-xl font-semibold mb-4">Design Features</h2>
             <ul className="space-y-2">
               {[
-                "Built-in elevator",
-                "4 en-suite bedrooms",
-                "Spacious living and dining area",
-                "3 walk-in closets",
-                "Maids quarter",
-                "1 terrace",
-                "1 balcony",
-                "Gourmet kitchens with engineered stone countertops",
-                "On-site power and water",
-                "State-of-art quality",
+                "Stainless steel appliances",
+                "Refrigerator",
+                "Gas stove",
+                "Microwave",
+                "Front and back balcony",
+                "Patios",
+                "Kitchen/Dining area",
+                "ACs",
+                "Standing showers & bathtub"
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-yellow-500 mr-2"><Check strokeWidth={3} /></span> {item}

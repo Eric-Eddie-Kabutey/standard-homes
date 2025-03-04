@@ -77,14 +77,11 @@ const SemiHero: React.FC<Images> = ({ images }) => {
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
         <Image src="/logo-inverted.png" alt="Logo" width={150} height={100} />
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-          Introducing Willow Lane, an exceptional residential enclave where
+          Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional residential enclave where
           elegance meets tranquility.
         </p>
         <p className="text-white text-xl text-center">
-          Set within the embrace of nature’s serenity, this distinguished real
-          estate project boasts a collection of over 100 thoughtfully crafted
-          homes, creating a harmonious blend of architectural excellence and
-          refined living.
+          Nestled in the peaceful beauty of nature, this exceptional real estate project features more than 100 beautifully designed homes. It perfectly combines stunning architecture with a luxurious, comfortable lifestyle.
         </p>
       </div>
     </div>

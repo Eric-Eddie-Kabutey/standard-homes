@@ -1,7 +1,13 @@
 export const imageArray = [
-  { alt: "Image 1", src: "/hero-01.jpg" },
-  { alt: "Image 2", src: "/hero-02.jpg" },
-  { alt: "Image 3", src: "/hero-03.jpg" },
+  { alt: "Image 1", src: "/modern-1.jpg"},
+  { alt: "Image 2", src: "/modern-2.jpg"},
+  { alt: "Image 3", src: "/modern-3.jpg"},
+  { alt: "Image 4", src: "/modern-4.jpg"},
+  { alt: "Image 5", src: "/modern-5.jpg"},
+  { alt: "Image 6", src: "/modern-6.jpg"},
+  { alt: "Image 7", src: "/modern-7.jpg"},
+  { alt: "Image 8", src: "/modern-8.jpg"},
+  { alt: "Image 9", src: "/modern-9.jpg"},
 ];
 
 export const imageArray1 = [
@@ -212,9 +218,9 @@ export const newsData = {
 
 export const properties = [
   {
-    name: "Willow Lane",
-    description: "Lush townhouses built with love",
-    img: "/about/home-card.jpg",
+    name: "4 BR/ 4.5 BA House at Brufut Gardens ",
+    description: "Experience luxury in this stunning home",
+    img: "/modern-house-1.jpg",
     link: "properties/willow-lane",
   },
   {
