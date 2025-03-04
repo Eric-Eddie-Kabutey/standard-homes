@@ -61,7 +61,7 @@ export default function Hero() {
     }
   }, [activeIndex]);
   return (
-    <section className="relative w-screen bg-blue-950 h-[50vh] md:h-[85vh] overflow-hidden">
+    <section className="relative w-screen bg-blue-950 h-[60vh] md:h-[85vh] overflow-hidden">
       <Carousel className="w-screen h-screen">
         <CarouselContent
           className="flex transition-transform duration-700 ease-in-out"
@@ -87,7 +87,7 @@ export default function Hero() {
         </CarouselContent>
       </Carousel>
       {/* Overlay Content */}
-      <div className="absolute  sm:mt-2 top-[46%] left-[4.5%] md:left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 md:w-[50%] py-[6%] px-[2%] rounded-xl">
+      <div className="absolute  sm:mt-2 top-[46%] left-[4.5%] md:left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 md:w-[70%] py-[6%] px-[2%] rounded-xl">
         <h1 className="text-2xl md:text-5xl  mb-4">
           {slides[activeIndex % slides.length].title}
         </h1>
