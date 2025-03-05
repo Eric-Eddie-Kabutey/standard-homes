@@ -11,18 +11,10 @@ export const imageArray = [
 ];
 
 export const imageArray1 = [
-  {
-    alt: "Image 1",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-02.jpg",
-  },
-  {
-    alt: "Image 2",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-03.jpg",
-  },
-  {
-    alt: "Image 3",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-01.jpg",
-  },
+  {alt: "Image 2", src: "/land-1.jpg",},
+  {alt: "Image 8", src: "/land-8.jpg",},
+  {alt: "Image 9", src: "/land-9.jpg",},
+
 ];
 
 export const imageArray2 = [
@@ -226,7 +218,7 @@ export const properties = [
   {
     name: "AlphabetCity",
     description: "Modern apartment in Tema",
-    img: "/about/home-card (1).jpg",
+    img: "/land-1.jpg",
     link: "properties/alphabetcity",
   }
 ];
