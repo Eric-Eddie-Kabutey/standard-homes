@@ -216,9 +216,9 @@ export const properties = [
     link: "properties/willow-lane",
   },
   {
-    name: "AlphabetCity",
-    description: "Modern apartment in Tema",
-    img: "/land-1.jpg",
-    link: "properties/alphabetcity",
+    name: "Land Demacation At Tujereng",
+    description: "27 Total Plots",
+    img: "/land-layout-1.jpg",
+    link: "/properties/lands/land-layout-1",
   }
 ];

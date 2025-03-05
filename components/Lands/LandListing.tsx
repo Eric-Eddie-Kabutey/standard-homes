@@ -29,7 +29,7 @@ const LandListing = () => {
                         <div className="p-4 text-white">
                             <h2 className="text-2xl font-bold mb-2">Land Demacation At Tujereng</h2>
                             <p className="text-lg mb-4">27 Total Plots</p>
-                            <Link href="/properties/luxury-villa">
+                            <Link href="/properties/lands/land-layout-1">
                                 <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
                                     More Details &gt;
                                 </Button>
@@ -50,7 +50,7 @@ const LandListing = () => {
                         <div className="p-4 text-white">
                             <h2 className="text-2xl font-bold mb-2">Land Demacation At Tujereng</h2>
                             <p className="text-lg mb-4">41 Total Plots</p>
-                            <Link href="/properties/modern-apartment">
+                            <Link href="/properties/lands/land-layout-2">
                                 <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
                                     More Details &gt;
                                 </Button>
