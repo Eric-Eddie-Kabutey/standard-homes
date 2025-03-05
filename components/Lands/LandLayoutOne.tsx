@@ -5,6 +5,7 @@ import PaymentPartners from "./PaymentPartners";
 import GalleryListing from "./GalleryListing";
 import LandHero from "./LandHero";
 import LayoutDesign from "./LayoutDesign";
+import Link from "next/link";
 
 const LandLayoutOne = () => {
     return (
@@ -51,9 +52,9 @@ const LandLayoutOne = () => {
                     Still have more questions about our properties? Interested in
                     reserving your unit?
                 </h2>
-                <button className="bg-blue-900 text-white py-2 px-4 rounded">
+                <Link href="https://wa.me/233501408803" className="bg-blue-900 text-white py-2 px-4 rounded">
                     Contact Us
-                </button>
+                </Link>
             </div>
         </div>
 
