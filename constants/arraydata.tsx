@@ -11,18 +11,8 @@ export const imageArray = [
 ];
 
 export const imageArray1 = [
-  {
-    alt: "Image 1",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-02.jpg",
-  },
-  {
-    alt: "Image 2",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-03.jpg",
-  },
-  {
-    alt: "Image 3",
-    src: "https://www.waylead.org/assets/images/properties/alphabet-city/hero-01.jpg",
-  },
+  {alt: "Image 1", src: "/land-6",},
+  
 ];
 
 export const imageArray2 = [
