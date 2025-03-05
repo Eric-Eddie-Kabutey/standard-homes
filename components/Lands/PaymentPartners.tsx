@@ -18,7 +18,7 @@ const partnerLogos = [
 
 const PaymentPartners = () => {
   return (
-    <div className="py-10 bg-white text-center relative pb-[50px]">
+    <div className="py-10 bg-white text-center relative pb-[20px]">
       <div className='md:ml-[10%] md:mr-[10%] flex justify-center items-center flex-col'>
         <div className="relative w-full overflow-hidden">
           <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
