@@ -20,12 +20,12 @@ const LayoutDesign = () => {
                 className="rounded-md shadow-lg"
               />
             </div>
-            <div className="flex flex-col items-center text-yellow-600 pt-8 space-y-3 font-medium text-pretty text-opacity-70">
-              <Link href="#" className="px-4 py-1 rounded-lg border border-yellow-600 flex space-x-2">
-                {" "}
-                <Globe /> Virtual Tour <ChevronRight className="mt-1" size={20}/>
-              </Link>
+            <div className="flex flex-col md:flex-row items-center justify-center text-yellow-600 pt-8 space-x-3 font-medium text-pretty text-opacity-70">
               <Link href="#" className="px-4 py-1 rounded-lg border border-yellow-600 flex justify-center items-center space-x-2">
+                {" "}
+                <span>Virtual Tour</span> <ChevronRight/>
+              </Link>
+              <Link href="https://www.google.com/maps/place/13%C2%B018'05.9%22N+16%C2%B046'15.2%22W/@13.3016451,-16.7734731,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.3016451!4d-16.7708982?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" className="px-4 py-1 rounded-lg border border-yellow-600 flex justify-center items-center space-x-2" target='_blank'>
                 <span>Get Direction</span><FaLocationArrow />
               </Link>
             </div>

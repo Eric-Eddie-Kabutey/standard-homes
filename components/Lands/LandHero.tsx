@@ -76,8 +76,7 @@ const LandHero: React.FC<Images> = ({ images }) => {
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-          Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional residential enclave where
-          elegance meets tranquility.
+          Presenting a prime land opportunity in Tujereng – a well-demarcated plot in a thriving community, perfect for your dream home or investment.
         </p>
       </div>
     </div>

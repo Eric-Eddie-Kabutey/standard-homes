@@ -8,7 +8,7 @@ import Link from "next/link";
 import LandLocation from "./LandLocation";
 import { landHero } from "@/constants/arraydata";
 
-const LandLayoutOne = () => {
+const LandLayoutTwo = () => {
     return (
         <div>
             <div className="p-12 bg-[#254864]">
@@ -62,4 +62,4 @@ const LandLayoutOne = () => {
     )
 }
 
-export default LandLayoutOne
+export default LandLayoutTwo
