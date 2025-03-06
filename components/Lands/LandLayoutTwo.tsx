@@ -1,12 +1,12 @@
 import MapSection from "@/components/properties/MapSection";
 import React from 'react'
 import PaymentPartners from "./PaymentPartners";
-import LayoutDesign from "./LayoutDesign";
 import Link from "next/link";
 import LandLocation from "./LandLocation";
 import { landHeroTwo } from "@/constants/arraydata";
 import LandHeroTwo from "./LandHeroTwo";
 import GalleryListingTwo from "./GalleryListingTwo";
+import LayoutDesignTwo from "./LayoutDesignTwo";
 
 const LandLayoutTwo = () => {
     return (
@@ -37,7 +37,7 @@ const LandLayoutTwo = () => {
                 </h2>
                 <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
             </div>
-            <LayoutDesign />
+            <LayoutDesignTwo />
 
             <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
                 <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
