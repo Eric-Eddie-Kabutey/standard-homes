@@ -1,0 +1,66 @@
+"use client";
+import Image from "next/image";
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const LandListing = () => {
+    return (
+        <div className="bg-[#0D2A47] py-12 px-[7%] text-white">
+            <div className="container mx-auto ">
+                {/* Heading */}
+                <div className="flex items-center mb-6">
+                    <h1 className="text-3xl font-semibold">Hot Sales</h1>
+                    <div className="flex-grow border-t border-[#B58541] ml-4"></div>
+                </div>
+
+                {/* Property Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-[#B58541] rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300">
+                        <div className="relative h-[400px] overflow-hidden">
+                            <Image
+                                src="/land-layout-1.jpg"
+                                alt="Luxury Villa"
+                                width={300}
+                                height={300}
+                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                            />
+                        </div>
+                        <div className="p-4 text-white">
+                            <h2 className="text-2xl font-bold mb-2">Land Demacation At Tujereng</h2>
+                            <p className="text-lg mb-4">27 Total Plots</p>
+                            <Link href="/properties/lands/land-layout-1">
+                                <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
+                                    More Details &gt;
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="bg-[#B58541] rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300">
+                        <div className="relative h-[400px] overflow-hidden">
+                            <Image
+                                src="/land-layout-2.jpg"
+                                alt="Modern Apartment"
+                                width={300}
+                                height={300}
+                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                            />
+                        </div>
+                        <div className="p-4 text-white">
+                            <h2 className="text-2xl font-bold mb-2">Land Demacation At Tujereng</h2>
+                            <p className="text-lg mb-4">41 Total Plots</p>
+                            <Link href="/properties/lands/land-layout-2">
+                                <Button className="bg-[#0D2A47] text-white hover:bg-[#0B213A] transition-colors duration-300">
+                                    More Details &gt;
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default LandListing;

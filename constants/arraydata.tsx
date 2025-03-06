@@ -1,14 +1,21 @@
 export const imageArray = [
-  { alt: "Image 1", src: "/modern-1.jpg"},
   { alt: "Image 2", src: "/modern-2.jpg"},
   { alt: "Image 3", src: "/modern-3.jpg"},
   { alt: "Image 4", src: "/modern-4.jpg"},
-  { alt: "Image 5", src: "/modern-5.jpg"},
-  { alt: "Image 6", src: "/modern-6.jpg"},
-  { alt: "Image 7", src: "/modern-7.jpg"},
-  { alt: "Image 8", src: "/modern-8.jpg"},
-  { alt: "Image 9", src: "/modern-9.jpg"},
 ];
+
+export const landHero = [
+  { alt: "Image 1", src: "/land-1-1.jpg"},
+  { alt: "Image 2", src: "/land-1-2.jpg"},
+  { alt: "Image 3", src: "/land-1-3.jpg"},
+]
+
+export const landHeroTwo = [
+  { alt: "Image 1", src: "/land-2-1.jpg"},
+  { alt: "Image 2", src: "/land-2-2.jpg"},
+  { alt: "Image 3", src: "/land-2-3.jpg"},
+
+]
 
 export const imageArray1 = [
   {alt: "Image 2", src: "/land-1.jpg",},
@@ -216,9 +223,9 @@ export const properties = [
     link: "properties/willow-lane",
   },
   {
-    name: "AlphabetCity",
-    description: "Modern apartment in Tema",
-    img: "/land-1.jpg",
-    link: "properties/alphabetcity",
+    name: "Land Demacation At Tujereng",
+    description: "27 Total Plots",
+    img: "/land-layout-1.jpg",
+    link: "/properties/lands/land-layout-1",
   }
 ];

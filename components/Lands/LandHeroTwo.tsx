@@ -19,7 +19,7 @@ interface Images {
   images: ImageProps[];
 }
 
-const SemiHero: React.FC<Images> = ({ images }) => {
+const LandHeroTwo: React.FC<Images> = ({ images }) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState<null | number | undefined>(0);
   const [count, setCount] = React.useState<null | number | undefined>(0);
@@ -76,15 +76,11 @@ const SemiHero: React.FC<Images> = ({ images }) => {
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-          Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional residential enclave where
-          elegance meets tranquility.
-        </p>
-        <p className="text-white text-xl text-center">
-          Nestled in the peaceful beauty of nature, this exceptional real estate project features more than 100 beautifully designed homes. It perfectly combines stunning architecture with a luxurious, comfortable lifestyle.
+        Discover an exceptional land opportunity in Tujereng—a strategically located plot in a growing community, perfect for building your ideal home or making a valuable investment.
         </p>
       </div>
     </div>
   );
 };
 
-export default SemiHero;
+export default LandHeroTwo;
