@@ -1,4 +1,3 @@
-import MapSection from "@/components/properties/MapSection";
 import React from 'react'
 import PaymentPartners from "./PaymentPartners";
 import GalleryListing from "./GalleryListing";
