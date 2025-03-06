@@ -45,7 +45,7 @@ export default function GoogleMapComponent() {
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
             setDirections(result);
-            const route = result?.routes[0].legs[0];
+            // const route = result?.routes[0].legs[0];
             // setDistance(route?.distance?.text || null);
             // setDuration(route?.duration?.text || null);
           } else {

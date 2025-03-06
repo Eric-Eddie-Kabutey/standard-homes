@@ -29,8 +29,8 @@ declare global {
 export default function LandLocation() {
   const [directions, setDirections] =
     useState<google.maps.DirectionsResult | null>(null);
-  const [duration, setDuration] = useState<string | null>(null);
-  const [distance, setDistance] = useState<string | null>(null);
+  const [setDuration] = useState<string | null>(null);
+  const [setDistance] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchDirections = async () => {
@@ -46,9 +46,9 @@ export default function LandLocation() {
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
             setDirections(result);
-            const route = result?.routes[0].legs[0];
-            setDistance(route?.distance?.text || null);
-            setDuration(route?.duration?.text || null);
+            // const route = result?.routes[0].legs[0];
+            // setDistance(route?.distance?.text || null);
+            // setDuration(route?.duration?.text || null);
           } else {
             console.error("Error fetching directions:", status);
           }
