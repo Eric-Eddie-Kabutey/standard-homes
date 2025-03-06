@@ -29,8 +29,8 @@ declare global {
 export default function LandLocation() {
   const [directions, setDirections] =
     useState<google.maps.DirectionsResult | null>(null);
-  const [setDuration] = useState<string | null>(null);
-  const [setDistance] = useState<string | null>(null);
+  // const [setDuration] = useState<string | null>(null);
+  // const [setDistance] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchDirections = async () => {
