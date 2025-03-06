@@ -1,5 +1,6 @@
+import HouseGallery from "@/components/Lands/HouseGallery";
+import HousePlan from "@/components/Lands/HousePlan";
 import Features from "@/components/properties/Features";
-import FloorPlan from "@/components/properties/FloorPlan";
 import MapSection from "@/components/properties/MapSection";
 import SemiHero from "@/components/properties/SemiHero";
 import { imageArray } from "@/constants/arraydata";
@@ -29,12 +30,22 @@ const page = () => {
 
       <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
         <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
-          Floor Plans
+          Gallery
         </h2>
         <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
       </div>
 
-      <FloorPlan />
+      <HouseGallery />
+
+      <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
+        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
+          Floor Plan
+        </h2>
+        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
+      </div>
+
+      <HousePlan />
+
 
       <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
         <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">

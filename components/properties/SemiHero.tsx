@@ -75,7 +75,6 @@ const SemiHero: React.FC<Images> = ({ images }) => {
 
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
-        <Image src="/logo-inverted.png" alt="Logo" width={150} height={100} />
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
           Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional residential enclave where
           elegance meets tranquility.
