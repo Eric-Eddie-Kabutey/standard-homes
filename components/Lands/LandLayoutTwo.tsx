@@ -2,17 +2,17 @@ import MapSection from "@/components/properties/MapSection";
 import React from 'react'
 import PaymentPartners from "./PaymentPartners";
 import GalleryListing from "./GalleryListing";
-import LandHero from "./LandHero";
 import LayoutDesign from "./LayoutDesign";
 import Link from "next/link";
 import LandLocation from "./LandLocation";
 import { landHero } from "@/constants/arraydata";
+import LandHeroTwo from "./LandHeroTwo";
 
 const LandLayoutTwo = () => {
     return (
         <div>
             <div className="p-12 bg-[#254864]">
-                <LandHero images={landHero} />
+                <LandHeroTwo images={landHero} />
             </div>
 
             <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
