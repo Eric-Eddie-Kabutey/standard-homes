@@ -13,7 +13,7 @@ const LayoutDesignTwo = () => {
                     <div className="text-center">
                         <div className="flex justify-center">
                             <Image
-                                src="/land-layout-2"
+                                src="/land-layout-2.jpg"
                                 alt="Type B Townhouse"
                                 width={1000}
                                 height={900}
