@@ -76,7 +76,7 @@ const LandHeroTwo: React.FC<Images> = ({ images }) => {
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-          Presenting a prime land opportunity in Tujereng – a well-demarcated plot in a thriving community, perfect for your dream home or investment.
+        Discover an exceptional land opportunity in Tujereng—a strategically located plot in a growing community, perfect for building your ideal home or making a valuable investment.
         </p>
       </div>
     </div>

@@ -5,14 +5,14 @@ import GalleryListing from "./GalleryListing";
 import LayoutDesign from "./LayoutDesign";
 import Link from "next/link";
 import LandLocation from "./LandLocation";
-import { landHero } from "@/constants/arraydata";
+import { landHeroTwo } from "@/constants/arraydata";
 import LandHeroTwo from "./LandHeroTwo";
 
 const LandLayoutTwo = () => {
     return (
         <div>
             <div className="p-12 bg-[#254864]">
-                <LandHeroTwo images={landHero} />
+                <LandHeroTwo images={landHeroTwo} />
             </div>
 
             <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">

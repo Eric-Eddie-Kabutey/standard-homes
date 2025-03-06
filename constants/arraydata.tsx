@@ -14,6 +14,12 @@ export const landHero = [
   { alt: "Image 1", src: "/land-1-1.jpg"},
   { alt: "Image 2", src: "/land-1-2.jpg"},
   { alt: "Image 3", src: "/land-1-3.jpg"},
+]
+
+export const landHeroTwo = [
+  { alt: "Image 1", src: "/land-2-1.jpg"},
+  { alt: "Image 2", src: "/land-2-2.jpg"},
+  { alt: "Image 3", src: "/land-2-3.jpg"},
 
 ]
 
