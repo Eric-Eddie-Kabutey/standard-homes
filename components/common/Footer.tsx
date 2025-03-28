@@ -18,10 +18,10 @@ export const links = [
     href: "#",
     label: "Properties",
     submenu: [
-      { href: "/properties/alphabetcity", label: "Alphabet City" },
-      { href: "/properties/symphonique", label: "Le Jardin Symphonique" },
-      { href: "/properties/vista-del-mare", label: "Vista del Mare" },
-      { href: "/properties/willow-lane", label: "Willow Lane" },
+      { href: "/properties/alphabetcity", label: "Lands" },
+      { href: "/properties/symphonique", label: "Homes" },
+      { href: "/properties/vista-del-mare", label: "Offices" },
+      { href: "/properties/willow-lane", label: "Warehouse" },
     ],
   },
   { href: "/news", label: "News" },
@@ -71,8 +71,6 @@ const Footer = () => {
   const mainLinks = links.filter((link) => !link.submenu && !link.megaMenu);
   const propertyLinks =
     links.find((link) => link.label === "Properties")?.submenu || [];
-  const serviceCategories =
-    links.find((link) => link.label === "Services")?.megaMenu || [];
 
   return (
     <footer className="bg-[#0d1f2d] text-white">
@@ -185,34 +183,23 @@ const Footer = () => {
       <div className=" py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-lg font-semibold mb-8 text-center">
-            Our Services
+            Our Payment Option
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {serviceCategories.map((category) => (
-              <div
-                key={category.category}
-                className="bg-[#1a3850] p-6 rounded-lg"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-[#3a7d44]">{category.icon}</div>
-                  <h4 className="font-medium text-white">
-                    {category.category}
-                  </h4>
+
+          <div className="mt-12 text-center">
+            <div className="flex flex-wrap justify-center gap-6">
+              {["logo-ecobank.svg", "download.png"].map((logo, index) => (
+                <div key={index} className="w-32 h-16 relative">
+                  <Image
+                    src={`/${logo}`}
+                    alt="Bank Logo"
+                    layout="fill"
+                    objectFit="contain"
+                    className="w-full"
+                  />
                 </div>
-                <ul className="space-y-2">
-                  {category.services.map((service) => (
-                    <li key={service.href}>
-                      <Link
-                        href={service.href}
-                        className="text-gray-300 hover:text-white transition-colors text-sm"
-                      >
-                        • {service.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
