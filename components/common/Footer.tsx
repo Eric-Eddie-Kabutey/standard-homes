@@ -188,19 +188,22 @@ const Footer = () => {
 
           <div className="mt-12 text-center">
             <div className="flex flex-wrap justify-center gap-6">
-              {["logo-ecobank.svg", "download.png", "mastercard.png"].map(
-                (logo, index) => (
-                  <div key={index} className="w-32 h-16 relative">
-                    <Image
-                      src={`/${logo}`}
-                      alt="Bank Logo"
-                      layout="fill"
-                      objectFit="contain"
-                      className="w-full"
-                    />
-                  </div>
-                )
-              )}
+              {[
+                "logo-ecobank.svg",
+                "download.png",
+                "mastercard.png",
+                "visa.jpeg",
+              ].map((logo, index) => (
+                <div key={index} className="w-32 h-16 relative">
+                  <Image
+                    src={`/${logo}`}
+                    alt="Bank Logo"
+                    layout="fill"
+                    objectFit="contain"
+                    className="w-full"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
