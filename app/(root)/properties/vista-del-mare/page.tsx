@@ -1,8 +1,8 @@
 import GoogleMapComponent from "@/components/properties/MapSection";
 import VistaHero from "@/components/properties/VistoHero";
 import { imageArray2 } from "@/constants/arraydata";
-import { Facebook } from "lucide-react";
-import Image from "next/image";
+// import { Facebook } from "lucide-react";
+// import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -10,11 +10,18 @@ const page = () => {
     <div>
       <div className="w-full border-b border-slate-200 bg-gradient-to-b from-white via-[#fff] to-[#F2ECE4] h-[23vh] flex items-end">
         <p className="mb-10 text-5xl font-extralight md:pl-[7%] text-[#1A3850]">
-        Vista del Mare
+          Offices
         </p>
       </div>
       <div className="p-12 bg-[#254864]">
         <VistaHero images={imageArray2} />
+      </div>
+
+      {/* no office available message */}
+      <div className="flex flex-col md:flex-row items-center gap-4 justify-center mt-10">
+        <p className="text-center text-xl text-[#1A3850] font-extralight">
+          No office available at this time. Please check back later.
+        </p>
       </div>
 
       <div className="pt-10 pb-8">
@@ -33,12 +40,12 @@ const page = () => {
       <GoogleMapComponent />
 
       <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
-        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
+        {/* <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
           Vista del Mare in Social Media
         </h2>
-        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
+        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div> */}
       </div>
-
+      {/* 
       <div className="m-auto pb-10">
         <div className="mx-20">
           <Image
@@ -49,7 +56,6 @@ const page = () => {
             className="w-full h-auto"
             layout="responsive"
             unoptimized={true} // Prevent unnecessary Next.js compression
-
           />
           <div className="flex justify-center">
             <button className="flex items-center gap-2 font-medium border border-[#c79c5c] text-[#c79c5c] px-6 py-2 rounded-lg hover:bg-[#666666] hover:border-[#666666] hover:text-white transition-all duration-500 ease-in-out">
@@ -58,7 +64,7 @@ const page = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
