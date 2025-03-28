@@ -74,7 +74,12 @@ const Features = () => {
                 Convenient local and international partners for easy payment
               </h2>
               <div className="flex flex-wrap justify-center gap-6">
-                {["logo-ecobank.svg", "download.png"].map((logo, index) => (
+                {[
+                  "logo-ecobank.svg",
+                  "download.png",
+                  "mastercard.png",
+                  "visa.jpeg",
+                ].map((logo, index) => (
                   <div key={index} className="w-32 h-16 relative">
                     <Image
                       src={`/${logo}`}
