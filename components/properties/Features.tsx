@@ -22,10 +22,13 @@ const Features = () => {
                 "Internet/WiFi",
                 "Water",
                 "Electricity",
-                "Gated estate"
+                "Gated estate",
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <span className="text-yellow-500 mr-2"><Check strokeWidth={3} /></span> {item}
+                  <span className="text-yellow-500 mr-2">
+                    <Check strokeWidth={3} />
+                  </span>{" "}
+                  {item}
                 </li>
               ))}
             </ul>
@@ -44,10 +47,13 @@ const Features = () => {
                 "Patios",
                 "Kitchen/Dining area",
                 "ACs",
-                "Standing showers & bathtub"
+                "Standing showers & bathtub",
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <span className="text-yellow-500 mr-2"><Check strokeWidth={3} /></span> {item}
+                  <span className="text-yellow-500 mr-2">
+                    <Check strokeWidth={3} />
+                  </span>{" "}
+                  {item}
                 </li>
               ))}
             </ul>
@@ -68,20 +74,14 @@ const Features = () => {
                 Convenient local and international partners for easy payment
               </h2>
               <div className="flex flex-wrap justify-center gap-6">
-                {[
-                  "logo-ecobank.svg",
-                  "logo-fidelity-bank.svg",
-                  "logo-fnb.svg",
-                  "logo-stanbic-bank.jpg",
-                  "logo-republic-bank.svg",
-                  "logo-wells-fargo.svg",
-                ].map((logo, index) => (
+                {["logo-ecobank.svg", "download.png"].map((logo, index) => (
                   <div key={index} className="w-32 h-16 relative">
                     <Image
                       src={`/${logo}`}
                       alt="Bank Logo"
                       layout="fill"
                       objectFit="contain"
+                      className="w-full"
                     />
                   </div>
                 ))}

@@ -71,16 +71,19 @@ const VistaHero: React.FC<Images> = ({ images }) => {
         <div className="py-2 text-center font-bold text-sm text-slate-200">
           Picture {current} of {count}
         </div>
-        <p className="text-4xl w-full p-4 bg-[#B48A4C] text-white font-extralight text-center">
+        {/* <p className="text-4xl w-full p-4 bg-[#B48A4C] text-white font-extralight text-center">
         Completed & Sold Out
-        </p>
-
+        </p> */}
       </div>
 
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
-
-        <Image src="https://www.waylead.org/assets/images/properties/vista-del-mare/logo-inverted.png" alt="Logo" width={350} height={100} />
+        <Image
+          src="https://www.waylead.org/assets/images/properties/vista-del-mare/logo-inverted.png"
+          alt="Logo"
+          width={350}
+          height={100}
+        />
       </div>
     </div>
   );

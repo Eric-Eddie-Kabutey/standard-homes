@@ -71,19 +71,29 @@ const VistaHero3: React.FC<Images> = ({ images }) => {
         <div className="py-2 text-center font-bold text-sm text-slate-200">
           Picture {current} of {count}
         </div>
-        <p className="text-4xl w-full p-4 bg-[#B48A4C] text-white font-extralight text-center">
+        {/* <p className="text-4xl w-full p-4 bg-[#B48A4C] text-white font-extralight text-center">
         Completed & Sold Out
-        </p>
-
+        </p> */}
       </div>
 
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
-        <Image src="https://www.waylead.org/assets/images/properties/le-jardin-symphonique/logo-inverted.png" alt="Logo" width={350} height={100} />
+        <Image
+          src="https://www.waylead.org/assets/images/properties/le-jardin-symphonique/logo-inverted.png"
+          alt="Logo"
+          width={350}
+          height={100}
+        />
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-        AlphabetCity is an all-inclusive residential complex designed for over 200 homes in a beautifully landscaped, gated community.        </p>
+          AlphabetCity is an all-inclusive residential complex featuring over
+          200 homes within a beautifully landscaped, gated community. It offers
+          modern amenities, ensuring a comfortable and secure living experience.
+        </p>
         <p className="text-white text-xl text-center">
-        Alphabet City is the perfect destination for residence and smart choice for your next investment.        </p>
+          Designed for both residents and investors, AlphabetCity provides a
+          perfect blend of luxury and convenience, making it an ideal choice for
+          a dream home or a smart real estate investment.
+        </p>
       </div>
     </div>
   );
