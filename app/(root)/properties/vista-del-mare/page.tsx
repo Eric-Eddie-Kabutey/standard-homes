@@ -1,4 +1,4 @@
-import GoogleMapComponent from "@/components/properties/MapSection";
+// import GoogleMapComponent from "@/components/properties/MapSection";
 import VistaHero from "@/components/properties/VistoHero";
 import { imageArray2 } from "@/constants/arraydata";
 // import { Facebook } from "lucide-react";
@@ -37,7 +37,7 @@ const page = () => {
         </p>
       </div>
 
-      <GoogleMapComponent />
+      {/* <GoogleMapComponent /> */}
 
       <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
         {/* <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
