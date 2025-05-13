@@ -26,7 +26,13 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-4">
-          <Image width={200} height={300} src="/S GAMBIA.png" alt="logo" />
+          <Image
+            width={200}
+            height={300}
+            src="/S GAMBIA.png"
+            alt="logo"
+            className="mt-5"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

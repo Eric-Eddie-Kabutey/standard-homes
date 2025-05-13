@@ -33,7 +33,7 @@ const page = () => {
           No office available at this time. Please check back later.
         </p>
       </div> */}
-
+      {/* 
       <div className="pt-10 pb-8">
         <div className="flex  max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
           <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
@@ -45,7 +45,7 @@ const page = () => {
           Please <span className="text-[#B78C4C] font-bold">contact us</span> if
           you would like to visit our previously completed properties.
         </p>
-      </div>
+      </div> */}
 
       {/* <GoogleMapComponent /> */}
 
