@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import MobileMenue from "./MobileMenue";
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,10 +12,9 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import { Building, HandCoins, Droplets } from "lucide-react";
 import AdsBanner from "../Advertisements/AdsBanner";
-
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -27,7 +26,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-4">
-          <Image width={100} height={300} src="/standardLogo.png" alt="logo" />
+          <Image width={200} height={300} src="/S GAMBIA.png" alt="logo" />
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -40,8 +39,11 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
               Home
             </Link>
@@ -55,8 +57,11 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/about"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/about" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/about"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
               About
             </Link>
@@ -64,13 +69,17 @@ const Navbar: React.FC = () => {
           <NavigationMenu className="">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="hover:bg-[#CA8A04]">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:bg-[#CA8A04]">
+                  Services
+                </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-[#CA8A04]">
                   <div className="grid w-[400px] gap-3 p-4 md:w-[650px] md:grid-cols-3 lg:w-[750px] ">
                     <div>
                       <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
                         <Building className="w-6 h-6 mb-5 text-slate-100" />
-                        <h3 className="text-white font-semibold">GENERAL CONSTRUCTION</h3>
+                        <h3 className="text-white font-semibold">
+                          GENERAL CONSTRUCTION
+                        </h3>
                       </div>
                       <Link
                         href="/general-construction#assets"
@@ -108,7 +117,9 @@ const Navbar: React.FC = () => {
                     <div>
                       <div className="grid grid-cols-1 mb-2 py-5 border-b border-slate-200">
                         <HandCoins className="w-6 h-6 mb-5 text-slate-100" />
-                        <h3 className="text-white font-semibold">SALES & SUPPLY</h3>
+                        <h3 className="text-white font-semibold">
+                          SALES & SUPPLY
+                        </h3>
                       </div>
                       <Link
                         href="/sales-supply#sales"
@@ -157,8 +168,11 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="#"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "#" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "#"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
               Properties
             </Link>
@@ -166,29 +180,35 @@ const Navbar: React.FC = () => {
               <div className="absolute top-full left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
                 <Link
                   href="/properties/lands"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
-                    }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
+                  }`}
                 >
                   Lands
                 </Link>
                 <Link
                   href="/properties/symphonique"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/symphonique" ? "bg-blue-50" : ""
-                    }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/symphonique" ? "bg-blue-50" : ""
+                  }`}
                 >
                   Homes
                 </Link>
                 <Link
                   href="/properties/vista-del-mare"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/vista-del-mare" ? "bg-blue-50" : ""
-                    }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/vista-del-mare"
+                      ? "bg-blue-50"
+                      : ""
+                  }`}
                 >
                   Offices
                 </Link>
                 <Link
                   href="/properties/willow-lane"
-                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
-                    }`}
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/willow-lane" ? "bg-blue-50" : ""
+                  }`}
                 >
                   Warehouses
                 </Link>
@@ -204,8 +224,11 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/news"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === "/news" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                pathname === "/news"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
               News
             </Link>
@@ -218,8 +241,11 @@ const Navbar: React.FC = () => {
           >
             <Link
               href="/inquire"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${pathname === "/inquire" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"
-                }`}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${
+                pathname === "/inquire"
+                  ? "bg-primary text-white"
+                  : "text-gray-600 hover:bg-primary hover:text-gray-800"
+              }`}
             >
               Inquire
             </Link>
@@ -265,6 +291,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

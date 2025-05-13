@@ -77,14 +77,7 @@ const VistaHero: React.FC<Images> = ({ images }) => {
       </div>
 
       {/* Logo section */}
-      <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
-        <Image
-          src="https://www.waylead.org/assets/images/properties/vista-del-mare/logo-inverted.png"
-          alt="Logo"
-          width={350}
-          height={100}
-        />
-      </div>
+      <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center"></div>
     </div>
   );
 };

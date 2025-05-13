@@ -1,4 +1,4 @@
-import GoogleMapComponent from "@/components/properties/MapSection";
+// import GoogleMapComponent from "@/components/properties/MapSection";
 import VistaHero3 from "@/components/properties/VistaHero3";
 import OverlapCards from "@/components/Symphoni/OverlapCards";
 import { imageArray3 } from "@/constants/arraydata";
@@ -16,7 +16,7 @@ const page = () => {
       <div className="p-12 bg-[#254864]">
         <VistaHero3 images={imageArray3} />
       </div>
-
+      {/* 
       <div className="flex mt-8  max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
         <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
           Location
@@ -24,7 +24,7 @@ const page = () => {
         <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
       </div>
 
-      <GoogleMapComponent />
+      <GoogleMapComponent /> */}
 
       <OverlapCards />
     </div>

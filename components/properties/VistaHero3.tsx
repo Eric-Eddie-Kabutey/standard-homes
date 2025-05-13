@@ -78,21 +78,22 @@ const VistaHero3: React.FC<Images> = ({ images }) => {
 
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
-        <Image
+        {/* <Image
           src="https://www.waylead.org/assets/images/properties/le-jardin-symphonique/logo-inverted.png"
           alt="Logo"
           width={350}
           height={100}
-        />
-        <p className="text-4xl text-[#B48A4C] font-extralight text-center">
+        /> */}
+        {/* <p className="text-4xl text-[#B48A4C] font-extralight text-center">
           AlphabetCity is an all-inclusive residential complex featuring over
           200 homes within a beautifully landscaped, gated community. It offers
           modern amenities, ensuring a comfortable and secure living experience.
-        </p>
+        </p> */}
         <p className="text-white text-xl text-center">
-          Designed for both residents and investors, AlphabetCity provides a
-          perfect blend of luxury and convenience, making it an ideal choice for
-          a dream home or a smart real estate investment.
+          Thoughtfully designed to offer quality rental homes that balance
+          comfort, affordability, and convenience—making it a dependable choice
+          for families, professionals, and individuals seeking a standard yet
+          modern living experience in The Gambia.
         </p>
       </div>
     </div>
