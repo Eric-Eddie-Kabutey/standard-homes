@@ -53,7 +53,7 @@ const page = () => {
 
       {/* <HouseGallery /> */}
 
-      <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
+      {/* <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
         <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
           Floor Plan
         </h2>
@@ -63,7 +63,7 @@ const page = () => {
         <h2 className="text-center text-3xl font-extralight ">
           Floor Plan not available
         </h2>
-      </div>
+      </div> */}
 
       <HousePlan />
 

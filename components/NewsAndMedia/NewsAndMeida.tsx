@@ -48,7 +48,7 @@ const NewsAndMedia = () => {
                 <p className="text-md text-[#1A293F] font-semibold mb-6 group-hover:text-white line-clamp-3">
                   {property.description}
                 </p>
-                <Link href={"/#"}>
+                <Link href={"/news"}>
                   <Button className="bg-[#FAEEDC] border border-[#B58541] text-[#B58541] text-lg hover:bg-[#666666] transition-colors duration-300">
                     Read More &gt;
                   </Button>
