@@ -25,14 +25,14 @@ const HousePlan = () => {
                 className="px-4 py-1 rounded-lg border border-gray-400 flex justify-center items-center space-x-2   text-gray-400"
               >
                 {" "}
-                <span>Virtual Tour</span> <ChevronRight />
+                <span>Explore Our Properties</span> <ChevronRight />
               </Link>
               <Link
                 href="https://www.google.com/maps/place/Brufut+Gardens+Estate/@13.3912443,-16.7611298,17z/data=!3m1!4b1!4m6!3m5!1s0xec297ab62cbe989:0xf54e0432a5aae5cc!8m2!3d13.3912391!4d-16.7585549!16s%2Fg%2F11rfqnrsr6?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
                 className="px-4 py-1 rounded-lg border border-yellow-600 flex justify-center items-center space-x-2"
                 target="_blank"
               >
-                <span>Get Direction</span>
+                <span>Contact Us</span>
                 <FaLocationArrow />
               </Link>
             </div>

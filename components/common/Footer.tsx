@@ -79,11 +79,11 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="space-y-6">
           <Image
-            src="/standardLogo.png"
+            src="/STANDARD MAIN.png"
             width={160}
-            height={60}
+            height={100}
             alt="Standard Homes"
-            className="h-12 w-auto"
+            className="h-20 w-auto"
           />
           <p className="text-gray-300 text-sm leading-relaxed">
             Creating premium, honest homes for fresh starts and new beginnings
