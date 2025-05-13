@@ -161,16 +161,19 @@ const Footer = () => {
             <div className="flex items-start gap-3">
               <FaMapMarkerAlt className="text-gray-400 mt-1 flex-shrink-0" />
               <p className="text-gray-300 text-sm">
-                123 Kairaba Avenue, Serrekunda, The Gambia
+                2nd Floor MSJ Plaza, OIC Highway Brusubi, Kombo North, West
+                Coast Region
               </p>
             </div>
             <div className="flex items-center gap-3">
               <FaPhone className="text-gray-400" />
-              <p className="text-gray-300 text-sm">+220 123 4567</p>
+              <p className="text-gray-300 text-sm">+220 792 2004</p>
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-gray-400" />
-              <p className="text-gray-300 text-sm">info@standardhomes.gm</p>
+              <span className="text-gray-300 text-sm">
+                standardhomesgambia@gmail.com
+              </span>
             </div>
             <Button className="mt-4 bg-[#3a7d44] hover:bg-[#4a8d54] w-full">
               Request a Callback
