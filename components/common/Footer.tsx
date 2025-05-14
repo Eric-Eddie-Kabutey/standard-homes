@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="space-y-6">
           <Image
-            src="/STANDARD MAIN.png"
+            src="/standard w1.png"
             width={160}
             height={100}
             alt="Standard Homes"
