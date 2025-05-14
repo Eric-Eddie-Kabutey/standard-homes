@@ -48,8 +48,11 @@ const ContactUs = () => {
 
           <div className="space-y-2">
             <h3 className="text-xl font-bold">Sales Office</h3>
-            <p>2nd Floor Office 8 MSJ Plaza</p>
-            <p>Bertil Harding Highway Brusubi, The Gambia</p>
+
+            <p>
+              2nd Floor MSJ Plaza, OIC Highway Brusubi, Kombo North, West Coast
+              Region
+            </p>
 
             <Label htmlFor="email" className="mt-2">
               <strong>Phone:</strong>
@@ -138,14 +141,19 @@ const ContactUs = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="alphabetCity">Buying Land</SelectItem>
-                    <SelectItem value="leJardin">
-                      Renting house
+                    <SelectItem value="leJardin">Renting house</SelectItem>
+                    <SelectItem value="vistaDelMare">
+                      Residential construction
                     </SelectItem>
-                    <SelectItem value="vistaDelMare">Residential construction</SelectItem>
-                    <SelectItem value="willowLane">Commercial construction</SelectItem>
-                    <SelectItem value="willowLane">Borehole drilling</SelectItem>
-                    <SelectItem value="willowLane">Property management</SelectItem>
-
+                    <SelectItem value="willowLane">
+                      Commercial construction
+                    </SelectItem>
+                    <SelectItem value="willowLane">
+                      Borehole drilling
+                    </SelectItem>
+                    <SelectItem value="willowLane">
+                      Property management
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
