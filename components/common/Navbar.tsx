@@ -26,12 +26,22 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between max-w-screen-xl mx-auto px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-4">
+          {/* Desktop Logo */}
           <Image
             width={200}
             height={300}
             src="/S GAMBIA.png"
-            alt="logo"
-            className="mt-5"
+            alt="desktop logo"
+            className="mt-5 hidden md:block"
+          />
+
+          {/* Mobile Logo */}
+          <Image
+            width={150}
+            height={200}
+            src="/STANDARD MAIN.png"
+            alt="mobile logo"
+            className="mt-5 block md:hidden"
           />
         </Link>
 
