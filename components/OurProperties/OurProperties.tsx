@@ -24,13 +24,12 @@ const OurProperties = () => {
               className="bg-[#B58541] rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300"
             >
               {/* Image with Hover Effect */}
-              <div className="relative h-[520px] overflow-hidden">
+              <div className="relative w-full h-[250px] md:h-[400px] lg:h-[420px] overflow-hidden">
                 <Image
                   src={property?.img}
                   alt={property?.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-110 cursor-pointer"
                 />
               </div>
 
