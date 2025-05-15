@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
+import { Button } from "../ui/button";
 
 const Features = () => {
   return (
@@ -64,12 +65,16 @@ const Features = () => {
             {/* Pricing Section */}
             <div className=" text-center">
               <div className="inline-block bg-blue-900 text-white px-10 py-4 rounded-lg">
-                <p className="text-lg">Luxurious Residences from</p>
-                <p className="text-3xl font-bold">USD 276,000</p>
+                <p className="text-lg text-left">Prices</p>
+                <p className="text-3xl font-bold ">USD 276,000</p>
               </div>
             </div>
+            <div className="text-center mt-4 gap-3 flex items-center m-auto">
+              <Button>Book Now</Button>
+              <Button>Enquired Now</Button>
+            </div>
             {/* Payment Partners */}
-            <div className="mt-12 text-center">
+            {/* <div className="mt-12 text-center">
               <h2 className=" mb-4">
                 Convenient local and international partners for easy payment
               </h2>
@@ -91,7 +96,7 @@ const Features = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
