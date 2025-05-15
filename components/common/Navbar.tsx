@@ -195,12 +195,12 @@ const Navbar: React.FC = () => {
             {hoveredMenu === "Properties" && (
               <div className="absolute top-full left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
                 <Link
-                  href="/properties/lands"
+                  href="/listings"
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
+                    pathname === "/listings" ? "bg-blue-50" : ""
                   }`}
                 >
-                  Lands
+                  Rental Apartments
                 </Link>
                 <Link
                   href="/properties/symphonique"
@@ -208,7 +208,7 @@ const Navbar: React.FC = () => {
                     pathname === "/properties/symphonique" ? "bg-blue-50" : ""
                   }`}
                 >
-                  Homes
+                  Houses For Sale
                 </Link>
                 <Link
                   href="/properties/vista-del-mare"
@@ -220,6 +220,15 @@ const Navbar: React.FC = () => {
                 >
                   Offices
                 </Link>
+                <Link
+                  href="/properties/lands"
+                  className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                    pathname === "/properties/alphabetcity" ? "bg-blue-50" : ""
+                  }`}
+                >
+                  Lands
+                </Link>
+
                 <Link
                   href="/properties/willow-lane"
                   className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
