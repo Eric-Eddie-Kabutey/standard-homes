@@ -11,12 +11,12 @@ import {
 import Image from "next/image";
 
 interface ImageProps {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
 }
 
 interface Images {
-  images: ImageProps[];
+  images?: ImageProps[];
 }
 
 const SemiHero: React.FC<Images> = ({ images }) => {
@@ -50,12 +50,12 @@ const SemiHero: React.FC<Images> = ({ images }) => {
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {images.map((img, index) => (
+            {images?.map((img, index) => (
               <CarouselItem key={index} className="w-full">
                 <Card className="border-none">
                   <Image
-                    src={img.src}
-                    alt={img.alt}
+                    src={img?.src || `${img}`}
+                    alt={img?.alt || `${img}`}
                     layout="responsive"
                     width={1920}
                     height={1080}
@@ -76,11 +76,14 @@ const SemiHero: React.FC<Images> = ({ images }) => {
       {/* Logo section */}
       <div className="pt-8 mx-auto max-w-3xl space-y-7 flex flex-col items-center justify-center">
         <p className="text-4xl text-[#B48A4C] font-extralight text-center">
-          Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional residential enclave where
-          elegance meets tranquility.
+          Introducing a 4 BR/ 4.5 BA House at Brufut Gardens, an exceptional
+          residential enclave where elegance meets tranquility.
         </p>
         <p className="text-white text-xl text-center">
-          Nestled in the peaceful beauty of nature, this exceptional real estate project features more than 100 beautifully designed homes. It perfectly combines stunning architecture with a luxurious, comfortable lifestyle.
+          Nestled in the peaceful beauty of nature, this exceptional real estate
+          project features more than 100 beautifully designed homes. It
+          perfectly combines stunning architecture with a luxurious, comfortable
+          lifestyle.
         </p>
       </div>
     </div>
