@@ -24,7 +24,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     type: string;
     yearBuilt: number;
     garage: number;
-    amenities: string[];
+    amenities: [];
     image: string[]; // fix type here
     description: string;
   };
@@ -55,7 +55,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
 
       <FeaturesSingle
-        amenities={propertyFound?.amenities as string[]}
+        amenities={propertyFound?.amenities as []}
         price={propertyFound?.price ?? { daily: "", twoWeeks: "", monthly: "" }}
       />
 

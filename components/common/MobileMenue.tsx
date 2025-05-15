@@ -187,16 +187,22 @@ const MobileMenue = () => {
                 <AccordionContent className="text-start">
                   <ul className="ml-4 font-semibold space-y-3">
                     <li>
-                      <Link href="/properties/alphabetcity">Lands</Link>
+                      <Link href="/listings"> Rental Apartments</Link>
                     </li>
                     <li>
-                      <Link href="/properties/symphonique">Homes</Link>
+                      <Link href="/properties/symphonique">
+                        {" "}
+                        Houses For Sale
+                      </Link>
                     </li>
                     <li>
                       <Link href="/properties/vista-del-mare">Offices</Link>
                     </li>
                     <li>
-                      <Link href="/properties/willow-lane"> Warehouses</Link>
+                      <Link href="/properties/willow-lane"> Lands</Link>
+                      <li>
+                        <Link href="/properties/willow-lane"> Warehouses</Link>
+                      </li>
                     </li>
                   </ul>
                 </AccordionContent>

@@ -19,7 +19,7 @@ const Properties = () => {
       price: "D65,000",
       title: "Modern Coastal Apartment",
       location: "Brufut Heights, The Gambia",
-      beds: 3,
+      beds: 2,
       baths: 2,
       kitchen: 1,
       new: true,
@@ -48,8 +48,8 @@ const Properties = () => {
       price: "D105,000",
       title: "Spacious Family Villa with Garden",
       location: "Brufut Heights, The Gambia",
-      beds: 5,
-      baths: 4,
+      beds: 3,
+      baths: 3,
       kitchen: 1,
       new: true,
       type: "Apartment",
@@ -79,35 +79,35 @@ const Properties = () => {
       description:
         "This luxury villa offers unparalleled elegance with 5 spacious bedrooms, 4 modern bathrooms, and 3500 sqft of living space. The property features a state-of-the-art kitchen, a private swimming pool, and a beautifully landscaped garden. Perfect for entertaining, the villa includes a home theater and wine cellar. Located in the heart of Beverly Hills, it provides easy access to top restaurants and shopping.",
     },
-    {
-      id: 3,
-      price: "D65,000",
-      title: "Cozy Suburban Home",
-      location: "Brufut Heights, The Gambia",
-      beds: 2,
-      baths: 2,
-      kitchen: 1,
-      new: true,
-      type: "Single Family Home",
-      yearBuilt: 2020,
-      garage: 1,
-      amenities: [
-        "Backyard",
-        "Patio",
-        "Fireplace",
-        "Energy Efficient",
-        "Storage Shed",
-      ],
-      image: [
-        "/apar.jpg",
-        "/apar11.jpg",
-        "/apar12.jpg",
-        "/apar13.jpg",
-        "/apar14.jpg",
-      ],
-      description:
-        "This cozy suburban home is perfect for small families or first-time buyers. It features 2 bedrooms, 2 bathrooms, and a spacious backyard with a patio. The home includes modern appliances, a fireplace, and energy-efficient windows. Located in a quiet neighborhood, it offers a peaceful retreat while being close to schools, parks, and shopping centers.",
-    },
+    // {
+    //   id: 3,
+    //   price: "$120",
+    //   title: "Cozy Suburban Home",
+    //   location: "Brufut Heights, The Gambia",
+    //   beds: 2,
+    //   baths: 2,
+    //   kitchen: 1,
+    //   new: true,
+    //   type: "Single Family Home",
+    //   yearBuilt: 2020,
+    //   garage: 1,
+    //   amenities: [
+    //     "Backyard",
+    //     "Patio",
+    //     "Fireplace",
+    //     "Energy Efficient",
+    //     "Storage Shed",
+    //   ],
+    //   image: [
+    //     "/apar.jpg",
+    //     "/apar11.jpg",
+    //     "/apar12.jpg",
+    //     "/apar13.jpg",
+    //     "/apar14.jpg",
+    //   ],
+    //   description:
+    //     "This cozy suburban home is perfect for small families or first-time buyers. It features 2 bedrooms, 2 bathrooms, and a spacious backyard with a patio. The home includes modern appliances, a fireplace, and energy-efficient windows. Located in a quiet neighborhood, it offers a peaceful retreat while being close to schools, parks, and shopping centers.",
+    // },
     {
       id: 4, // Replace with the next unique number
       title: "RELAX WATER 💦 FRONT",
@@ -209,7 +209,7 @@ const Properties = () => {
                 <h3 className="text-xl font-semibold text-gray-900">
                   {property.price}
                 </h3>
-                <span className="text-sm text-gray-600">For Sale</span>
+                <span className="text-sm text-gray-600">For Rent</span>
               </div>
 
               <h4 className="text-lg font-medium text-gray-800 mb-2">

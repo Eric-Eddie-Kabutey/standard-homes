@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { Button } from "../ui/button";
+import { JSX } from "react";
 
 type PriceType = {
   daily: string;
@@ -11,9 +12,12 @@ const FeaturesSingle = ({
   amenities,
   price,
 }: {
-  amenities: string[];
+  amenities: { icon: JSX.Element; label: string }[];
+
   price: PriceType;
 }) => {
+  console.log(amenities);
+
   return (
     <div className="mx-[6%]">
       <div className="container p-8">
@@ -25,11 +29,9 @@ const FeaturesSingle = ({
             </h2>
             <ul className="space-y-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
               {amenities.map((item, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-yellow-500 mr-2">
-                    <Check strokeWidth={3} />
-                  </span>{" "}
-                  {item}
+                <li key={index} className="flex items-center gap-2">
+                  {item?.icon}
+                  {item?.label}
                 </li>
               ))}
             </ul>
