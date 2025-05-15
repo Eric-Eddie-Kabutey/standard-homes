@@ -492,6 +492,11 @@ export const propertiy = [
   {
     id: 4, // Replace with the next unique number
     title: "RELAX WATER 💦 FRONT",
+    price: {
+      daily: "$120",
+      twoWeeks: "",
+      monthly: "",
+    },
     location: "Diplomatic, Bijilo (after Aqua View & Coco Ocean Hotel)",
     beds: 2,
     baths: 2,
@@ -500,7 +505,6 @@ export const propertiy = [
     type: "Apartment", // or "Villa" if more appropriate
     yearBuilt: 2024, // update accordingly
     garage: 3, // adjust if needed
-    price: "Contact for price",
     image: [
       // "/property/p31.jpeg",
 
