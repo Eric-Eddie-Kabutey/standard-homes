@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { ReactElement } from "react";
 import { Card } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -27,7 +27,7 @@ type propertyType = {
   type: string;
   yearBuilt: number;
   garage: number;
-  amenities: string[];
+  amenities: { lable: string; icons: ReactElement }[];
   image: string[]; // fix type here
   description: string;
 };
