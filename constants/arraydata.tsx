@@ -411,14 +411,14 @@ export const propertiy = [
     ],
     image: [
       "/property/p1.jpeg",
-      "/property/p2.jpeg",
+
       "/property/p3.jpeg",
-      "/property/p4.jpeg",
       "/property/p5.jpeg",
       "/property/p6.jpeg",
       "/property/p7.jpeg",
       "/property/p8.jpeg",
       "/property/p9.jpeg",
+      "/property/p20.jpeg",
     ],
     description:
       "Enjoy seaside living in this stylish modern apartment located in the heart of Senegambia. The property features 3 spacious bedrooms with built-in wardrobes, 2 bathrooms with modern fittings, and an open-plan kitchen with contemporary cabinetry. The balcony offers stunning ocean views. Residents have access to a fully equipped gym, secure parking, and uninterrupted power with a backup generator.",
@@ -455,8 +455,11 @@ export const propertiy = [
     ],
     image: [
       "/property/p10.jpeg",
+      "/property/p2.jpeg",
       "/property/p11.jpeg",
       "/property/p12.jpeg",
+      "/property/p4.jpeg",
+
       "/property/p13.jpeg",
       "/property/p14.jpeg",
       `/property/p15.jpeg`,
@@ -464,7 +467,6 @@ export const propertiy = [
       "/property/p17.jpeg",
       "/property/p18.jpeg",
       "/property/p19.jpeg",
-      "/property/p20.jpeg",
     ],
     description:
       "This elegant villa in Bijilo is ideal for a growing family. Set on a quiet street, it offers a large private garden, an expansive living area, and a solar-powered energy system. The kitchen includes modern appliances and plenty of storage. With two living lounges, a guest room, and a master suite with a walk-in closet, the home provides both luxury and comfort. Located near international schools and supermarkets.",

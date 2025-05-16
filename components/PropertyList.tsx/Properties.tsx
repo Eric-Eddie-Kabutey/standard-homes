@@ -16,7 +16,7 @@ const Properties = () => {
   const properties = [
     {
       id: 1,
-      price: "D65,000",
+      price: "D3,000",
       title: "Modern Coastal Apartment",
       location: "Brufut Heights, The Gambia",
       beds: 2,
@@ -45,7 +45,7 @@ const Properties = () => {
     },
     {
       id: 2,
-      price: "D105,000",
+      price: "D5,000",
       title: "Spacious Family Villa with Garden",
       location: "Brufut Heights, The Gambia",
       beds: 3,
@@ -207,7 +207,7 @@ const Properties = () => {
             <div className="p-4">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  {property.price}
+                  {property.price} / Daily
                 </h3>
                 <span className="text-sm text-gray-600">For Rent</span>
               </div>
