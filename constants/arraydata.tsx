@@ -250,17 +250,17 @@ export const newsData = {
         "/images/gambia-road-network.jpg",
       ],
     },
-    {
-      title: "Waylead Launches Gambia Property Portal",
-      date: "February 10, 2025",
-      description:
-        "Waylead Properties has revolutionized Gambian real estate access with our new digital platform featuring: (1) Virtual property tours for international buyers, (2) Automated valuation models for 12 key locations, (3) Investment return calculators for rental properties, and (4) Direct connection to legal and financing services. The portal already lists 287 properties across all price points, from $50,000 studio apartments in Serrekunda to $2.5 million beachfront estates in Bijilo. Our market data shows 62% of diaspora buyers now begin their property search online, making this platform essential for connecting with The Gambia's global investor community. The system also includes educational resources about Gambian property law, tax regulations, and the leasehold process - addressing key concerns for first-time investors in the market.",
-      images: [
-        "/images/gambia-property-portal.jpg",
-        "/images/gambia-virtual-tour.jpg",
-        "/images/gambia-diaspora-investors.jpg",
-      ],
-    },
+    // {
+    //   title: "Waylead Launches Gambia Property Portal",
+    //   date: "February 10, 2025",
+    //   description:
+    //     "Waylead Properties has revolutionized Gambian real estate access with our new digital platform featuring: (1) Virtual property tours for international buyers, (2) Automated valuation models for 12 key locations, (3) Investment return calculators for rental properties, and (4) Direct connection to legal and financing services. The portal already lists 287 properties across all price points, from $50,000 studio apartments in Serrekunda to $2.5 million beachfront estates in Bijilo. Our market data shows 62% of diaspora buyers now begin their property search online, making this platform essential for connecting with The Gambia's global investor community. The system also includes educational resources about Gambian property law, tax regulations, and the leasehold process - addressing key concerns for first-time investors in the market.",
+    //   images: [
+    //     "/images/gambia-property-portal.jpg",
+    //     "/images/gambia-virtual-tour.jpg",
+    //     "/images/gambia-diaspora-investors.jpg",
+    //   ],
+    // },
   ],
   // "March 2025": [
   //   {
