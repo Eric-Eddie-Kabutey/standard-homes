@@ -1,16 +1,16 @@
 "use client";
-import { ArrowRight, Instagram } from "lucide-react";
+// import { ArrowRight, Instagram } from "lucide-react";
 import React, { useState } from "react";
-import Image from "next/image";
-import { propertiy } from "@/constants/arraydata";
-import { Button } from "../ui/button";
-import Link from "next/link";
+// import Image from "next/image";
+// import { propertiy } from "@/constants/arraydata";
+// import { Button } from "../ui/button";
+// import Link from "next/link";
 
 const OverlapCards = () => {
   const [filter, setFilter] = useState("All");
 
-  const filteredProperties =
-    filter === "All" ? propertiy : propertiy.filter((p) => p.type === filter);
+  // const filteredProperties =
+  //   filter === "All" ? propertiy : propertiy.filter((p) => p.type === filter);
 
   return (
     <div>
@@ -37,7 +37,7 @@ const OverlapCards = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {filteredProperties.map((property) => (
           <div key={property.id} className="border p-4 rounded-lg shadow-lg">
             <div className="w-full h-52 relative rounded-lg overflow-hidden mb-4">
@@ -79,13 +79,13 @@ const OverlapCards = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div className="flex justify-center mt-4 mb-4">
-        <button className="flex items-center gap-2 font-medium border border-[#c79c5c] text-[#c79c5c] px-6 py-2 rounded-lg hover:bg-[#666666] hover:border-[#666666] hover:text-white transition-all duration-500 ease-in-out">
+        {/* <button className="flex items-center gap-2 font-medium border border-[#c79c5c] text-[#c79c5c] px-6 py-2 rounded-lg hover:bg-[#666666] hover:border-[#666666] hover:text-white transition-all duration-500 ease-in-out">
           Follow on Instagram
           <Instagram size={20} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

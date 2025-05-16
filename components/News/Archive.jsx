@@ -84,7 +84,7 @@ const Archive = () => {
                               key={idx}
                               src={image}
                               alt={`News Image ${idx + 1}`}
-                              className="w-full h-auto cursor-pointer rounded-lg"
+                              className="w-full h-[300px] max-h-[350px] min-h-[200px] object-cover cursor-pointer rounded-lg"
                             />
                           ))}
                         </div>

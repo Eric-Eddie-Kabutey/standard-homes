@@ -19,10 +19,16 @@ export default function PropertyOptions() {
       className="relative -mt-16 flex flex-col items-center justify-center p-10  bg-[#A7795D] md:p-20"
     >
       <div className="flex space-x-4 -mt-16">
-        <Link href="#" className="px-6 py-3 text-nowrap bg-[#0F2A3C] text-white rounded-lg shadow font-semibold hover:bg-blue-700">
+        <Link
+          href="#"
+          className="px-6 py-3 text-nowrap bg-[#0F2A3C] text-white rounded-lg shadow font-semibold hover:bg-blue-700"
+        >
           List Property
         </Link>
-        <Link href="/listings" className="px-8 py-3 text-nowrap bg-[#B58541] font-semibold text-white rounded-lg shadow hover:bg-green-700">
+        <Link
+          href="/inquire"
+          className="px-8 py-3 text-nowrap bg-[#B58541] font-semibold text-white rounded-lg shadow hover:bg-green-700"
+        >
           Book Stay
         </Link>
       </div>
@@ -63,7 +69,8 @@ function OptionCard({ title, buttonText, buttonColor, url }) {
     >
       <div className="bg-slate-300 shadow-md rounded-lg p-8 flex flex-col items-center">
         <h2 className="text-lg font-light mb-4">{title}</h2>
-        <Link href={url}
+        <Link
+          href={url}
           className={`bg-${buttonColor} text-white px-6 py-3 rounded-md text-lg font-serif hover:bg-[#057A55] transition`}
         >
           {buttonText}

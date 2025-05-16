@@ -14,8 +14,10 @@ const slides = [
   {
     image: "/hero-home-1.jpg",
     title: "Your Next Perfect Home",
-    description: "We handle all projects with love, care, and dedicated attention.",
+    description:
+      "We handle all projects with love, care, and dedicated attention.",
     button: "Discuss Your Project",
+    link: "/inquire",
   },
   {
     image: "/hero-home-1 (1).jpg",
@@ -23,18 +25,23 @@ const slides = [
     description:
       "We give you value for your money, let's help you make the right choice",
     button: "Buy and Build With Us",
+    link: "/inquire",
   },
   {
     image: "/hero-home-2.jpg",
     title: "Built for Families",
-    description: "We provive you the best residentisal setting for long and short stays",
+    description:
+      "We provive you the best residentisal setting for long and short stays",
     button: "Rent a Safe Home Now",
+    link: "/properties/vista-del-mare",
   },
   {
     image: "/office.jpg",
     title: "Definition New Luxury Offices",
-    description: "We are your go to for morden Office spaces, furnished or unfurnished",
+    description:
+      "We are your go to for morden Office spaces, furnished or unfurnished",
     button: "Rent an Office space Now",
+    link: "/properties/vista-del-mare",
   },
 ];
 
@@ -96,7 +103,7 @@ export default function Hero() {
           {slides[activeIndex % slides.length].description}
         </p>
 
-        <Link href="#">
+        <Link href={`${slides[activeIndex % slides.length].link}`}>
           <Button className="mt-6  text-white px-6 py-3 text-lg">
             {slides[activeIndex % slides.length].button}
           </Button>
