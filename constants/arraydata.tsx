@@ -362,10 +362,11 @@ export const newsData = {
 
 export const properties = [
   {
-    name: "4 BR/ 4.5 BA House at Brufut Gardens ",
-    description: "Experience luxury in this stunning home",
-    img: "/modern-house-1.jpg",
-    link: "properties/willow-lane",
+    name: "Relax waterfront (apartment)",
+    description:
+      "Relax waterfront (apartment) in Bijilo offers direct beachfront access, a lush garden, and a year-round outdoor swimming pool. Where tenants enjoy Seaview and a serene environment",
+    img: "/sale/WhatsApp Image 2025-05-27 at 10.45.47 (2).jpeg",
+    link: `/properties/${1}`,
   },
   {
     name: "Land Demacation At Tujereng",
