@@ -1,5 +1,7 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "../ui/button";
 import { JSX } from "react";
+import Link from "next/link";
 
 type PriceType = {
   daily: string;
@@ -10,13 +12,12 @@ type PriceType = {
 const FeaturesSingle = ({
   amenities,
   price,
+  sale = false,
 }: {
   amenities: { icon: JSX.Element; label: string }[];
-
+  sale?: boolean;
   price: PriceType;
 }) => {
-  console.log(amenities);
-
   return (
     <div className="mx-[6%]">
       <div className="container p-8">
@@ -36,28 +37,56 @@ const FeaturesSingle = ({
             </ul>
           </div>
 
-          {/* Pricing Section */}
-          <div className="flex flex-col">
-            <div className="text-center">
-              <div className="inline-block bg-blue-900 text-white px-10 py-4 rounded-lg text-left">
-                <p className="text-lg font-semibold mb-2">Prices</p>
-                <p className="text-md mb-1">
-                  2 bedrooms going for{" "}
-                  <span className="font-bold">{price.daily}</span> a day
-                </p>
-                <p className="text-md mb-1">
-                  <span className="font-bold">{price.twoWeeks}</span> two weeks
-                </p>
-                <p className="text-md mb-1">
-                  <span className="font-bold">{price.monthly}</span> monthly
-                </p>
+          {sale === true ? (
+            <div>
+              <div className="flex flex-col">
+                <div className="text-center">
+                  <div className="inline-block bg-blue-900 text-white px-10 py-4 rounded-lg text-left">
+                    <p className="text-lg font-semibold mb-2">Prices</p>
+                    <p className="text-md mb-1">For more info</p>
+                    <p className="text-md mb-1">
+                      Please contact us via WhatsApp .
+                    </p>
+                    <p className="text-md mb-1">
+                      <span className="font-bold">+220 1234567</span> (WhatsApp){" "}
+                      <Link
+                        href="https://wa.me/2201234567"
+                        target="_blank"
+                        className="text-white text-lg"
+                      >
+                        <FaWhatsapp className="inline-block" />
+                      </Link>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="text-center mt-4 gap-3 flex items-center m-auto">
-              <Button>Book Now</Button>
-              <Button>Enquire Now</Button>
+          ) : (
+            <div className="flex flex-col">
+              <div className="text-center">
+                <div className="inline-block bg-blue-900 text-white px-10 py-4 rounded-lg text-left">
+                  <p className="text-lg font-semibold mb-2">Prices</p>
+                  <p className="text-md mb-1">
+                    2 bedrooms going for{" "}
+                    <span className="font-bold">{price.daily}</span> a day
+                  </p>
+                  <p className="text-md mb-1">
+                    <span className="font-bold">{price.twoWeeks}</span> two
+                    weeks
+                  </p>
+                  <p className="text-md mb-1">
+                    <span className="font-bold">{price.monthly}</span> monthly
+                  </p>
+                </div>
+              </div>
+              <div className="text-center mt-4 gap-3 flex items-center m-auto">
+                <Button>Book Now</Button>
+                <Button>Enquire Now</Button>
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Pricing Section */}
         </div>
       </div>
     </div>
