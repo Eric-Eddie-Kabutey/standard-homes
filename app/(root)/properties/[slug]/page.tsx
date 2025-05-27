@@ -14,7 +14,7 @@ import React from "react";
 import { FaWater } from "react-icons/fa";
 
 // property
-const propertiy = [
+export const propertiyForSale = [
   {
     video: "/sale/WhatsApp Video 2025-05-27 at 10.45.48.mp4",
     id: 1,
@@ -42,6 +42,7 @@ const propertiy = [
       { label: "Serene Environment", icon: <VolumeX /> },
     ],
     image: [
+      "/sale/WhatsApp Image 2025-05-27 at 10.45.47 (2).jpeg",
       "/sale/WhatsApp Image 2025-05-25 at 22.23.34 (1).jpeg",
       "/sale/WhatsApp Image 2025-05-25 at 22.23.34 (2).jpeg",
       "/sale/WhatsApp Image 2025-05-25 at 22.23.34 (3).jpeg",
@@ -116,7 +117,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     video: string;
   };
   // filter property by id
-  const propertyFound = propertiy.find(
+  const propertyFound = propertiyForSale.find(
     (property) => property.id === Number(slug)
   );
 

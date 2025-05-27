@@ -5,13 +5,133 @@ import React from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
+import { Button } from "../ui/button";
+
+import Link from "next/link";
+import { propertiyForSale } from "@/app/(root)/properties/[slug]/page";
 // import { propertiy } from "@/constants/arraydata";
 
 const PropertyForSale = () => {
   return (
     <div className="mx-[7%] py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {propertiyForSale.map((property) => (
+          <div
+            key={property.id}
+            className="bg-white rounded-xl cursor-pointer shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          >
+            {/* Property Image */}
+            <div className="relative h-[240px]">
+              <Image
+                src={property.image[0]}
+                alt={property.title}
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full"
+              />
+              {property.new && (
+                <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  New
+                </div>
+              )}
+            </div>
+
+            {/* Property Card Content */}
+            <div className="p-4">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Price:</h3>
+                <span className="text-sm text-gray-600">For Sale</span>
+              </div>
+
+              <h4 className="text-lg font-medium text-gray-800 mb-2">
+                {property.title}
+              </h4>
+              <p className="text-gray-600 text-sm mb-4">{property.location}</p>
+
+              <div className="flex justify-between border-t pt-4">
+                <div className="flex items-center">
+                  <svg
+                    className="w-5 h-5 text-gray-600 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2 20v-8a2 2 0 012-2h16a2 2 0 012 2v8M2 20h20M6 20v-4m12 4v-4"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 12h4v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2zM16 12h4v-2a1 1 0 00-1-1h-2a1 1 0 00-1 1v2z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 16h12"
+                    />
+                  </svg>{" "}
+                  <span className="text-sm">{property.beds} Beds</span>
+                </div>
+                <div className="flex items-center">
+                  <svg
+                    className="w-5 h-5 text-gray-600 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20 12H4M4 12V6a2 2 0 012-2h12a2 2 0 012 2v6M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6m-8-6h.01M12 12h.01M12 18h.01M16 6h.01M16 12h.01M16 18h.01"
+                    />
+                  </svg>{" "}
+                  <span className="text-sm">{property.baths} Baths</span>
+                </div>
+                <div className="flex items-center">
+                  <svg
+                    className="w-5 h-5 text-gray-600 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 20h18v-4H3v4zM3 4v12h18V4H3z"
+                    />
+                    <circle cx="7" cy="8" r="1.5" strokeWidth={2} />
+                    <circle cx="17" cy="8" r="1.5" strokeWidth={2} />
+                    <circle cx="7" cy="14" r="1.5" strokeWidth={2} />
+                    <circle cx="17" cy="14" r="1.5" strokeWidth={2} />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 16v-4m0 0h-2m2 0h2"
+                    />
+                  </svg>{" "}
+                  <span className="text-sm">{property.kitchen} kitchen</span>
+                </div>
+              </div>
+
+              {/* Drawer for Detailed View */}
+
+              <Link className="mt-3" href={`/properties/${property.id}`}>
+                <Button className="mt-3 text-white"> View Details</Button>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
