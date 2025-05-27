@@ -48,9 +48,9 @@ const FeaturesSingle = ({
                       Please contact us via WhatsApp .
                     </p>
                     <p className="text-md mb-1">
-                      <span className="font-bold">+220 1234567</span> (WhatsApp){" "}
+                      <span className="font-bold">+220 7922004</span> (WhatsApp){" "}
                       <Link
-                        href="https://wa.me/2201234567"
+                        href="https://wa.me/2207922004"
                         target="_blank"
                         className="text-white text-lg"
                       >
