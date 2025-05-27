@@ -10,7 +10,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 
 import Link from "next/link";
-import { propertiyForSale } from "@/app/(root)/properties/[slug]/page";
+import { propertiyForSale } from "@/constants/arraydata";
 // import { propertiy } from "@/constants/arraydata";
 
 const PropertyForSale = () => {
