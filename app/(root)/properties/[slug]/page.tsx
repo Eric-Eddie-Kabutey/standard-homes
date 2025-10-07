@@ -1,120 +1,109 @@
-// import HouseGallery from "@/components/Lands/HouseGallery";
-import Gallery from "@/components/Lands/Gallary";
-import HousePlan from "@/components/Lands/HousePlan";
-import FeaturesSingle from "@/components/properties/FeaturesSingle";
-import HotSaleView from "@/components/properties/HotSaleView";
-import { propertiyForSale } from "@/constants/arraydata";
+import { sampleProperties } from '@/data/property-data';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import { BedDouble, Bath, Ruler, MapPin, Phone, Mail } from 'lucide-react';
+import { formatCurrency } from '@/lib/utils';
 
-// property
+interface PropertyDetailPageProp {
+  params: Promise<{slug: string}>
+}
 
-const PropertyForSaleView = async ({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) => {
-  const { slug } = await params;
-  type propertyType = {
-    id: number;
-    price: {
-      daily: string;
-      twoWeeks: string;
-      monthly: string;
-    };
-    title: string;
-    location: string;
-    beds: number;
-    baths: number;
-    kitchen: number;
-    new: boolean;
-    type: string;
-    yearBuilt: number;
-    garage: number;
-    amenities: [];
-    image: string[]; // fix type here
-    description: string;
-    video: string;
-  };
-  // filter property by id
-  const propertyFound = propertiyForSale.find(
-    (property) => property.id === Number(slug)
-  );
+export default async function PropertyDetailPage({ params }: PropertyDetailPageProp) {
+  const slug = (await params).slug
+  const property = sampleProperties.find(p => p.slug === slug);
 
-  //   features
+  if (!property) {
+    notFound();
+  }
+  
+  const priceDisplay = property.listingType === 'For Rent'
+    ? `${formatCurrency(property.price.amount, property.price.currency)} /mo`
+    : formatCurrency(property.price.amount, property.price.currency);
 
   return (
-    <div>
-      <div className="w-full border-b border-slate-200 bg-gradient-to-b from-white via-[#fff] to-[#F2ECE4] h-[23vh] flex items-end">
-        <p className="mb-10 text-3xl md:text-4xl font-extralight md:pl-[7%] text-[#1A3850]">
-          {propertyFound?.title}
-        </p>
-      </div>
+    <div className="bg-gray-50">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
+        {/* Image Gallery */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 rounded-xl overflow-hidden mb-8">
+          <div className="relative h-96 lg:h-[500px] col-span-1">
+            <Image src={property.media.coverImage} alt={property.title} layout="fill" objectFit="cover" />
+          </div>
+          <div className="hidden lg:grid grid-cols-2 gap-2">
+            {property.media.gallery.slice(0, 4).map((img, index) => (
+              <div key={index} className="relative h-full">
+                <Image src={img} alt={`${property.title} gallery image ${index + 1}`} layout="fill" objectFit="cover" />
+              </div>
+            ))}
+          </div>
+        </div>
 
-      <div className="p-12 bg-[#a7a7a8]">
-        <HotSaleView properties={propertyFound as propertyType} />
-      </div>
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Left Column: Details & Description */}
+          <div className="lg:col-span-2">
+            <h1 className="text-4xl font-extrabold text-gray-900">{property.title}</h1>
+            <div className="mt-2 flex items-center">
+              <MapPin className="w-5 h-5 text-gray-500 mr-2" />
+              <p className="text-lg text-gray-600">{`${property.location.city}, ${property.location.country}`}</p>
+            </div>
 
-      <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
-        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
-          Features & Amenities
-        </h2>
-        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
-      </div>
+            <div className="mt-8 flex items-center gap-8 border-t border-b border-gray-200 py-6">
+              <div className="flex items-center gap-2 text-lg">
+                <BedDouble className="w-6 h-6 text-indigo-600" />
+                <span><span className="font-bold">{property.details.bedrooms ?? 'N/A'}</span> bedrooms</span>
+              </div>
+              <div className="flex items-center gap-2 text-lg">
+                <Bath className="w-6 h-6 text-indigo-600" />
+                <span><span className="font-bold">{property.details.bathrooms ?? 'N/A'}</span> bathrooms</span>
+              </div>
+              <div className="flex items-center gap-2 text-lg">
+                <Ruler className="w-6 h-6 text-indigo-600" />
+                <span><span className="font-bold">{property.details.area.value}</span> {property.details.area.unit}</span>
+              </div>
+            </div>
 
-      <FeaturesSingle
-        sale={true}
-        amenities={propertyFound?.amenities as []}
-        price={propertyFound?.price ?? { daily: "", twoWeeks: "", monthly: "" }}
-      />
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">About this property</h2>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{property.description}</p>
+            </div>
+            
+             <div className="mt-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Features & Amenities</h2>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
+                {property.features.map(feature => (
+                  <li key={feature} className="flex items-center">
+                    <span className="bg-green-500 w-2 h-2 rounded-full mr-3"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-      {/* Warehouse Section Not Available */}
-      {/* <div className="max-w-7xl m-auto my-10">
-        <p className="text-center text-gray-500 italic">
-          Note: This is no warehouse available at the moment.
-        </p>
-      </div> */}
-
-      <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
-        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
-          Gallery
-        </h2>
-        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
-      </div>
-
-      <Gallery images={propertyFound?.image as string[]} />
-
-      {/* <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
-        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
-          Floor Plan
-        </h2>
-        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
-      </div>
-      <div className="max-w-7xl m-auto">
-        <h2 className="text-center text-3xl font-extralight ">
-          Floor Plan not available
-        </h2>
-      </div> */}
-
-      <HousePlan />
-
-      {/* <div className="flex pt-10 max-w-7xl m-auto flex-col md:flex-row items-center gap-4 mb-2">
-        <h2 className="text-[#1A3850] text-[2.2rem] font-extralight mb-4">
-          Location
-        </h2>
-        <div className="border-b border-dashed border-[#B78C4C] flex-1"></div>
-      </div>
-      <MapSection /> */}
-
-      <div className="bg-[#B78C4C] p-20 text-center flex flex-col items-center justify-center mt-32">
-        <h2 className="text-white text-2xl text-center mb-4 max-w-2xl">
-          Still have more questions about our properties? Interested in
-          reserving your unit?
-        </h2>
-        <button className="bg-blue-900 text-white py-2 px-4 rounded">
-          Contact Us
-        </button>
+          {/* Right Column: Price & Agent */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 bg-white p-8 rounded-xl shadow-lg">
+              <p className="text-4xl font-bold text-gray-900">{priceDisplay}</p>
+              <button className="mt-6 w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors">
+                Inquire Now
+              </button>
+              
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h3 className="font-bold text-gray-900">Agent Information</h3>
+                <div className="mt-4">
+                  <p className="font-semibold text-lg">{property.agent.name}</p>
+                  <a href={`tel:${property.agent.phone}`} className="flex items-center mt-2 text-indigo-600 hover:underline">
+                    <Phone className="w-4 h-4 mr-2" /> {property.agent.phone}
+                  </a>
+                   <a href={`mailto:${property.agent.email}`} className="flex items-center mt-1 text-indigo-600 hover:underline">
+                    <Mail className="w-4 h-4 mr-2" /> {property.agent.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default PropertyForSaleView;
+}
