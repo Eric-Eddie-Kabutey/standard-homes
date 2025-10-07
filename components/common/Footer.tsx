@@ -75,7 +75,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#0d1f2d] text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand Column */}
         <div className="space-y-6">
           <Image
@@ -214,7 +214,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="bg-[#0a1721] py-4">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Standard Homes Co. Ltd. All rights
             reserved.
