@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import { Building, HandCoins, Droplets, Search, Globe, ChevronDown, ChevronUp } from "lucide-react";
+import { Building, HandCoins, Droplets, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import AdsBanner from "../Advertisements/AdsBanner";
 
 const Navbar: React.FC = () => {
@@ -24,22 +24,75 @@ const Navbar: React.FC = () => {
 
       {/* top site menu */}
       <div className="bg-[#0a2f5c] text-white hidden md:block">
-        <nav className="flex items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-2">
+        <nav className="flex items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
           <div className="ml-auto flex items-center gap-x-8">
-              <Link href="#" className="flex items-center gap-2 font-bold text-base hover:text-gray-300 transition-colors">
-                <Search className="h-5 w-5" />
-                <span>Search</span>
+              <Link href="#" className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">                
+                <span>About</span>
               </Link>
-              <Link href="/sales-team" className="font-bold text-base hover:text-gray-300 transition-colors">
-                Sales Team
-              </Link>             
-              <Link href="/contact" className="font-bold text-base hover:text-gray-300 transition-colors">
-                Contact us
+              {/* Service */}
+            <div
+              className="relative"
+              onMouseEnter={() => setHoveredMenu("Services")}
+              onMouseLeave={() => setHoveredMenu(null)}
+            >
+              <Link
+                href="#"
+                className={`px-3 rounded-md text-sm font-medium transition-colors ${
+                  pathname === "#"
+                    ? "bg-primary text-white"
+                    : " hover:text-gray-300"
+                }`}
+              >
+                <div className="flex items-center gap-x-2">
+
+                Service {hoveredMenu === "Services" ? <ChevronUp className="w-4 h-auto" /> : <ChevronDown className="w-4 h-auto" />}
+                </div>
               </Link>
-              <Link href="/careers" className="font-bold text-base hover:text-gray-300 transition-colors">
+              {hoveredMenu === "Services" && (
+                <div className="absolute top-14 left-0 z-10 w-64 bg-primary shadow-lg rounded-md border border-gray-200">
+                  <Link
+                    href="/general-construction"
+                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                      pathname === "/general-construction" ? "bg-blue-50" : ""
+                    }`}
+                  >
+                    <div className="flex gap-4 items-center">
+                          <Building className="w-6 h-6 text-slate-100" />
+                          <span>GENERAL CONSTRUCTION</span>
+                        </div>
+                  </Link>
+                  <Link
+                    href="/sales-and-supply"
+                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                      pathname === "/sales-and-supply" ? "bg-blue-50" : ""
+                    }`}
+                  >
+                     <div className="flex gap-4 items-center">
+                          <HandCoins className="w-6 h-6 text-slate-100" />
+                          <span>SALES & SUPPLY</span>
+                        </div>
+                  </Link>                                  
+
+                  <Link
+                    href="/water"
+                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
+                      pathname === "/water"
+                        ? "bg-blue-50"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex gap-4 items-center">
+                          <Droplets className="w-6 h-6 text-slate-100" />
+                          <span>WATER</span>
+                        </div>
+                  </Link>
+                </div>
+              )}
+            </div>                           
+              <Link href="/careers" className="text-base hover:text-gray-300 transition-colors">
                 Careers
               </Link>
-              <button className="flex items-center gap-2 font-bold text-base hover:text-gray-300 transition-colors">
+              <button className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">
                 <Globe className="h-5 w-5" />
                 <span>Language</span>
               </button>
@@ -81,76 +134,17 @@ const Navbar: React.FC = () => {
             >
               <Link
                 href="/about"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   pathname === "/about"
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
                 }`}
               >
-                About
+                Property Search
               </Link>
             </div>
 
-              {/* Service */}
-            <div
-              className="relative"
-              onMouseEnter={() => setHoveredMenu("Services")}
-              onMouseLeave={() => setHoveredMenu(null)}
-            >
-              <Link
-                href="#"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  pathname === "#"
-                    ? "bg-primary text-white"
-                    : "text-gray-600 hover:text-gray-800"
-                }`}
-              >
-                <div className="flex items-center gap-2">
-
-                Service {hoveredMenu === "Services" ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </div>
-              </Link>
-              {hoveredMenu === "Services" && (
-                <div className="absolute top-14 left-0 mt-1 w-64 bg-primary shadow-lg rounded-md border border-gray-200">
-                  <Link
-                    href="/general-construction"
-                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                      pathname === "/general-construction" ? "bg-blue-50" : ""
-                    }`}
-                  >
-                    <div className="flex gap-4 items-center">
-                          <Building className="w-6 h-6 text-slate-100" />
-                          <span>GENERAL CONSTRUCTION</span>
-                        </div>
-                  </Link>
-                  <Link
-                    href="/sales-and-supply"
-                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                      pathname === "/sales-and-supply" ? "bg-blue-50" : ""
-                    }`}
-                  >
-                     <div className="flex gap-4 items-center">
-                          <HandCoins className="w-6 h-6 text-slate-100" />
-                          <span>SALES & SUPPLY</span>
-                        </div>
-                  </Link>                                  
-
-                  <Link
-                    href="/water"
-                    className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                      pathname === "/water"
-                        ? "bg-blue-50"
-                        : ""
-                    }`}
-                  >
-                    <div className="flex gap-4 items-center">
-                          <Droplets className="w-6 h-6 text-slate-100" />
-                          <span>WATER</span>
-                        </div>
-                  </Link>
-                </div>
-              )}
-            </div>
+              
 
             {/* Our projects Link with Submenu */}
             <div
@@ -160,13 +154,13 @@ const Navbar: React.FC = () => {
             >
               <Link
                 href="#"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   pathname === "#"
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:text-gray-800"
                 }`}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-base">
 
                 Our Projects {hoveredMenu === "Properties" ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
@@ -232,7 +226,7 @@ const Navbar: React.FC = () => {
             >
               <Link
                 href="/news"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   pathname === "/news"
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
@@ -250,13 +244,13 @@ const Navbar: React.FC = () => {
             >
               <Link
                 href="/inquire"
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors border-yellow-600 border ${
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors border-yellow-600 border ${
                   pathname === "/inquire"
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
                 }`}
               >
-                Get Free
+                Get Free Evaluation
               </Link>
             </div>
           </div>
