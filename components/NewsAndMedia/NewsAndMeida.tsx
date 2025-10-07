@@ -24,7 +24,7 @@ const properties = [
 const NewsAndMedia = () => {
   return (
     <div className="bg-[#FDF6EB] py-12 px-4">
-      <div className="container mx-auto">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
         {/* Heading */}
         <div className="flex items-center mb-8">
           <h1 className="text-3xl text-[#1A293F] font-semibold">

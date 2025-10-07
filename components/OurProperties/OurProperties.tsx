@@ -7,8 +7,8 @@ import { properties } from "@/constants/arraydata";
 
 const OurProperties = () => {
   return (
-    <div className="bg-[#0D2A47] py-12 px-[7%] text-white">
-      <div className="container mx-auto ">
+    <div className="bg-[#0D2A47] py-16 text-white">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
         {/* Heading */}
 
         <div className="flex items-center mb-6">

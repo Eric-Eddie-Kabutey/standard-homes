@@ -14,7 +14,7 @@ const AdsBanner = () => {
     const [isOpen, setIsOpen] = useState(true)
 
     return (
-        <div className="flex gap-3 mt-[-11.7px] items-center justify-between md:justify-center bg-[#ff4757] text-white py-2.5 px-[1%] text-center">
+        <div className="flex gap-3 mt-[-11.7px] items-center justify-between md:justify-center bg-[#ff4757] text-white py-1 px-4 text-center">
             <p>🚨 Limited Time Offer! Click Here for Special Discount</p>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
