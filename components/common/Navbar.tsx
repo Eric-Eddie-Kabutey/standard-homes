@@ -250,7 +250,7 @@ const Navbar: React.FC = () => {
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
                 }`}
               >
-                Get Free Evaluation
+                Get a free evaluation
               </Link>
             </div>
           </div>
