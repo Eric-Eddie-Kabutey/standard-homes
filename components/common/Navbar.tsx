@@ -144,6 +144,23 @@ const Navbar: React.FC = () => {
               </Link>
             </div>
 
+            {/* Guide to buy, sell and rent */}
+            <div
+              className=""
+              onMouseEnter={() => setHoveredMenu(null)}
+              onMouseLeave={() => setHoveredMenu(null)}
+            >
+              <Link
+                href="/guide"
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  pathname === "/guide"
+                    ? "bg-primary text-white"
+                    : "text-gray-600 hover:bg-primary hover:text-gray-800"
+                }`}
+              >
+                Guide
+              </Link>
+            </div>
               
 
             {/* Our projects Link with Submenu */}
@@ -220,7 +237,7 @@ const Navbar: React.FC = () => {
 
             {/* Insights Link */}
             <div
-              className="relative"
+              className=""
               onMouseEnter={() => setHoveredMenu(null)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
