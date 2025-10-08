@@ -27,7 +27,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </div>
         <div className="p-6 flex flex-col flex-grow">
           <div>
-            <p className="text-2xl font-bold text-gray-800">{priceDisplay}</p>
+            <p className="text-xl font-normal text-gray-800">{priceDisplay}</p>
             <h3 className="mt-2 text-xl font-semibold text-gray-900 truncate">{property.title}</h3>
             <p className="mt-1 text-gray-600 truncate">{property.summary}</p>
           </div>
