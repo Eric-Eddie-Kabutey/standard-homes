@@ -185,9 +185,9 @@ const Navbar: React.FC = () => {
               {hoveredMenu === "Properties" && (
                 <div className="absolute top-14 left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
                   <Link
-                    href="/listings"
+                    href="/project-one"
                     className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
-                      pathname === "/listings" ? "bg-blue-50" : ""
+                      pathname === "/project-one" ? "bg-blue-50" : ""
                     }`}
                   >
                     Project One
