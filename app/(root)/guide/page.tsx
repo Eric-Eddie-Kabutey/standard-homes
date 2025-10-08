@@ -13,7 +13,7 @@ export default function GuidePage() {
           </p>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 md:mt-32">
           <GuideTabs />
         </div>
       </div>
