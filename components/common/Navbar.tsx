@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
       <div className="bg-[#0a2f5c] text-white hidden md:block">
         <nav className="flex items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
           <div className="ml-auto flex items-center gap-x-8">
-              <Link href="#" className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">                
+              <Link href="/about" className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">                
                 <span>About</span>
               </Link>
               {/* Service */}
@@ -190,9 +190,9 @@ const Navbar: React.FC = () => {
                       pathname === "/listings" ? "bg-blue-50" : ""
                     }`}
                   >
-                    Rental Apartments
+                    Project One
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/properties/symphonique"
                     className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground ${
                       pathname === "/properties/symphonique" ? "bg-blue-50" : ""
@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
                     }`}
                   >
                     Warehouses
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
