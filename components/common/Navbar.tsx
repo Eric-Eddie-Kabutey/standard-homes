@@ -133,9 +133,9 @@ const Navbar: React.FC = () => {
               onMouseLeave={() => setHoveredMenu(null)}
             >
               <Link
-                href="/about"
+                href="/properties"
                 className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  pathname === "/about"
+                  pathname === "/properties"
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:bg-primary hover:text-gray-800"
                 }`}
