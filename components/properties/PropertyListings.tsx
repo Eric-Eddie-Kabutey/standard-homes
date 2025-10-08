@@ -106,7 +106,7 @@ export default function PropertyListings({ properties }: { properties: Property[
   return (
     <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
       {/* Top Level Country Tabs */}
-      <div className="flex justify-center border-b border-gray-200 mb-8">
+      <div className="flex justify-center border-b lg:border-none border-gray-200 mb-8">
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
           {countries.map(country => (
             <button
@@ -114,9 +114,9 @@ export default function PropertyListings({ properties }: { properties: Property[
               onClick={() => { setActiveCountry(country); setVisibleCount(PROPERTIES_PER_PAGE); }}
               className={`${
                 activeCountry === country
-                  ? 'border-indigo-500 text-indigo-600'
+                  ? 'lg:bg-yellow-500 border-indigo-600 lg:border-none text-indigo-700 lg:text-white'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors`}
+              } whitespace-nowrap py-4 lg:py-2 px-1 lg:px-10 border-b-2 lg:border-yellow-600 lg:border font-medium text-sm transition-colors lg:rounded-full`}
             >
               {country}
             </button>
@@ -132,8 +132,8 @@ export default function PropertyListings({ properties }: { properties: Property[
       />
 
       {/* Results Count Display */}
-      <div className="mb-6">
-        <p className="text-lg font-semibold text-gray-800">{filteredProperties.length} results found</p>
+      <div className="mb-6 flex ">
+        <p className="text-lg font-semibold text-gray-800 ml-auto">{filteredProperties.length} results found</p>
       </div>
 
       {/* Animated Property Grid */}
