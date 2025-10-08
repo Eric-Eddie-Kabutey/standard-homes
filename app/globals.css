@@ -154,7 +154,7 @@
 }
 
 .contact-input::placeholder {
-  color: #9ca3af; /* Light gray placeholder text */
+  color: #525253; /* Light gray placeholder text */
 }
 
 .contact-input:focus {
@@ -172,8 +172,8 @@
 }
 
 /* Adjust the country select dropdown arrow for visual consistency */
-.PhoneInputCountrySelectArrow {
-  border-color: #9ca3af !important; /* Darker arrow color */
+.PhoneInputCountrySelectArrow {  
+  border-color: #0f0f0f !important; /* Darker arrow color */
 }
 
 .PhoneInputCountrySelect:focus {
