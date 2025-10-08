@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add this line to the top of your globals.css file */
+/* @import 'react-phone-number-input/style.css'; */
+
 /* body {
   font-family: Arial, Helvetica, sans-serif;
 } */
@@ -81,4 +84,99 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+
+
+/* Custom styles for the phone input to match the design */
+.PhoneInput {
+  background-color: #f7f7f7; /* Light beige background */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.75rem 1rem; /* Adjust padding */
+  border: 1px solid #e5e7eb; /* Light border */
+  display: flex; /* Ensure flag and input align */
+  align-items: center; /* Center vertically */
+}
+
+.PhoneInputInput {
+  flex-grow: 1; /* Take up remaining space */
+  border: none !important; /* Remove default input border */
+  background-color: transparent !important; /* Match parent background */
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 !important; /* Remove default input padding */
+  color: #374151; /* Darker text */
+  box-shadow: none !important; /* Remove any focus shadow */
+  outline: none !important; /* Remove outline */
+}
+
+.PhoneInputCountry {
+  margin-right: 0.5rem; /* Space between flag and input */
+}
+
+.PhoneInputCountrySelect {
+  /* Hide the native select dropdown arrow if you want to use custom arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none; /* Remove default dropdown arrow */
+  /* If you want a custom arrow, you'd add it as a pseudo-element or icon */
+}
+
+.PhoneInputCountryIcon {
+  box-shadow: none !important; /* Remove shadow on flag */
+}
+
+/* Ensure the input fields match the beige background and border */
+.contact-input {
+  background-color: #f7f7f7; /* Light beige background */
+  border: 1px solid #e5e7eb; /* Light border */
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 0.75rem 1rem; /* Consistent padding */
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #374151; /* Darker text */
+  width: 100%; /* Full width */
+  box-shadow: none; /* Remove any default shadows */
+  outline: none; /* Remove outline */
+}
+
+.contact-input::placeholder {
+  color: #9ca3af; /* Light gray placeholder text */
+}
+
+.contact-input:focus {
+  border-color: #d4a762; /* Focus border color to match theme */
+  box-shadow: 0 0 0 1px #d4a762; /* Subtle focus ring */
+}
+
+/* Specific styles for the PhoneInput wrapper to make it act like other inputs */
+.PhoneInput {
+  background-color: #f7f7f7;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0 1rem; /* adjust vertical padding if needed, horizontal is fixed by internal elements */
+  height: 3.5rem; /* Match height of other inputs, 56px */
+}
+
+/* Adjust the country select dropdown arrow for visual consistency */
+.PhoneInputCountrySelectArrow {
+  border-color: #9ca3af !important; /* Darker arrow color */
+}
+
+.PhoneInputCountrySelect:focus {
+  outline: none !important; /* Remove outline */
+  box-shadow: none !important; /* Remove shadow */
 }
