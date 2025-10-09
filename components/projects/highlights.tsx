@@ -26,7 +26,7 @@ const DevelopmentHighlightSection: React.FC<DevelopmentHighlightProps> = ({
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
-        <div className="flex flex-cols md:flex-row items-center gap-y-10 gap-x-20">
+        <div className="flex flex-col md:flex-row items-center gap-y-10 gap-x-20">
           
           {/* Text Content Column */}
           <div className={`${imageOnLeft ? 'lg:order-last' : ''} w-full md:w-1/2`}>
