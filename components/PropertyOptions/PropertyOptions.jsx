@@ -36,13 +36,13 @@ export default function PropertyOptions() {
 				className='hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 -mt-[100px] max-w-2xl w-full'>
 				<OptionCard
 					title='Do you own a property?'
-					buttonText='List Property'
+					buttonText='Rent / Sales'
 					buttonColor='[#0F2A3C]'
 					url=''
 				/>
 				<OptionCard
 					title='Do you need an Apartment?'
-					buttonText='Book a Stay'
+					buttonText='List Property'
 					buttonColor='[#B58541]'
 					url='/listings'
 				/>
