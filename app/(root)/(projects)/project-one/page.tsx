@@ -3,11 +3,11 @@ import ContactSection from "@/components/projects/contact";
 import FaqSection from "@/components/projects/Faq";
 
 import GallerySection from "@/components/projects/gallery";
-import HeroSection from "@/components/projects/Hero";
 import DevelopmentHighlightSection from "@/components/projects/highlights";
 import PaymentTermsSection from "@/components/projects/payment-terms";
 import PropertyTypesSection from "@/components/projects/payment-types";
 import ProjectResourcesSection from "@/components/projects/project-resources";
+import ProjectHero from "@/components/shared/ProjectHero";
 import {
   Building2, ShieldCheck, Camera, Dumbbell, Waves, Castle, PanelTopClose,
   ParkingCircle, ClipboardList, Store, UtensilsCrossed, PlusSquare, BedDouble, Bath, Building, Tags,
@@ -250,7 +250,8 @@ const contactData = {
 export default function ProjectOnePage() {
     return (<>
         {/* Hero */}
-        <HeroSection />
+      {/* <HeroSection /> */}
+      <ProjectHero title="Project Name" description="Some description about this project." imgUrl="/project/project-one/project-one-hero-img.jpeg" />
         
         {/* Project highlights section */}
         <DevelopmentHighlightSection {...diplomatProjectData} />
