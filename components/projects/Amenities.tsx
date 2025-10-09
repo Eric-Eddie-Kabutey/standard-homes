@@ -16,26 +16,26 @@ const AmenitiesSection: React.FC<AmenitiesSectionProps> = ({ title, amenities, i
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-y-10 gap-x-20">
           
           {/* Left Column: Image Carousel */}
-          <div className="w-full aspect-w-4 aspect-h-3">
+          <div className="w-full md:w-1/2 aspect-w-4 aspect-h-3">
             <ImageCarousel images={images} />
           </div>
 
           {/* Right Column: Amenities Grid */}
-          <div>
-            <h2 className="text-center text-4xl font-serif font-bold text-amber-800 sm:text-5xl mb-12">
+          <div className='w-full md:w-1/2'>
+            <h2 className="text-center text-2xl  md:text-4xl font-semibold  text-[#1A3850] mb-12">
               {title}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
               {amenities.map((amenity, index) => (
                 <div key={index} className="flex flex-col items-center text-center">
-                  <div className="flex items-center justify-center w-20 h-20 bg-amber-50 rounded-full mb-3">
+                  <div className="flex items-center justify-center w-12 h-12 bg-amber-50 rounded-full mb-3">
                     {/* The icon is passed as a React component */}
                     {amenity.icon}
                   </div>
-                  <p className="font-semibold text-gray-700">{amenity.label}</p>
+                  <p className="text-sm font-medium text-gray-700">{amenity.label}</p>
                 </div>
               ))}
             </div>

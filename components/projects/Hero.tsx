@@ -29,9 +29,9 @@ const HeroSection = () => {
         transition={zoomAnimation.transition}
       >
         <Image
-          src="/project/project-one/hero-img.png"
-                  alt="Modern architectural building with curved balconies"
-                  fill
+          src="/project/project-one/project-one-hero-img.jpeg"
+          alt="Project one cover image"
+          fill
           layout="fill"
           objectFit="cover"
           quality={90}
@@ -45,7 +45,7 @@ const HeroSection = () => {
       {/* Content to display on top of the hero image */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
         <motion.h1 
-          className="text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl"
+          className="text-2xl md:text-5xl font-medium tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
           Find Your Next Home
         </motion.h1>
         <motion.p 
-          className="mt-4 max-w-2xl text-lg md:text-xl"
+          className="mt-4 max-w-2xl text-lg sm:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

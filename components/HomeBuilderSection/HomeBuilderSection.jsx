@@ -21,7 +21,7 @@ export default function TrustedHomebuilder() {
 
 					{/* Text Section */}
 					<div className='w-full md:w-1/2'>
-						<h2 className='text-2xl md:text-4xl font-light relative font-semibold inline-block'>
+						<h2 className='text-2xl md:text-4xl relative font-semibold inline-block'>
 							Gambia’s No. 1 Homebuilder
 							<span className='block w-full border-t border-yellow-300 mt-2'></span>
 						</h2>

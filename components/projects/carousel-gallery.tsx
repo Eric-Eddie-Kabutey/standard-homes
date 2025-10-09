@@ -15,8 +15,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ images }) => {
   const options: EmblaOptionsType = {
     align: 'start',
     loop: true,
-    slidesToScroll: 1,
-    // Define how many slides to show based on screen size
+    slidesToScroll: 1,    
     breakpoints: {
       '(min-width: 1024px)': { slidesToScroll: 2, containScroll: 'trimSnaps' },
     }
@@ -71,14 +70,14 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ images }) => {
       {/* Navigation Arrows */}
       <button 
         onClick={scrollPrev} 
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-amber-800 disabled:text-gray-400"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-yellow-500 disabled:text-gray-400"
         disabled={!prevBtnEnabled}
       >
         <ArrowLeft className="w-8 h-8" />
       </button>
       <button 
         onClick={scrollNext} 
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-amber-800 disabled:text-gray-400"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-yellow-500 disabled:text-gray-400"
         disabled={!nextBtnEnabled}
       >
         <ArrowRight className="w-8 h-8" />
@@ -91,7 +90,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ images }) => {
             key={index}
             onClick={() => scrollTo(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === selectedIndex ? 'bg-amber-800' : 'bg-amber-800/30'
+              index === selectedIndex ? 'bg-yellow-500' : 'bg-amber-800/30'
             }`}
           />
         ))}

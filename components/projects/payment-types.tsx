@@ -18,8 +18,8 @@ const PropertyTypeCard: React.FC<{ property: PropertyType }> = ({ property }) =>
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-xl">
       <div className="p-4">
-        <p className="font-semibold text-gray-500 text-sm">{property.title}</p>
-        <h3 className="text-xl font-bold text-gray-800">{property.subtitle}</h3>
+        <p className="font-thin text-gray-500 text-sm">{property.title}</p>
+        <h3 className="text-xl font-semibold text-[#1A3850]">{property.subtitle}</h3>
       </div>
       <div className="relative h-48 w-full">
         <Image src={property.imageUrl} alt={property.subtitle} layout="fill" objectFit="cover" />
@@ -50,7 +50,7 @@ const PropertyTypesSection: React.FC<PropertyTypesSectionProps> = ({ title, type
   return (
     <section className="bg-stone-50 py-16 sm:py-24">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
-        <h2 className="text-center text-4xl font-serif font-bold text-amber-800 sm:text-5xl mb-12">
+        <h2 className="text-center text-3xl md:text-4xl font-semibold  text-[#1A3850] mb-12">
           {title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">

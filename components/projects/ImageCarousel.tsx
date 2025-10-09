@@ -59,7 +59,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
             key={index}
             onClick={() => scrollTo(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === selectedIndex ? 'bg-white' : 'bg-white/50'
+              index === selectedIndex ? 'bg-yellow-500' : 'bg-white/50'
             }`}
           />
         ))}

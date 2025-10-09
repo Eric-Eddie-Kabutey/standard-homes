@@ -36,11 +36,11 @@ const FaqAccordion: React.FC<FaqAccordionProps> = ({ faqs }) => {
           <div key={index} className="border border-gray-300 rounded-lg overflow-hidden">
             <button
               onClick={() => handleToggle(index)}
-              className="w-full flex justify-between items-center p-4 text-left font-semibold text-gray-800 focus:outline-none"
+              className="w-full flex justify-between items-center p-4 text-left font-semibold text-[#1A3850] focus:outline-none"
             >
               <span>{faq.question}</span>
               <ChevronDown
-                className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
+                className={`w-5 h-5 text-[#1A3850] transition-transform duration-300 ${
                   isOpen ? 'transform rotate-180' : ''
                 }`}
               />

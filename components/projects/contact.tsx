@@ -94,10 +94,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     <section className="bg-white py-16 sm:py-24">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
         <div className="text-center md:text-left mb-12">
-          <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider relative inline-block before:absolute before:content-[''] before:w-8 before:h-px before:bg-gray-400 before:left-[0rem] before:top-1/2 before:-translate-y-1/2 before:transform pl-[40px]">
+          <p className="text-sm font-thin text-gray-500 uppercase tracking-wider relative inline-block before:absolute before:content-[''] before:w-8 before:h-px before:bg-gray-400 before:left-[0rem] before:top-1/2 before:-translate-y-1/2 before:transform pl-[40px]">
             {sectionTitle}
           </p>
-          <h2 className="mt-2 text-4xl font-serif font-bold text-amber-800 sm:text-5xl">
+          <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-[#1A3850]">
             {headline}
           </h2>
           <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto md:mx-0">
@@ -105,9 +105,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
           {/* Left Column: Image and Company Info */}
-          <div className="lg:col-span-1 flex flex-col gap-8">
+          <div className="lg:col-span-2 flex flex-col gap-8">
             <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
               <Image src={contactImage} alt="Couple looking at property" layout="fill" objectFit="cover" />
             </div>
@@ -216,7 +216,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-block px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-yellow-700 to-amber-800 rounded-md shadow-lg hover:from-yellow-800 hover:to-amber-900 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full inline-block px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-[#CA8A04] to-[#d39f2f] rounded-md shadow-lg duration-300 transform transition-transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'SEND'}
               </button>
