@@ -41,8 +41,8 @@ const ProjectResourcesSection: React.FC<ProjectResourcesSectionProps> = ({
           </div>
 
           {/* Right Column: Resources */}
-          <div className="bg-gray-700 w-full p-8 md:p-12 text-center">
-            <h2 className="font-serif text-3xl font-bold text-amber-500 mb-8">
+          <div className="bg-[#0F2A3C] w-full p-8 md:p-12 text-center">
+            <h2 className="font-serif text-3xl font-bold text-white mb-8">
               {title}
             </h2>
             <div className="flex flex-col sm:flex-row justify-around items-center gap-8">
@@ -53,7 +53,7 @@ const ProjectResourcesSection: React.FC<ProjectResourcesSectionProps> = ({
                   </div>
                   <Link href={resource.link} passHref>
                     <div 
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-amber-700 text-white font-semibold py-2 px-6 rounded-md shadow-md transition-transform hover:scale-105"
+                      className="inline-flex items-center gap-2 py-2 px-6 rounded-md shadow-md    bg-gradient-to-r from-[#CA8A04] to-[#d39f2f]  font-semibold text-white transition-transform hover:scale-105"
                       // Add 'download' attribute for files, or target="_blank" for videos
                       {...(resource.label !== "Watch video" ? { download: true } : { target: "_blank", rel: "noopener noreferrer" })}
                     >
