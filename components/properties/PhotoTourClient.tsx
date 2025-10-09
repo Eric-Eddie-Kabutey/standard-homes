@@ -9,8 +9,7 @@ interface PhotoTourClientProps {
   gallery: GalleryCategory[];
 }
 
-const PhotoTourClient: React.FC<PhotoTourClientProps> = ({ gallery }) => {
-    console.log("gallery", gallery);
+const PhotoTourClient: React.FC<PhotoTourClientProps> = ({ gallery }) => {    
   // State to track the currently visible category
   const [activeCategory, setActiveCategory] = useState<string>(gallery[0]?.name || '');
   // Refs to hold the DOM elements of each section
