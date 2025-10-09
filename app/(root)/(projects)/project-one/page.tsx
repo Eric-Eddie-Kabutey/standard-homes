@@ -32,98 +32,97 @@ const diplomatProjectData = {
     </>
   ),
   buttonText: "Learn More",
-  buttonLink: "/properties/the-diplomat-listings",
-  imageUrl: "/project/project-highlights.png",
+  buttonLink: "/properties the-diplomat-listings",
+  imageUrl: "/project/project-one/highlights-img.jpeg",
   imageAlt: "The Diplomat, a modern commercial and residential building in Fajara",
 };
 
 
 // Define the data for the amenities section
-const iconClass = "w-10 h-10 text-amber-900";
 const diplomatAmenities = [
-  { label: "Magnificent Entrance Lobby", icon: <Building2 className={iconClass} /> },
-  { label: "24 x 7 Security", icon: <ShieldCheck className={iconClass} /> },
-  { label: "CCTV Camera", icon: <Camera className={iconClass} /> },
-  { label: "Gymnasium", icon: <Dumbbell className={iconClass} /> },
-  { label: "Swimming Pool", icon: <Waves className={iconClass} /> },
-  { label: "Kids Play Area", icon: <Castle className={iconClass} /> },
-  { label: "Elevators", icon: <PanelTopClose className={iconClass} /> },
-  { label: "Underground Parking", icon: <ParkingCircle className={iconClass} /> },
-  { label: "Property Management", icon: <ClipboardList className={iconClass} /> },
-  { label: "Retail Stores", icon: <Store className={iconClass} /> },
-  { label: "Restaurants", icon: <UtensilsCrossed className={iconClass} /> },
-  { label: "Pharmacy", icon: <PlusSquare className={iconClass} /> },
+  { label: "Magnificent Entrance Lobby", icon: <Building2 className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "24 x 7 Security", icon: <ShieldCheck className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "CCTV Camera", icon: <Camera className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Gymnasium", icon: <Dumbbell className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Swimming Pool", icon: <Waves className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Kids Play Area", icon: <Castle className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Elevators", icon: <PanelTopClose className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Underground Parking", icon: <ParkingCircle className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Property Management", icon: <ClipboardList className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Retail Stores", icon: <Store className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Restaurants", icon: <UtensilsCrossed className="w-auto h-6 text-[#B78C4C]" /> },
+  { label: "Pharmacy", icon: <PlusSquare className="w-auto h-6 text-[#B78C4C]" /> },
 ];
 
 const diplomatCarouselImages = [
-  "/project/img-1.png", 
-  "/project/img-2.png",
-  "/project/img-3.png",
-  "/project/img-4.png",
+  "/project/project-one/diplomatic-img-1.jpeg", 
+  "/project/project-one/diplomatic-img-2.jpeg",
+  "/project/project-one/diplomatic-img-3.jpeg",
+  "/project/project-one/diplomatic-img-4.jpeg",
 ];
 
 const propertyTypesData = [
   {
-    title: "One Bedroom Executive", subtitle: "Apartment", imageUrl: "/project/img-1.png",
+    title: "One Bedroom Executive", subtitle: "Apartment", imageUrl: "/project/project-one/diplomatic-img-1.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "1" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "1" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "63-67sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "start from US$78,500" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "1" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "1" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "63-67sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "start from US$78,500" },
     ],
   },
   {
-    title: "One Bedroom Premium", subtitle: "Apartment", imageUrl: "/project/img-2.png",
+    title: "One Bedroom Premium", subtitle: "Apartment", imageUrl: "/project/project-one/diplomatic-img-2.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "1" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "1" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "81-82sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "US$98,700 - US$115,000" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "1" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "1" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "81-82sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "US$98,700 - US$115,000" },
     ],
   },
   {
-    title: "Two Bedroom", subtitle: "Apartment", imageUrl: "/project/img-3.png",
+    title: "Two Bedroom", subtitle: "Apartment", imageUrl: "/project/project-one/diplomatic-img-3.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "2" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "2" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "117sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "start from US$140,500" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "2" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "2" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "117sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "start from US$140,500" },
     ],
   },
     {
-    title: "Three Bedroom", subtitle: "Apartment", imageUrl: "/project/img-4.png",
+    title: "Three Bedroom", subtitle: "Apartment", imageUrl: "/project/project-one/diplomatic-img-3.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "3" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "3" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "164sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "start from US$214,500" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "3" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "3" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "164sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "start from US$214,500" },
     ],
   },
     {
-    title: "Three Bedroom Penthouse", subtitle: "Type A", imageUrl: "/project/img-1.png",
+    title: "Three Bedroom Penthouse", subtitle: "Type A", imageUrl: "/project/project-one/diplomatic-img-4.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "3" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "3" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "186sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "Upon Request" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "3" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "3" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "186sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "Upon Request" },
     ],
   },
     {
-    title: "Three Bedroom Penthouse", subtitle: "Type B", imageUrl: "/project/img-3.png",
+    title: "Three Bedroom Penthouse", subtitle: "Type B", imageUrl: "/project/project-one/diplomatic-img-5.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "3" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "4" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "235sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "Upon Request" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "3" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "4" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "235sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "Upon Request" },
     ],
   },
     {
-    title: "Four Bedroom", subtitle: "Penthouse", imageUrl: "/project/img-4.png",
+    title: "Four Bedroom", subtitle: "Penthouse", imageUrl: "/project/project-one/diplomatic-img-1.jpeg",
     details: [
-      { icon: <BedDouble className={iconClass} />, label: "Bedrooms", value: "4" },
-      { icon: <Bath className={iconClass} />, label: "Toilet", value: "3" },
-      { icon: <Building className={iconClass} />, label: "Built Area", value: "284sqm" },
-      { icon: <Tags className={iconClass} />, label: "Prices", value: "Upon Request" },
+      { icon: <BedDouble className="w-auto h-6 text-[#B78C4C]" />, label: "Bedrooms", value: "4" },
+      { icon: <Bath className="w-auto h-6 text-[#B78C4C]" />, label: "Toilet", value: "3" },
+      { icon: <Building className="w-auto h-6 text-[#B78C4C]" />, label: "Built Area", value: "284sqm" },
+      { icon: <Tags className="w-auto h-6 text-[#B78C4C]" />, label: "Prices", value: "Upon Request" },
     ],
   },
 ];
@@ -163,19 +162,19 @@ const projectResourcesData = {
   title: "Project Resources",
   resources: [
     {
-      mainIcon: <Newspaper className={iconClass} />,
+      mainIcon: <Newspaper className="w-auto h-8 text-[#B78C4C]" />,
       buttonIcon: <Download className={buttonIconClass} />,
       label: "Brochure",
       link: "/downloads/diplomat-brochure.pdf", 
     },
     {
-      mainIcon: <ClipboardList className={iconClass} />,
+      mainIcon: <ClipboardList className="w-auto h-8 text-[#B78C4C]" />,
       buttonIcon: <Download className={buttonIconClass} />,
       label: "Price List",
       link: "/downloads/diplomat-pricelist.pdf", 
     },
     {
-      mainIcon: <PlaySquare className={iconClass} />,
+      mainIcon: <PlaySquare className="w-auto h-8 text-[#B78C4C]" />,
       buttonIcon: <Play className={buttonIconClass} />,
       label: "Watch video",
       link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -186,14 +185,14 @@ const projectResourcesData = {
 
 // carousel gallery data
 const galleryImages = [
-  "/project/gallery-1.png",
-  "/project/gallery-2.png",
-  "/project/gallery-3.webp",
-  "/project/gallery-4.webp",
-  "/project/gallery-5.webp",
-  "/project/gallery-6.png",
-  "/project/gallery-7.png",
-  "/project/gallery-8.png",
+  "/project/project-one/diplomatic-img-1.jpeg",
+  "/project/project-one/diplomatic-img-2.jpeg",
+  "/project/project-one/diplomatic-img-3.jpeg",
+  "/project/project-one/diplomatic-img-4.jpeg",
+  "/project/project-one/diplomatic-img-5.jpeg",
+  "/project/project-one/diplomatic-img-6.jpeg",
+  "/project/project-one/diplomatic-img-1.jpeg",
+  "/project/project-one/diplomatic-img-2.jpeg",
 ];
 
 // --- DATA FOR THE FAQ SECTION ---
@@ -233,7 +232,7 @@ const contactData = {
   sectionTitle: "CONTACT US",
   headline: "Schedule a visit",
   description: "For more information about our properties including all of the latest availabilities, please complete the following form; visit our office or contact us via the details below to schedule a meeting or a tour of our show homes & apartments. We look forward to meeting you and showing you what makes us different.",
-  contactImage: "/project/img-1.png", 
+  contactImage: "/project/project-one/contact-cover-img.jpeg", 
   companyName: "Swami India International Limited",
   phoneNumbers: ["+220 2082828", "+220 7990 998"], 
   email: "sales@swamiindiainternational.com",
@@ -276,7 +275,7 @@ export default function ProjectOnePage() {
         <GallerySection title="Gallery" images={galleryImages} />
         
         {/* Faq section */}
-        <FaqSection title="FREQUENTLY ASKED QUESTIONS" faqs={faqsData} />
+        <FaqSection title="Frequently Asked Questions" faqs={faqsData} />
 
         {/* Contact section */}
         <ContactSection {...contactData} />
