@@ -1,9 +1,10 @@
 import { sampleProperties } from '@/data/property-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { BedDouble, Bath, Ruler, MapPin, Phone, Mail } from 'lucide-react';
+import { BedDouble, Bath, Ruler, MapPin, Phone, Mail, Grid3x3 } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import SimilarProperties from '@/components/properties/SimilarProperties';
+import Link from 'next/link';
 
 // This is where to define for surrounding areas for future use.
 // Configuration for surrounding areas. This can be expanded easily.
@@ -69,22 +70,33 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
   const priceDisplay = currentProperty.listingType === 'For Rent'
     ? `${formatCurrency(currentProperty.price.amount, currentProperty.price.currency)} /mo`
     : formatCurrency(currentProperty.price.amount, currentProperty.price.currency);
+  
+  const allImages = currentProperty.media.gallery.flatMap(category => category.images);
 
   return (
     <div className="bg-gray-50">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
         {/* Image Gallery */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 rounded-xl overflow-hidden mb-8">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-2 rounded-xl overflow-hidden mb-8">
           <div className="relative h-96 lg:h-[500px] col-span-1">
             <Image src={currentProperty.media.coverImage} alt={currentProperty.title} layout="fill" objectFit="cover" />
           </div>
           <div className="hidden lg:grid grid-cols-2 gap-2">
-            {currentProperty.media.gallery.slice(0, 4).map((img, index) => (
+            {/* Use the flattened list of all gallery images */}
+            {allImages.slice(0, 4).map((img, index) => (
               <div key={index} className="relative h-full">
                 <Image src={img} alt={`${currentProperty.title} gallery image ${index + 1}`} layout="fill" objectFit="cover" />
               </div>
             ))}
           </div>
+          
+          {/* --- ADD THE "SHOW ALL PHOTOS" BUTTON --- */}
+          <Link href={`/properties/${currentProperty.slug}/gallery`}>
+            <div className="absolute bottom-4 right-4 bg-white text-black font-semibold px-4 py-2 rounded-lg shadow-md flex items-center gap-2 transition-transform hover:scale-105">
+              <Grid3x3 className="w-5 h-5"/>
+              Show all photos
+            </div>
+          </Link>
         </div>
 
         {/* Main Content */}
