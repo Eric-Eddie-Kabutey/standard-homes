@@ -1,4 +1,8 @@
-// /interfaces/property.ts
+// Define a new interface for a gallery category
+export interface GalleryCategory {
+  name: string;      // e.g., "Exterior", "Living Room"
+  images: string[];  // An array of image URLs for this category
+}
 
 export interface Property {
   _id: string; // Unique identifier from the database (e.g., MongoDB ObjectID)
@@ -45,14 +49,14 @@ export interface Property {
     garageSpaces?: number; // Number of garage spots
   };
 
-  description: string; // Full, detailed description (can support Markdown or HTML)
+  description: string[] | string; // Full, detailed description (can support Markdown or HTML)
   summary: string; // A short, one or two-sentence summary for preview cards.
 
   features: string[]; // An array of features: ['Air Conditioning', 'Swimming Pool', 'Balcony', 'Gated Community']
 
   media: {
     coverImage: string; // URL to the main image
-    gallery: string[]; // Array of URLs for all other images
+    gallery:  GalleryCategory[]; // gallery categorized  by property area
     virtualTourUrl?: string; // Optional URL for a 3D tour
     floorPlanUrl?: string; // Optional URL for a floor plan image
   };
