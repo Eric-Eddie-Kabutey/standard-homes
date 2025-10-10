@@ -8,9 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const PROPERTIES_PER_PAGE = 6;
 
-export default function PropertyListings({ properties }: { properties: Property[] }) {
-  // --- STATE MANAGEMENT ---
-
+export default function PropertyListings({ properties }: { properties: Property[] }) {  
   const [activeCountry, setActiveCountry] = useState("ALL");
   const [visibleCount, setVisibleCount] = useState(PROPERTIES_PER_PAGE);
   
@@ -101,8 +99,7 @@ export default function PropertyListings({ properties }: { properties: Property[
   const showMoreProperties = () => {
     setVisibleCount(prev => prev + PROPERTIES_PER_PAGE);
   };
-  
-  // --- RENDER ---
+    
   return (
     <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
       {/* Top Level Country Tabs */}
@@ -138,7 +135,7 @@ export default function PropertyListings({ properties }: { properties: Property[
 
       {/* Animated Property Grid */}
       <AnimatePresence>
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {filteredProperties.slice(0, visibleCount).map((property, index) => (
             <motion.div
               key={property._id}
