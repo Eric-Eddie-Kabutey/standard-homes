@@ -74,7 +74,7 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
   const allImages = currentProperty.media.gallery.flatMap(category => category.images);
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 pt-20 sm:pt-32 md:pt-44">
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
         {/* Image Gallery */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-2 rounded-xl overflow-hidden mb-8">
@@ -90,7 +90,7 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
             ))}
           </div>
           
-          {/* --- ADD THE "SHOW ALL PHOTOS" BUTTON --- */}
+          {/* --- "SHOW ALL PHOTOS" BUTTON Take you to gallery tour --- */}
           <Link href={`/properties/${currentProperty.slug}/gallery`}>
             <div className="absolute bottom-4 right-4 bg-white text-black font-semibold px-4 py-2 rounded-lg shadow-md flex items-center gap-2 transition-transform hover:scale-105">
               <Grid3x3 className="w-5 h-5"/>
@@ -103,7 +103,7 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Column: Details & Description */}
           <div className="lg:col-span-2">
-            <h1 className="text-4xl font-semibold text-gray-900">{currentProperty.title}</h1>
+            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">{currentProperty.title}</h1>
             <div className="mt-2 flex items-center">
               <MapPin className="w-5 h-5 text-gray-500 mr-2" />
               <p className="text-lg text-gray-600">{`${currentProperty.location.city}, ${currentProperty.location.country}`}</p>
