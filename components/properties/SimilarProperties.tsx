@@ -18,7 +18,7 @@ const SimilarProperties: React.FC<SimilarPropertiesProps> = ({ title, properties
       <h2 className="text-3xl font-normal text-gray-900 mb-8">
         {title}
       </h2>
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {properties.map((property) => (
           <PropertyCard key={property._id} property={property} />
         ))}
