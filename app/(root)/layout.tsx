@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <Navbar />
         {/* Pass className to Navbar */}
-        <main className="mt-28 md:mt-32">
+        <main className=" -z-10">
           {children}
         </main>
         <Footer />
