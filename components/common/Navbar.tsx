@@ -19,9 +19,17 @@ const Navbar: React.FC = () => {
   
   const [isNavVisible, setIsNavVisible] = useState(true);   
   const [isBannerVisible, setIsBannerVisible] = useState(true);   
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [ lastScrollY, setLastScrollY ] = useState(0);
+  
+   // --- Logic to hide navbar on specific pages ---
+  // We check if the current URL path ends with '/gallery'
+  const isGalleryPage = pathname.endsWith('/gallery');
   
   useEffect(() => {
+    // If we are on the gallery page, don't attach scroll listeners
+    if (isGalleryPage) return;
+
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const SCROLL_THRESHOLD = 100; 
@@ -47,10 +55,17 @@ const Navbar: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
+  }, [ lastScrollY, isGalleryPage ]);
+  
+   // --- Conditional return ---
+  // If it's a gallery page, the component renders nothing.
+  if (isGalleryPage) {
+    return null;
+  }
 
-  return (
-    // The main container is now 'fixed' to allow for smooth translation
+  // If not a gallery page, render the navbar as usual.
+
+  return (    
     <div className={cn(
         "fixed top-0 w-full z-50 shadow-md transition-transform duration-300 ease-in-out",
         // When isNavVisible is false, the entire block slides out of view
@@ -68,8 +83,7 @@ const Navbar: React.FC = () => {
       
       
       {/* Top site menu */}
-      <div className="bg-[#0a2f5c] text-white hidden md:block">
-        {/* Spacing reduction: slightly less padding and gap */}
+      <div className="bg-[#0a2f5c] text-white hidden md:block">        
         <nav className="flex items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 md:-py-1">
           <div className="ml-auto flex items-center gap-x-6">
               <Link href="/about" className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">                
@@ -109,7 +123,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Main site menu */}
-      <div className="bg-white py-2 md:py-0 "> {/* Reduced vertical padding */}
+      <div className="bg-white py-2 md:py-0 ">
         <div className="flex items-center justify-between max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 overflow-hidden">
           <Link href="/" className="flex items-center">            
             <Image width={160} height={240} src="/S GAMBIA.png" alt="desktop logo" className="mt-2 hidden md:block" />
@@ -123,7 +137,7 @@ const Navbar: React.FC = () => {
             <Link href="/guide" className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${ pathname === "/guide" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"}`}>
               Guide
             </Link>
-
+              {/* dropdown to explore more projects */}
             <div className="relative" onMouseEnter={() => setHoveredMenu("Properties")} onMouseLeave={() => setHoveredMenu(null)}>
               <Link href="#" className={`px-3 py-2 rounded-md text-base font-medium transition-colors text-gray-600 hover:text-gray-800`}>
                 <div className="flex items-center gap-2 text-base">
@@ -131,7 +145,7 @@ const Navbar: React.FC = () => {
                 </div>
               </Link>
               {hoveredMenu === "Properties" && (
-                <div className="absolute top-12 left-0 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
+                <div className="absolute top-12 left-0 z-50 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
                   <Link href="/project-one" className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground`}>Project One</Link>
                 </div>
               )}
