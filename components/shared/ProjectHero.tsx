@@ -12,7 +12,7 @@ export default function ProjectHero({
 	imgUrl,
 }: ProjectHeroPro) {
 	return (
-        <section className='py-4 md:py-20'>
+        <section className='pt-36 lg:pt-52 2xl:pt-56 pb-12'>
             <div className='flex flex-col items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4'>
 			<h1 className='mb-2 text-3xl md:text-4xl font-semibold text-[#1A3850]'>{title}</h1>
 			<p className='text-lg font-medium text-gray-800'>{description}</p>

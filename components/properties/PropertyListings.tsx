@@ -101,7 +101,7 @@ export default function PropertyListings({ properties }: { properties: Property[
   };
     
   return (
-    <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
+    <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 pt-36 lg:pt-52 2xl:pt-56 pb-12">
       {/* Top Level Country Tabs */}
       <div className="flex justify-center border-b lg:border-none border-gray-200 mb-8">
         <nav className="-mb-px flex space-x-8" aria-label="Tabs">

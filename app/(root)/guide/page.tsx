@@ -3,7 +3,7 @@ import GuideTabs from "@/components/guide/GuideTabs";
 export default function GuidePage() {
   return (
     <main className="bg-white">
-      <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto pt-36 lg:pt-52 2xl:pt-56 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight">
             Standard Homes Guides
@@ -13,7 +13,7 @@ export default function GuidePage() {
           </p>
         </div>
 
-        <div className="mt-16 md:mt-32">
+        <div className="mt-8 md:mt-24">
           <GuideTabs />
         </div>
       </div>
