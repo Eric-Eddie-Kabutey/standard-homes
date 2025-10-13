@@ -68,47 +68,46 @@ export default function Hero() {
     }
   }, [activeIndex]);
   return (
-    <section className="relative bg-blue-950 h-[60vh] md:h-[85vh] overflow-hidden">
-      <Carousel className="w-full h-screen overflow-hidden">
-        <CarouselContent
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateX(-${activeIndex * 100}%)`,
-            transition:
-              activeIndex >= slides.length
-                ? "none"
-                : "transform 0.7s ease-in-out",
-          }}
-        >
-          {extendedSlides.map((slide, index) => (
-            <CarouselItem key={index} className="w-screen h-screen relative">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                objectFit="cover"
-                className="absolute"
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-      {/* Overlay Content */}
-      <div className="absolute  sm:mt-2 top-[46%] left-[4.5%] md:left-[7%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 md:w-[70%] py-[6%] px-[2%] rounded-xl">
-        <h1 className="text-2xl md:text-5xl  mb-4">
-          {slides[activeIndex % slides.length].title}
-        </h1>
+		<section className='relative bg-blue-950 h-[70vh] md:h-[85vh] lg:h-[90vh] overflow-hidden pt-[115px] lg:pt-[167px]'>
+			<Carousel className='w-full h-screen overflow-hidden'>
+				<CarouselContent
+					className='flex transition-transform duration-700 ease-in-out'
+					style={{
+						transform: `translateX(-${activeIndex * 100}%)`,
+						transition:
+							activeIndex >= slides.length
+								? 'none'
+								: 'transform 0.7s ease-in-out',
+					}}>
+					{extendedSlides.map((slide, index) => (
+						<CarouselItem key={index} className='w-screen h-screen relative'>
+							<Image
+								src={slide.image}
+								alt={slide.title}
+								fill
+								objectFit='cover'
+								className='absolute'
+							/>
+						</CarouselItem>
+					))}
+				</CarouselContent>
+			</Carousel>
+			{/* Overlay Content */}
+			<div className='absolute  sm:mt-2 top-[60%] lg:top-[65%] 2xl:top-[60%] left-[4.5%] md:left-[7%] 2xl:left-[15%] transform -translate-y-1/2 text-left text-white bg-gradient-to-tr from-[#c59034] z-10 md:w-[70%] lg:md:w-[65%] py-[6%] lg:py-[4%] 2xl:py-[6%] px-[2%] rounded-xl'>
+				<h1 className='text-2xl md:text-5xl  mb-4'>
+					{slides[activeIndex % slides.length].title}
+				</h1>
 
-        <p className="text-lg sm:text-xl mb-6">
-          {slides[activeIndex % slides.length].description}
-        </p>
+				<p className='text-lg sm:text-xl mb-6'>
+					{slides[activeIndex % slides.length].description}
+				</p>
 
-        <Link href={`${slides[activeIndex % slides.length].link}`}>
-          <Button className="mt-6  text-white px-6 py-3 text-lg">
-            {slides[activeIndex % slides.length].button}
-          </Button>
-        </Link>
-      </div>
-    </section>
-  );
+				<Link href={`${slides[activeIndex % slides.length].link}`}>
+					<Button className='mt-6  text-white px-6 py-3 text-lg'>
+						{slides[activeIndex % slides.length].button}
+					</Button>
+				</Link>
+			</div>
+		</section>
+	)
 }
