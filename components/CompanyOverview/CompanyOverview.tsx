@@ -26,20 +26,22 @@ const Overviews = [
 
 const CompanyOverview = () => {
   return (
-    <div className="flex justify-center items-center  bg-white">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-16 mx-[4%] md:mx-[8%] w-full">
-        {Overviews?.map((overview, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-4 bg-white px-3 py-7 cursor-pointer rounded-lg shadow-md hover:shadow-lg"
-          >
-            {overview.icon}
-            <h2 className="text-2xl mb-6 text-[#344F64]">{overview.title}</h2>
-            <p className=" font-semibold text-gray-700">
-              {overview.body}
-            </p>
-          </div>
-        ))}
+    <div className="flex justify-center items-center  bg-white py-12">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-16">
+          {Overviews?.map((overview, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-4 bg-white px-3 py-7 cursor-pointer rounded-lg shadow-md hover:shadow-lg"
+            >
+              {overview.icon}
+              <h2 className="text-2xl mb-6 text-[#344F64]">{overview.title}</h2>
+              <p className=" font-semibold text-gray-700">
+                {overview.body}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

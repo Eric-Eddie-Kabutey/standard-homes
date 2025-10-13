@@ -19,7 +19,8 @@ const images = [
 
 const AboutTrustedHomeBuilders = () => {
   return (
-      <div className="py-8 md:mx-[8.7%]">
+    <div className="py-12">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
         <Card className="p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {images?.map((image) => (
@@ -34,6 +35,7 @@ const AboutTrustedHomeBuilders = () => {
             ))}
           </div>
         </Card>
+      </div>
       </div>
   );
 };

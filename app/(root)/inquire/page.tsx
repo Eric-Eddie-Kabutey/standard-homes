@@ -34,7 +34,7 @@ const ContactUs = () => {
   return (
     <React.Fragment>
       <NewsBanner title="Contact" />
-      <div className="flex flex-col md:flex-row max-w-screen-lg mx-auto px-4 gap-10 py-8">
+      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 flex flex-col md:flex-row  gap-10 py-8">
         {/* Left Column: Map & Contact Details */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
           {/* Embedded Google Map */}
