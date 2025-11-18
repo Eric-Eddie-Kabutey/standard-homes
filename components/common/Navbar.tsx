@@ -1,199 +1,359 @@
 "use client";
 
-import React, { useState, useEffect } from "react"; 
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import MobileMenue from "./MobileMenue";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import {
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import { Building, HandCoins, Droplets, Globe, ChevronDown, ChevronUp } from "lucide-react";
-import AdsBanner from "../Advertisements/AdsBanner";
 
+import {
+  ChevronDown,
+  Menu,
+  Phone,
+  Building,
+  HandCoins,
+  Droplets,
+  Globe,
+  Info,
+  Briefcase,
+  LucideProps,
+} from "lucide-react";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+
+interface MenuItem {
+  name: string;
+  href: string;
+  hasDropdown?: boolean;
+  dropdownItems?: MenuItem[];
+  icon?: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
+}
+
+/* -------------------------
+   Navigation Configuration
+   -------------------------*/
+const navItems: MenuItem[] = [
+  { name: "Property Search", href: "/properties" },
+  { name: "Guide", href: "/guide" },
+  {
+    name: "Service",
+    href: "#",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "GENERAL CONSTRUCTION", href: "/general-construction" },
+      { name: "SALES & SUPPLY", href: "/sales-and-supply" },
+      { name: "WATER", href: "/water" },
+    ],
+  },
+  { name: "Insights", href: "/news" },
+  {
+    name: "Pages",
+    href: "#",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "About", href: "/about", icon: Info },
+      { name: "Careers", href: "/careers", icon: Briefcase },
+      { name: "Language", href: "/language", icon: Globe },
+    ],
+  },
+];
+
+const mobileNavServices: MenuItem[] = [
+  { name: "General Construction", href: "/general-construction", icon: Building },
+  { name: "Sales & Supply", href: "/sales-and-supply", icon: HandCoins },
+  { name: "Water Solutions", href: "/water", icon: Droplets },
+];
+
+/* -------------------------
+   Navbar Component
+   -------------------------*/
 const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  
-  const [isNavVisible, setIsNavVisible] = useState(true);   
-  const [isBannerVisible, setIsBannerVisible] = useState(true);   
-  const [ lastScrollY, setLastScrollY ] = useState(0);
-  
-   // --- Logic to hide navbar on specific pages ---
-  // We check if the current URL path ends with '/gallery'
-  const isGalleryPage = pathname.endsWith('/gallery');
-  
   useEffect(() => {
-    // If we are on the gallery page, don't attach scroll listeners
-    if (isGalleryPage) return;
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: -18, scale: 0.99 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  };
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const SCROLL_THRESHOLD = 100; 
-      
-      if (currentScrollY <= 10) {
-        setIsNavVisible(true);
-        setIsBannerVisible(true);
-      } else if (currentScrollY > lastScrollY) {        
-        setIsNavVisible(false);
-      } else {        
-        setIsNavVisible(true);
-      }
-            
-      if (currentScrollY > SCROLL_THRESHOLD) {
-          setIsBannerVisible(false);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
+  return (
+    <motion.header
+      initial="hidden"
+      animate="visible"
+      variants={fadeInVariants}
+      className={cn(
+        "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
+        isScrolled ? "py-2 backdrop-blur-md" : "py-4"
+      )}
+      style={{
+        background: isScrolled
+          ? "linear-gradient(to bottom, rgba(30,27,75,0.86), rgba(30,27,75,0.72))"
+          : "transparent",
+      }}
+    >
+      <div
+        className={cn(
+          "relative mx-auto flex max-w-[1300px] items-center justify-between rounded-full border border-slate-700/50 p-2 shadow-2xl transition-all duration-300",
+          isScrolled ? "h-16" : "h-20",
+          "bg-dark-navy/80 backdrop-blur-xl",
+          "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-indigo-950 before:via-slate-900 before:to-emerald-950 before:opacity-50 before:mix-blend-lighten"
+        )}
+      >
+        {/* Logo Section */}
+        <Link
+          href="/"
+          className="relative z-10 flex items-center gap-2 px-4 py-2 transition-all duration-300 group"
+        >
+          {/* Desktop Logo Image */}
+          <Image 
+            src="/standard w1.png"
+            alt="Standard Homes Gambia"
+            width={200}
+            height={60}
+            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            priority
+          />
+          
+          {/* Vertical Divider */}
+          <div className="ml-4 h-full w-[1px] bg-slate-600/50 absolute left-full inset-y-0 my-auto hidden lg:block" />
+        </Link>
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [ lastScrollY, isGalleryPage ]);
-  
-   // --- Conditional return ---
-  // If it's a gallery page, the component renders nothing.
-  if (isGalleryPage) {
-    return null;
-  }
+        {/* Desktop Navigation */}
+        <nav className="relative z-10 hidden flex-grow justify-center lg:flex">
+          <ul className="flex items-center space-x-8">
+            {navItems.map((item) => (
+              <li
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
+                onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
+              >
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "relative block py-2 text-lg font-medium text-slate-300 transition-colors duration-200 hover:text-white",
+                    pathname.startsWith(item.href) && item.href !== "#" && "text-white"
+                  )}
+                >
+                  <span className="inline-flex items-center gap-2">
+                    {item.name}
+                    {item.hasDropdown && (
+                      <ChevronDown
+                        className={cn(
+                          "ml-1 h-4 w-4 inline-block transform transition-transform duration-200",
+                          activeDropdown === item.name && "rotate-180"
+                        )}
+                      />
+                    )}
+                  </span>
 
-  // If not a gallery page, render the navbar as usual.
+                  {/* Underline effect */}
+                  <span
+                    className={cn(
+                      "absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-gradient-to-r from-indigo-400 to-emerald-400 transition-all duration-300 ease-out",
+                      (pathname.startsWith(item.href) && item.href !== "#" || activeDropdown === item.name) ? "w-full" : "w-0"
+                    )}
+                  />
+                </Link>
 
-  return (    
-    <div className={cn(
-        "fixed top-0 w-full z-50 shadow-md transition-transform duration-300 ease-in-out",
-        // When isNavVisible is false, the entire block slides out of view
-        isNavVisible ? "translate-y-0" : "-translate-y-full"
-    )}>
-      
-      {/* Site Banner with its own height transition */}
-      <div className={cn(
-          "transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden",
-          // This allows the banner to hide even when the main nav is visible on scroll-up
-          isBannerVisible ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-      )}>
-        <AdsBanner />
-      </div>
-      
-      
-      {/* Top site menu */}
-      <div className="bg-[#0a2f5c] text-white hidden md:block">        
-        <nav className="flex items-center max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 md:-py-1">
-          <div className="ml-auto flex items-center gap-x-6">
-              <Link href="/about" className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">                
-                <span>About</span>
-              </Link>
-            <div
-              className="relative"
-              onMouseEnter={() => setHoveredMenu("Services")}
-              onMouseLeave={() => setHoveredMenu(null)}
-            >
-              <Link href="#" className={`px-3 rounded-md text-sm font-medium transition-colors hover:text-gray-300`}>
-                <div className="flex items-center gap-x-2">
-                  Service {hoveredMenu === "Services" ? <ChevronUp className="w-4 h-auto" /> : <ChevronDown className="w-4 h-auto" />}
-                </div>
-              </Link>
-              {hoveredMenu === "Services" && (
-                <div className="absolute top-12 left-0 z-10 w-64 bg-primary shadow-lg rounded-md border border-gray-200">
-                  <Link href="/general-construction" className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground`}>
-                    <div className="flex gap-4 items-center"><Building className="w-6 h-6 text-slate-100" /><span>GENERAL CONSTRUCTION</span></div>
-                  </Link>
-                  <Link href="/sales-and-supply" className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground`}>
-                     <div className="flex gap-4 items-center"><HandCoins className="w-6 h-6 text-slate-100" /><span>SALES & SUPPLY</span></div>
-                  </Link>
-                  <Link href="/water" className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground`}>
-                    <div className="flex gap-4 items-center"><Droplets className="w-6 h-6 text-slate-100" /><span>WATER</span></div>
-                  </Link>
-                </div>
-              )}
-            </div>                           
-              <Link href="/careers" className="text-base hover:text-gray-300 transition-colors">Careers</Link>
-              <button className="flex items-center gap-2 text-base hover:text-gray-300 transition-colors">
-                <Globe className="h-5 w-5" />
-                <span>Language</span>
-              </button>
-          </div>
+                {/* Dropdown (desktop) */}
+                {item.hasDropdown && activeDropdown === item.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.14 }}
+                    className="absolute left-1/2 top-full mt-1 -translate-x-1/2 w-60 rounded-lg border border-slate-700/40 bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 p-2 shadow-xl backdrop-blur-md z-[9999] pointer-events-auto"
+                    style={{ marginTop: "-1px" }}
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    {item.dropdownItems?.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.name}
+                        href={dropdownItem.href}
+                        className={cn(
+                          "flex items-center gap-3 px-4 py-3 rounded-md text-slate-300 transition-colors duration-150 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-emerald-600 hover:text-white",
+                          pathname === dropdownItem.href && "bg-gradient-to-r from-indigo-600 to-emerald-600 text-white"
+                        )}
+                      >
+                        {dropdownItem.icon && <dropdownItem.icon className="h-5 w-5 opacity-90" />}
+                        <span>{dropdownItem.name}</span>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </li>
+            ))}
+          </ul>
         </nav>
-      </div>
 
-      {/* Main site menu */}
-      <div className="bg-white py-2 md:py-0 ">
-        <div className="flex items-center justify-between max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 overflow-hidden">
-          <Link href="/" className="flex items-center">            
-            <Image width={160} height={240} src="/S GAMBIA.png" alt="desktop logo" className="mt-2 hidden md:block" />
-            <Image width={120} height={160} src="/STANDARD MAIN.png" alt="mobile logo" className="mt-2 block md:hidden" />
+        {/* Phone Number & CTA */}
+        <div className="relative z-10 flex items-center gap-4 pr-2">
+          <a
+            href="tel:+2203012345"
+            className="hidden items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-white lg:flex"
+          >
+            <Phone className="h-5 w-5" />
+            <span className="font-medium">Call Us: +220 301 2345</span>
+          </a>
+
+          <Link
+            href="/inquire"
+            className="relative overflow-hidden rounded-full bg-emerald-500 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.03] hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-dark-navy pulsing-button"
+          >
+            Get a Free Evaluation
+            <span className="absolute inset-0 size-full animate-pulse rounded-full bg-emerald-400 opacity-0 mix-blend-screen" />
           </Link>
-          
-          <div className="hidden md:flex items-center space-x-2 relative">
-            <Link href="/properties" className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${ pathname === "/properties" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"}`}>
-              Property Search
-            </Link>
-            <Link href="/guide" className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${ pathname === "/guide" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"}`}>
-              Guide
-            </Link>
-              {/* dropdown to explore more projects */}
-            <div className="relative" onMouseEnter={() => setHoveredMenu("Properties")} onMouseLeave={() => setHoveredMenu(null)}>
-              <Link href="#" className={`px-3 py-2 rounded-md text-base font-medium transition-colors text-gray-600 hover:text-gray-800`}>
-                <div className="flex items-center gap-2 text-base">
-                  Our Projects {hoveredMenu === "Properties" ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </div>
-              </Link>
-              {hoveredMenu === "Properties" && (
-                <div className="absolute top-12 left-0 z-50 mt-1 w-48 bg-primary shadow-lg rounded-md border border-gray-200">
-                  <Link href="/project-one" className={`block px-4 py-2 text-sm text-white hover:bg-primary-foreground`}>Project One</Link>
-                </div>
-              )}
-            </div>
+        </div>
 
-            <Link href="/news" className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${ pathname === "/news" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"}`}>
-              Insights
-            </Link>
-          
-            <Link href="/inquire" className={`px-3 py-2 rounded-md text-base font-medium transition-colors border-yellow-600 border ${ pathname === "/inquire" ? "bg-primary text-white" : "text-gray-600 hover:bg-primary hover:text-gray-800"}`}>
-              Get a free evaluation
-            </Link>
-          </div>
-
-          <div className="md:hidden flex items-center gap-3">
-            <Link href="/inquire" className="bg-primary text-white px-4 py-2 shadow-lg flex items-center justify-center">Inquire</Link>
-            <MobileMenue />
-          </div>
+        {/* Mobile Menu Trigger */}
+        <div className="lg:hidden">
+          <MobileNavbar />
         </div>
       </div>
-    </div>
+
+      {/* Subtle bottom gradient border */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-indigo-500 to-emerald-500 opacity-50" />
+    </motion.header>
+  );
+};
+
+/* -------------------------
+   Mobile Navbar Component
+   -------------------------*/
+const MobileNavbar: React.FC = () => {
+  const pathname = usePathname();
+
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button size="icon" variant="ghost" className="text-white hover:bg-slate-800">
+          <Menu className="h-6 w-6" />
+        </Button>
+      </SheetTrigger>
+
+      <SheetContent side="right" className="w-full max-w-sm border-l-slate-700 bg-dark-navy p-0">
+        <div className="flex h-full flex-col overflow-y-auto pt-6">
+          
+          {/* Mobile Logo Section */}
+          <div className="mb-8 flex items-center justify-center gap-2 border-b border-slate-700 pb-6">
+             <Link href="/">
+               <Image 
+                  src="/standard w1.png"
+                  alt="Standard Homes Gambia"
+                  width={180}
+                  height={50}
+                  className="h-auto w-auto max-h-12 object-contain"
+                />
+             </Link>
+          </div>
+
+          {/* Mobile Nav Links */}
+          <nav className="flex-grow">
+            <Accordion type="single" collapsible className="w-full">
+              {navItems.map((item) => (
+                <AccordionItem key={item.name} value={`item-${item.name.toLowerCase().replace(/\s/g, "-")}`} className="border-b border-slate-800">
+                  {item.hasDropdown ? (
+                    <>
+                      <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-slate-200 hover:no-underline hover:bg-slate-800">
+                        {item.name}
+                      </AccordionTrigger>
+                      <AccordionContent className="bg-slate-900 pb-0">
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className={cn(
+                              "flex items-center gap-4 px-10 py-3 text-base text-slate-300 transition-colors duration-200 hover:bg-slate-800 hover:text-white",
+                              pathname === dropdownItem.href && "bg-gradient-to-r from-indigo-600 to-emerald-600 text-white"
+                            )}
+                          >
+                            {dropdownItem.icon && <dropdownItem.icon className="h-5 w-5" />}
+                            <span>{dropdownItem.name}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "block w-full px-6 py-4 text-left text-lg font-medium text-slate-200 transition-colors duration-200 hover:bg-slate-800 hover:text-white",
+                        pathname === item.href && "bg-gradient-to-r from-indigo-600 to-emerald-600 text-white"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </AccordionItem>
+              ))}
+
+              {/* Services Accordion for Mobile */}
+              <AccordionItem value="item-services" className="border-b border-slate-800">
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-medium text-slate-200 hover:no-underline hover:bg-slate-800">
+                  Our Services
+                </AccordionTrigger>
+                <AccordionContent className="bg-slate-900 pb-0">
+                  {mobileNavServices.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className={cn(
+                        "flex items-center gap-4 px-10 py-3 text-base text-slate-300 transition-colors duration-200 hover:bg-slate-800 hover:text-white",
+                        pathname === service.href && "bg-gradient-to-r from-indigo-600 to-emerald-600 text-white"
+                      )}
+                    >
+                      {service.icon && <service.icon className="h-5 w-5" />}
+                      <span>{service.name}</span>
+                    </Link>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </nav>
+
+          {/* Mobile CTA */}
+          <div className="p-6">
+            <Link
+              href="/inquire"
+              className="block w-full rounded-full bg-emerald-500 py-3 text-center text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-emerald-600"
+            >
+              Get a Free Evaluation
+            </Link>
+            <a
+              href="tel:+2203012345"
+              className="mt-4 flex items-center justify-center gap-2 text-slate-400 transition-colors duration-300 hover:text-white"
+            >
+              <Phone className="h-5 w-5" />
+              <span className="font-medium">Call Us: +220 301 2345</span>
+            </a>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 
 export default Navbar;
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

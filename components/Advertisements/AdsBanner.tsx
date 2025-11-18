@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
@@ -21,6 +21,7 @@ const AdsBanner = () => {
 					</p>
 				</DialogTrigger>
 				<DialogContent className='bg-[#7FB5E3] p-0'>
+					    <DialogTitle className="sr-only">Advertisement Banner</DialogTitle>
 					<div className='aspect-video'>
 						<video
 							autoPlay

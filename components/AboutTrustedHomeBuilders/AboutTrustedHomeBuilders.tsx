@@ -23,8 +23,8 @@ const AboutTrustedHomeBuilders = () => {
       <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4">
         <Card className="p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {images?.map((image) => (
-              <div key={image.name} className="relative h-60 w-full">
+            {images?.map((image, index) => (
+              <div key={index} className="relative h-60 w-full">
                 <Image
                   src={image.img}
                   alt={image.name}
