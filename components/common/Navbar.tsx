@@ -114,34 +114,36 @@ const Navbar: React.FC = () => {
     >
       <div
         className={cn(
-          "relative mx-auto flex w-full max-w-none items-center justify-between rounded-none lg:rounded-full border border-slate-700/50 p-2 shadow-2xl transition-all duration-300",
-          isScrolled ? "h-16" : "h-20",
+          "relative mx-auto flex max-w-[1400px] items-center justify-between rounded-full border border-slate-700/50 p-2 shadow-2xl transition-all duration-300",
+          // Responsive height: shorter on smaller screens, taller on big screens or when transparent
+          isScrolled ? "h-16" : "h-16 xl:h-20",
           "bg-dark-navy/80 backdrop-blur-xl",
-          "before:absolute before:inset-0 before:rounded-none lg:rounded-full  before:bg-gradient-to-br before:from-indigo-950 before:via-slate-900 before:to-emerald-950 before:opacity-50 before:mix-blend-lighten"
+          "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-indigo-950 before:via-slate-900 before:to-emerald-950 before:opacity-50 before:mix-blend-lighten"
         )}
       >
         {/* Logo Section */}
         <Link
           href="/"
-          className="relative z-10 flex items-center gap-2 px-4 py-2 transition-all duration-300 group"
+          className="relative z-10 flex shrink-0 items-center gap-2 px-3 py-2 transition-all duration-300 group"
         >
-          {/* Desktop Logo Image */}
-          <Image 
-            src="/standard w1.png"
-            alt="Standard Homes Gambia"
-            width={200}
-            height={60}
-            className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-            priority
-          />
+          {/* Desktop Logo Image - Responsive sizing */}
+          <div className="relative h-8 w-32 xl:h-10 xl:w-[200px]">
+            <Image 
+                src="/standard w1.png"
+                alt="Standard Homes Gambia"
+                fill
+                className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
+                priority
+            />
+          </div>
           
           {/* Vertical Divider */}
-          <div className="ml-4 h-full w-[1px] bg-slate-600/50 absolute left-full inset-y-0 my-auto hidden lg:block" />
+          <div className="ml-4 h-full w-[1px] bg-slate-600/50 absolute left-full inset-y-0 my-auto hidden xl:block" />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="relative z-10 hidden flex-grow justify-center lg:flex">
-          <ul className="flex items-center space-x-8">
+          <ul className="flex items-center space-x-5 xl:space-x-8">
             {navItems.map((item) => (
               <li
                 key={item.name}
@@ -152,16 +154,17 @@ const Navbar: React.FC = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative block py-2 text-lg font-medium text-slate-300 transition-colors duration-200 hover:text-white",
+                    // Font size: text-sm on laptop (lg), text-lg on desktop (xl)
+                    "relative block py-2 text-sm font-medium xl:text-lg text-slate-300 transition-colors duration-200 hover:text-white",
                     pathname.startsWith(item.href) && item.href !== "#" && "text-white"
                   )}
                 >
-                  <span className="inline-flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1">
                     {item.name}
                     {item.hasDropdown && (
                       <ChevronDown
                         className={cn(
-                          "ml-1 h-4 w-4 inline-block transform transition-transform duration-200",
+                          "h-3 w-3 xl:h-4 xl:w-4 inline-block transform transition-transform duration-200",
                           activeDropdown === item.name && "rotate-180"
                         )}
                       />
@@ -184,7 +187,7 @@ const Navbar: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.14 }}
-                    className="absolute left-1/2 top-full mt-1 -translate-x-1/2 w-60 rounded-lg border border-slate-700/40 bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 p-2 shadow-xl backdrop-blur-md z-[9999] pointer-events-auto"
+                    className="absolute left-1/2 top-full mt-1 -translate-x-1/2 w-56 xl:w-60 rounded-lg border border-slate-700/40 bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 p-2 shadow-xl backdrop-blur-md z-[9999] pointer-events-auto"
                     style={{ marginTop: "-1px" }}
                     onMouseEnter={() => setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
@@ -194,11 +197,11 @@ const Navbar: React.FC = () => {
                         key={dropdownItem.name}
                         href={dropdownItem.href}
                         className={cn(
-                          "flex items-center gap-3 px-4 py-3 rounded-md text-slate-300 transition-colors duration-150 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-emerald-600 hover:text-white",
+                          "flex items-center gap-3 px-4 py-3 rounded-md text-sm xl:text-base text-slate-300 transition-colors duration-150 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-emerald-600 hover:text-white",
                           pathname === dropdownItem.href && "bg-gradient-to-r from-indigo-600 to-emerald-600 text-white"
                         )}
                       >
-                        {dropdownItem.icon && <dropdownItem.icon className="h-5 w-5 opacity-90" />}
+                        {dropdownItem.icon && <dropdownItem.icon className="h-4 w-4 opacity-90" />}
                         <span>{dropdownItem.name}</span>
                       </Link>
                     ))}
@@ -210,18 +213,20 @@ const Navbar: React.FC = () => {
         </nav>
 
         {/* Phone Number & CTA */}
-        <div className="relative z-10 flex items-center gap-4 pr-2">
+        <div className="relative z-10 flex shrink-0 items-center gap-3 pr-2">
+          {/* Phone: Hidden on small laptops (lg), Visible on large desktops (xl) */}
           <a
             href="tel:+2203012345"
-            className="hidden items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-white lg:flex"
+            className="hidden xl:flex items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-white"
           >
             <Phone className="h-5 w-5" />
-            <span className="font-medium">Call Us: +220 301 2345</span>
+            <span className="font-medium whitespace-nowrap">Call Us: +220 301 2345</span>
           </a>
 
+          {/* CTA Button: Adjusted padding and text size for responsiveness */}
           <Link
             href="/inquire"
-            className="relative overflow-hidden rounded-full bg-emerald-500 px-6 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.03] hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-dark-navy pulsing-button"
+            className="relative overflow-hidden rounded-full bg-emerald-500 px-4 py-2 text-sm xl:px-6 xl:py-3 xl:text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.03] hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-dark-navy pulsing-button whitespace-nowrap"
           >
             Get a Free Evaluation
             <span className="absolute inset-0 size-full animate-pulse rounded-full bg-emerald-400 opacity-0 mix-blend-screen" />
@@ -241,7 +246,7 @@ const Navbar: React.FC = () => {
 };
 
 /* -------------------------
-   Mobile Navbar Component
+   Mobile Navbar Component (Unchanged)
    -------------------------*/
 const MobileNavbar: React.FC = () => {
   const pathname = usePathname();

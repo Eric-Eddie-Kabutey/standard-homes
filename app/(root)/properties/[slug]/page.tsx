@@ -6,9 +6,6 @@ import { formatCurrency } from '@/lib/utils';
 import SimilarProperties from '@/components/properties/SimilarProperties';
 import Link from 'next/link';
 
-// This is where to define for surrounding areas for future use.
-// Configuration for surrounding areas. This can be expanded easily.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const surroundingAreas: { [key: string]: string[] } = {
   "Coastal Corridor": ["Fajara", "Kololi", "Bijilo", "Brufut", "Kotu"],
   "Dakar Peninsula": ["Dakar", "Almadies", "Plateau"],
@@ -29,7 +26,6 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
     notFound();
   }     
 
-  // Get all other properties, excluding the current one.
   const otherProperties = allProperties.filter(p => p._id !== currentProperty._id);  
 
    // Layer 1: Properties in the EXACT same city/neighborhood.

@@ -4,6 +4,7 @@ import HomeBuilderSection from "../../components/HomeBuilderSection/HomeBuilderS
 import OurProperties from "../../components/OurProperties/OurProperties.tsx";
 import NewsAndMedia from "../../components/NewsAndMedia/NewsAndMeida";
 import PropertyOptions from "../../components/PropertyOptions/PropertyOptions.jsx";
+import WhatMakesUsDifferent from "@/components/OurProperties/WhatMakesUsDifferent";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <PropertyOptions />
       <HomeBuilderSection />
       <OurProperties />
+      <WhatMakesUsDifferent />
       <NewsAndMedia />
     </>
   );
