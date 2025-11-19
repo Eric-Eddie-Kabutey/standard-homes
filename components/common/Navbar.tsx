@@ -114,10 +114,10 @@ const Navbar: React.FC = () => {
     >
       <div
         className={cn(
-          "relative mx-auto flex max-w-[1300px] items-center justify-between rounded-full border border-slate-700/50 p-2 shadow-2xl transition-all duration-300",
+          "relative mx-auto flex w-full max-w-none items-center justify-between rounded-none lg:rounded-full border border-slate-700/50 p-2 shadow-2xl transition-all duration-300",
           isScrolled ? "h-16" : "h-20",
           "bg-dark-navy/80 backdrop-blur-xl",
-          "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-indigo-950 before:via-slate-900 before:to-emerald-950 before:opacity-50 before:mix-blend-lighten"
+          "before:absolute before:inset-0 before:rounded-none lg:rounded-full  before:bg-gradient-to-br before:from-indigo-950 before:via-slate-900 before:to-emerald-950 before:opacity-50 before:mix-blend-lighten"
         )}
       >
         {/* Logo Section */}
