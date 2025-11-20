@@ -1,7 +1,7 @@
 import { sampleProperties } from '@/data/property-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { BedDouble, Bath, Ruler, MapPin, Phone, Mail, Grid3x3 } from 'lucide-react';
+import { BedDouble, Bath, Ruler, MapPin, Phone, Mail, Grid3x3, CheckCircle2, ArrowRight, Share2, Heart } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import SimilarProperties from '@/components/properties/SimilarProperties';
 import Link from 'next/link';
@@ -11,7 +11,6 @@ const surroundingAreas: { [key: string]: string[] } = {
   "Dakar Peninsula": ["Dakar", "Almadies", "Plateau"],
   "Petite Côte": ["Saly Portudal", "Thiès Region"],
 };
-
 
 interface currentPropertyDetailPageProp {
   params: Promise<{slug: string}>
@@ -31,37 +30,27 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
    // Layer 1: Properties in the EXACT same city/neighborhood.
   const propertiesInSameCity = otherProperties.filter(
     p => p.location.city === currentProperty.location.city
-  ).slice(0, 3); // Limit to 3 results for this section
+  ).slice(0, 3); 
   
-  // Rule 2: Find properties in the same country but NOT in the same city.
-  // const propertiesInSameCountry = otherProperties.filter(
-  //   p => p.location.country === currentProperty.location.country &&
-  //        p.location.city !== currentProperty.location.city
-  // );
-
-    // Layer 3: Properties in surrounding areas.
-  // Find which group the current city belongs to.
+  // Layer 3: Properties in surrounding areas.
   const currentGroupKey = Object.keys(surroundingAreas).find(key => 
     surroundingAreas[key].includes(currentProperty.location.city)
   );
 
-    // Get the list of other cities in the same group.
   const surroundingCities = currentGroupKey 
     ? surroundingAreas[currentGroupKey].filter(city => city !== currentProperty.location.city) 
     : [];
 
-   // Filter properties that are in one of the surrounding cities.
   const propertiesInSurroundingAreas = otherProperties.filter(
     p => surroundingCities.includes(p.location.city)
-  ).slice(0, 3); // Limit to 3 results
+  ).slice(0, 3);
 
-   // Layer 2: Properties in the same country (but not in the same city or surrounding areas to avoid duplicates).
+   // Layer 2: Properties in the same country.
   const excludedCities = [currentProperty.location.city, ...surroundingCities];
   const propertiesInSameCountry = otherProperties.filter(
     p => p.location.country === currentProperty.location.country &&
          !excludedCities.includes(p.location.city)
-  ).slice(0, 3); // Limit to 3 results
-  // --- END OF SIMILAR PROPERTIES LOGIC ---
+  ).slice(0, 3); 
   
   const priceDisplay = currentProperty.listingType === 'For Rent'
     ? `${formatCurrency(currentProperty.price.amount, currentProperty.price.currency)} /mo`
@@ -70,114 +59,230 @@ export default async function currentPropertyDetailPage({ params }: currentPrope
   const allImages = currentProperty.media.gallery.flatMap(category => category.images);
 
   return (
-    <div className="bg-gray-50 pt-20 sm:pt-32 md:pt-44">
-      <div className="max-w-[1230px] 2xl:max-w-[1390px] mx-auto px-4 py-12">
-        {/* Image Gallery */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-2 rounded-xl overflow-hidden mb-8">
-          <div className="relative h-96 lg:h-[500px] col-span-1">
-            <Image src={currentProperty.media.coverImage} alt={currentProperty.title} layout="fill" objectFit="cover" />
+    <main className="bg-[#F8F7F4] min-h-screen pt-32 pb-20">
+      
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* --- HEADER SECTION --- */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#a3e635] bg-white text-[#16a34a] mb-4 shadow-sm w-fit">
+                <span className="text-[10px] font-bold uppercase tracking-widest">
+                  {currentProperty.listingType}
+                </span>
+             </div>
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight">
+               {currentProperty.title}
+             </h1>
+             <div className="flex items-center gap-2 mt-4 text-slate-500 font-medium text-lg">
+                <MapPin className="w-5 h-5 text-[#a3e635]" />
+                {`${currentProperty.location.city}, ${currentProperty.location.country}`}
+             </div>
           </div>
-          <div className="hidden lg:grid grid-cols-2 gap-2">
-            {/* Use the flattened list of all gallery images */}
-            {allImages.slice(0, 4).map((img, index) => (
-              <div key={index} className="relative h-full">
-                <Image src={img} alt={`${currentProperty.title} gallery image ${index + 1}`} layout="fill" objectFit="cover" />
-              </div>
-            ))}
+
+          <div className="flex gap-3">
+             <button className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#a3e635] hover:text-[#16a34a] transition-colors shadow-sm">
+                <Share2 className="w-5 h-5" />
+             </button>
+             <button className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-[#a3e635] hover:text-[#16a34a] transition-colors shadow-sm">
+                <Heart className="w-5 h-5" />
+             </button>
+          </div>
+        </div>
+
+
+        {/* --- GALLERY SECTION --- */}
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 h-[500px] lg:h-[600px] mb-12">
+          {/* Main Large Image */}
+          <div className="lg:col-span-8 relative h-full rounded-[2.5rem] overflow-hidden shadow-sm group">
+            <Image 
+              src={currentProperty.media.coverImage} 
+              alt={currentProperty.title} 
+              fill 
+              className="object-cover transition-transform duration-700 group-hover:scale-105" 
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+
+          {/* Side Grid */}
+          <div className="hidden lg:grid lg:col-span-4 grid-rows-2 gap-4 h-full">
+             {allImages.slice(0, 2).map((img, index) => (
+               <div key={index} className="relative w-full h-full rounded-[2rem] overflow-hidden group">
+                  <Image 
+                    src={img} 
+                    alt={`Gallery ${index}`} 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+               </div>
+             ))}
           </div>
           
-          {/* --- "SHOW ALL PHOTOS" BUTTON Take you to gallery tour --- */}
-          <Link href={`/properties/${currentProperty.slug}/gallery`}>
-            <div className="absolute bottom-4 right-4 bg-white text-black font-semibold px-4 py-2 rounded-lg shadow-md flex items-center gap-2 transition-transform hover:scale-105">
+          {/* Show All Button */}
+          <Link href={`/properties/${currentProperty.slug}/gallery`} className="absolute bottom-6 right-6 z-10">
+            <button className="flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-md text-slate-900 font-bold rounded-full shadow-lg hover:bg-[#a3e635] transition-all duration-300 transform hover:scale-105">
               <Grid3x3 className="w-5 h-5"/>
               Show all photos
-            </div>
+            </button>
           </Link>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Left Column: Details & Description */}
-          <div className="lg:col-span-2">
-            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">{currentProperty.title}</h1>
-            <div className="mt-2 flex items-center">
-              <MapPin className="w-5 h-5 text-gray-500 mr-2" />
-              <p className="text-lg text-gray-600">{`${currentProperty.location.city}, ${currentProperty.location.country}`}</p>
-            </div>
 
-            <div className="mt-8 flex items-center gap-8 border-t border-b border-gray-200 py-6">
-              <div className="flex items-center gap-2 text-lg">
-                <BedDouble className="w-6 h-6 text-indigo-600" />
-                <span><span className="font-bold">{currentProperty.details.bedrooms ?? 'N/A'}</span> bedrooms</span>
-              </div>
-              <div className="flex items-center gap-2 text-lg">
-                <Bath className="w-6 h-6 text-indigo-600" />
-                <span><span className="font-bold">{currentProperty.details.bathrooms ?? 'N/A'}</span> bathrooms</span>
-              </div>
-              <div className="flex items-center gap-2 text-lg">
-                <Ruler className="w-6 h-6 text-indigo-600" />
-                <span><span className="font-bold">{currentProperty.details.area.value}</span> {currentProperty.details.area.unit}</span>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h2 className="text-2xl font-normal text-gray-900 mb-4">About this currentProperty</h2>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">{currentProperty.description}</p>
-            </div>
+        {/* --- MAIN CONTENT LAYOUT --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          {/* LEFT: Description & Details (8 Cols) */}
+          <div className="lg:col-span-8 space-y-12">
             
-             <div className="mt-10">
-              <h2 className="text-2xl font-normal text-gray-900 mb-4">Features & Amenities</h2>
-              <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
-                {currentProperty.features.map(feature => (
-                  <li key={feature} className="flex items-center">
-                    <span className="bg-green-500 w-2 h-2 rounded-full mr-3"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Right Column: Price & Agent */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-28 bg-white p-8 rounded-xl shadow-lg">
-              <p className="text-4xl font-bold text-gray-900">{priceDisplay}</p>
-              <button className="mt-6 w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors">
-                Inquire Now
-              </button>
+            {/* Key Stats Bar */}
+            <div className="flex flex-wrap gap-4 sm:gap-8 p-8 bg-white rounded-[2rem] border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-[#F8F7F4] rounded-full text-slate-900">
+                   <BedDouble className="w-6 h-6" />
+                </div>
+                <div>
+                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Bedrooms</p>
+                   <p className="text-xl font-bold text-slate-900">{currentProperty.details.bedrooms ?? 'N/A'}</p>
+                </div>
+              </div>
               
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <h3 className="font-bold text-gray-900">Agent Information</h3>
-                <div className="mt-4">
-                  <p className="font-semibold text-lg">{currentProperty.agent.name}</p>
-                  <a href={`tel:${currentProperty.agent.phone}`} className="flex items-center mt-2 text-indigo-600 hover:underline">
-                    <Phone className="w-4 h-4 mr-2" /> {currentProperty.agent.phone}
-                  </a>
-                   <a href={`mailto:${currentProperty.agent.email}`} className="flex items-center mt-1 text-indigo-600 hover:underline">
-                    <Mail className="w-4 h-4 mr-2" /> {currentProperty.agent.email}
-                  </a>
+              <div className="w-[1px] h-12 bg-slate-100 hidden sm:block" />
+
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-[#F8F7F4] rounded-full text-slate-900">
+                   <Bath className="w-6 h-6" />
+                </div>
+                <div>
+                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Bathrooms</p>
+                   <p className="text-xl font-bold text-slate-900">{currentProperty.details.bathrooms ?? 'N/A'}</p>
+                </div>
+              </div>
+
+              <div className="w-[1px] h-12 bg-slate-100 hidden sm:block" />
+
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-[#F8F7F4] rounded-full text-slate-900">
+                   <Ruler className="w-6 h-6" />
+                </div>
+                <div>
+                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Area</p>
+                   <p className="text-xl font-bold text-slate-900">{currentProperty.details.area.value} {currentProperty.details.area.unit}</p>
                 </div>
               </div>
             </div>
+
+            {/* Description */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-slate-900">About this property</h2>
+              <p className="text-lg text-slate-600 leading-relaxed whitespace-pre-wrap">
+                {currentProperty.description}
+              </p>
+            </div>
+            
+            {/* Features */}
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-8">Features & Amenities</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {currentProperty.features.map(feature => (
+                  <div key={feature} className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+                    <CheckCircle2 className="w-5 h-5 text-[#16a34a]" />
+                    <span className="text-slate-700 font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
+
+
+          {/* RIGHT: Sticky Sidebar (4 Cols) */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-32 bg-white p-8 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100">
+              
+              {/* Price Tag */}
+              <div className="mb-8">
+                <p className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Total Price</p>
+                <p className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+                  {priceDisplay}
+                </p>
+              </div>
+
+              {/* Agent Info */}
+              <div className="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100">
+                <div className="w-16 h-16 rounded-full bg-slate-100 overflow-hidden border-2 border-white shadow-sm">
+                   {/* Placeholder for Agent Image if available, otherwise initial */}
+                   <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-500 font-bold text-xl">
+                      {currentProperty.agent.name.charAt(0)}
+                   </div>
+                </div>
+                <div>
+                   <p className="text-lg font-bold text-slate-900">{currentProperty.agent.name}</p>
+                   <p className="text-sm text-[#16a34a] font-medium">Property Consultant</p>
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="space-y-4">
+                <button className="w-full py-4 bg-[#a3e635] hover:bg-[#8cd321] text-slate-900 font-bold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                  Inquire Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                <a 
+                  href={`tel:${currentProperty.agent.phone}`}
+                  className="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-full shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  {currentProperty.agent.phone}
+                </a>
+
+                <a 
+                   href={`mailto:${currentProperty.agent.email}`}
+                   className="flex items-center justify-center gap-2 text-slate-500 hover:text-slate-900 font-medium pt-2 transition-colors"
+                >
+                   <Mail className="w-4 h-4" /> 
+                   Email Agent
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-         {/* RENDER THE LAYERED SIMILAR PROPERTIES SECTIONS */}
-        <div className="mt-16 pt-12 border-t border-gray-200">
-          <SimilarProperties 
-            title={`More in ${currentProperty.location.city}`} 
-            properties={propertiesInSameCity} 
-          />
-          <SimilarProperties 
-            title="In Surrounding Areas" 
-            properties={propertiesInSurroundingAreas} 
-          />
-          <SimilarProperties 
-            title={`Other Properties in ${currentProperty.location.country}`}
-            properties={propertiesInSameCountry}
-          />
+
+        {/* --- SIMILAR PROPERTIES SECTION --- */}
+        <div className="mt-24 pt-12 border-t border-slate-200">
+           <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">
+              You might also like
+           </h2>
+           
+           <div className="space-y-16">
+              {propertiesInSameCity.length > 0 && (
+                <SimilarProperties 
+                  title={`More in ${currentProperty.location.city}`} 
+                  properties={propertiesInSameCity} 
+                />
+              )}
+              
+              {propertiesInSurroundingAreas.length > 0 && (
+                <SimilarProperties 
+                  title="In Surrounding Neighborhoods" 
+                  properties={propertiesInSurroundingAreas} 
+                />
+              )}
+              
+              {propertiesInSameCountry.length > 0 && (
+                <SimilarProperties 
+                  title={`Other Properties in ${currentProperty.location.country}`}
+                  properties={propertiesInSameCountry}
+                />
+              )}
+           </div>
         </div>
+
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,224 +1,150 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+// Removed unused imports
 
-// A simple data structure for our tabs
 const tabs = [
-	{ id: 'buy', label: 'For Buyers' },
-	{ id: 'sell', label: 'For Sellers' },
-	{ id: 'rent', label: 'For Renters' },
-]
+  { id: "buy", label: "For Buyers" },
+  { id: "sell", label: "For Sellers" },
+  { id: "rent", label: "For Renters" },
+];
 
-const GuideTabs = () => {
-	const [activeTab, setActiveTab] = useState(tabs[0].id)
+export default function GuideTabs() {
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-	const contentVariants = {
-		hidden: { opacity: 0, y: 20 },
-		visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-		exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-	}
+  return (
+    <div className="w-full">
+      
+      {/* --- 1. Premium Tab Switcher --- */}
+      <div className="flex justify-center mb-12">
+        <div className="inline-flex p-1.5 bg-slate-100 rounded-full border border-slate-200 shadow-inner">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "text-white shadow-md"
+                  : "text-slate-500 hover:text-slate-900"
+              }`}
+            >
+              {activeTab === tab.id && (
+                <motion.div
+                  layoutId="activeGuideTab"
+                  className="absolute inset-0 bg-slate-900 rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="relative z-10">{tab.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
 
-	return (
-		<div className='w-full py-10'>
-			{/* Tab Buttons */}
-			<div className='border-b border-gray-200 lg:border-b-0 lg:border-none'>
-				<nav className='flex space-x-8' aria-label='Tabs'>
-					{tabs.map((tab) => (
-						<button
-							key={tab.id}
-							onClick={() => setActiveTab(tab.id)}
-							className={`${
-								activeTab === tab.id
-									? 'lg:bg-yellow-500 border-indigo-600 lg:border-none text-indigo-700 lg:text-white'
-									: 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-							} whitespace-nowrap py-2 px-1 lg:px-8 lg:py-1 border-b-2 lg:border-yellow-600 lg:border  font-semibold text-lg transition-colors focus:outline-none lg:rounded-full`}>
-							{tab.label}
-						</button>
-					))}
-				</nav>
-			</div>
+      {/* --- 2. Content Panels --- */}
+      <div className="relative min-h-[600px]">
+        <AnimatePresence mode="wait">
+          
+          {/* BUYER GUIDE */}
+          {activeTab === "buy" && (
+            <GuidePanel key="buy" title="The Ultimate Guide to Buying Property">
+              <GuideImage src="/hero-home-1.jpg" alt="Buying a Home" />
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                Navigating the property market can be complex. Whether you&apos;re a first-time buyer or a seasoned investor, this guide will walk you through the essential steps to make a successful purchase.
+              </p>
+              <GuideSteps
+                steps={[
+                  { title: "Financial Preparation", desc: "Get pre-approved for a mortgage and understand your budget." },
+                  { title: "Finding the Right Property", desc: "Use advanced filters to narrow down properties by location and price." },
+                  { title: "Making an Offer & Closing", desc: "Submit a competitive offer and proceed through inspections." }
+                ]}
+              />
+            </GuidePanel>
+          )}
 
-			{/* Tab Content Panels */}
-			<div className='mt-8'>
-				<AnimatePresence mode='wait'>
-					{activeTab === 'buy' && (
-						<motion.div
-							key='buy'
-							variants={contentVariants}
-							initial='hidden'
-							animate='visible'
-							exit='exit'>
-							<GuideContent title='The Ultimate Guide to Buying Property'>
-								{/* tab image cover */}
-								<div className='relative mt-12 w-full max-w-5xl mx-auto h-[200px] md:h-[300px] overflow-hidden rounded-xl mb-4 md:mb-6'>
-									<Image
-										src='/project/buy-cover.png'
-										alt='Project 1 cover image'
-										fill
-										className='object-cover'
-										priority
-									/>
-								</div>
-								<p className='mb-6'>
-									Navigating the property market can be complex. Whether
-									you&apos;re a first-time buyer or a seasoned investor, this
-									guide will walk you through the essential steps to make a
-									successful purchase.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 1: Financial Preparation
-								</h3>
-								<p className='mb-4'>
-									Before you start looking, it&apos;s crucial to understand your
-									budget. Get pre-approved for a mortgage, calculate your down
-									payment, and account for closing costs and taxes.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 2: Finding the Right Property
-								</h3>
-								<p className='mb-4'>
-									Use our advanced search filters to narrow down properties by
-									location, type, price, and features. Create a watchlist and
-									schedule viewings for your top choices.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 3: Making an Offer and Closing
-								</h3>
-								<p>
-									Once you&apos;ve found your dream property, your agent will
-									help you submit a competitive offer. After acceptance,
-									you&apos;ll proceed through inspections, legal checks, and
-									finally, the closing process.
-								</p>
-							</GuideContent>
-						</motion.div>
-					)}
+          {/* SELLER GUIDE */}
+          {activeTab === "sell" && (
+            <GuidePanel key="sell" title="A Seller's Handbook to Success">
+              <GuideImage src="/hero-home-2.jpg" alt="Selling Property" />
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                Selling your property for the best possible price requires careful planning and strategy. Follow our guide to ensure a smooth and profitable transaction.
+              </p>
+              <GuideSteps
+                steps={[
+                  { title: "Valuation & Prep", desc: "Get a professional valuation and enhance curb appeal." },
+                  { title: "Strategic Marketing", desc: "Professional photography and targeted campaigns." },
+                  { title: "Negotiation & Closing", desc: "Manage offers and finalize the sale with legal guidance." }
+                ]}
+              />
+            </GuidePanel>
+          )}
 
-					{activeTab === 'sell' && (
-						<motion.div
-							key='sell'
-							variants={contentVariants}
-							initial='hidden'
-							animate='visible'
-							exit='exit'>
-                            <GuideContent title="A Seller's Handbook to a Successful Sale">
-                                
-                                {/* tab image cover */}
-								<div className='relative mt-12 w-full max-w-5xl mx-auto h-[200px] md:h-[300px] overflow-hidden rounded-xl mb-4 md:mb-6'>
-									<Image
-										src='/project/sales-cover.jpg'
-										alt='Sales cover image'
-										fill
-										className='object-cover'
-										priority
-									/>
-								</div>
+          {/* RENTER GUIDE */}
+          {activeTab === "rent" && (
+            <GuidePanel key="rent" title="Renting Made Simple: A Tenant's Guide">
+              <GuideImage src="/office.jpg" alt="Renting Apartment" />
+              <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                Finding the perfect rental property should be an exciting experience. This guide covers everything from searching for a home to signing your lease.
+              </p>
+              <GuideSteps
+                steps={[
+                  { title: "Define Your Needs", desc: "Determine budget, location, and essential amenities." },
+                  { title: "Application Process", desc: "Prepare documentation like ID and proof of income." },
+                  { title: "Sign & Move In", desc: "Read the lease agreement carefully before signing." }
+                ]}
+              />
+            </GuidePanel>
+          )}
 
-								<p className='mb-6'>
-									Selling your property for the best possible price requires
-									careful planning and strategy. Follow our guide to ensure a
-									smooth and profitable transaction.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 1: Property Valuation and Preparation
-								</h3>
-								<p className='mb-4'>
-									Get a professional valuation to set a competitive price.
-									Prepare your home for viewings by decluttering, making minor
-									repairs, and enhancing its curb appeal.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 2: Marketing Your Property
-								</h3>
-								<p className='mb-4'>
-									We use high-quality photography, virtual tours, and targeted
-									marketing campaigns to reach a wide audience of potential
-									buyers across The Gambia, Senegal, and internationally.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 3: Negotiating Offers and Closing
-								</h3>
-								<p>
-									Your agent will manage all incoming offers, help you negotiate
-									the best terms, and guide you through the legal paperwork
-									required to finalize the sale.
-								</p>
-							</GuideContent>
-						</motion.div>
-					)}
-
-					{activeTab === 'rent' && (
-						<motion.div
-							key='rent'
-							variants={contentVariants}
-							initial='hidden'
-							animate='visible'
-							exit='exit'>
-                            <GuideContent title="Renting Made Simple: A Tenant's Guide">
-                                 {/* tab image cover */}
-								<div className='relative mt-12 w-full max-w-5xl mx-auto h-[200px] md:h-[300px] overflow-hidden rounded-xl mb-4 md:mb-6'>
-									<Image
-										src='/project/rent-cover.jpg'
-										alt='Rent cover image'
-										fill
-										className='object-cover'
-										priority
-									/>
-								</div>
-								<p className='mb-6'>
-									Finding the perfect rental property should be an exciting
-									experience. This guide covers everything you need to know,
-									from searching for a home to understanding your lease
-									agreement.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 1: Define Your Needs
-								</h3>
-								<p className='mb-4'>
-									Determine your budget, desired location, number of bedrooms,
-									and essential amenities. This will help you focus your search
-									and find suitable options quickly.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 2: The Application Process
-								</h3>
-								<p className='mb-4'>
-									Prepare your documentation, which may include identification,
-									proof of income, and references. Be ready to fill out an
-									application form and potentially pay a holding deposit.
-								</p>
-								<h3 className='text-xl font-semibold mb-3'>
-									Step 3: Understanding Your Tenancy Agreement
-								</h3>
-								<p>
-									Before signing, carefully read the lease agreement. Pay close
-									attention to the term length, rent amount, rules, and
-									responsibilities for both you and the landlord. Don&apos;t
-									hesitate to ask questions.
-								</p>
-							</GuideContent>
-						</motion.div>
-					)}
-				</AnimatePresence>
-			</div>
-		</div>
-	)
+        </AnimatePresence>
+      </div>
+    </div>
+  );
 }
 
-// A helper component to keep the content structure consistent
-const GuideContent = ({
-	title,
-	children,
-}: {
-	title: string
-	children: React.ReactNode
-}) => (
-	<div className='prose prose-lg max-w-none'>
-		<h2 className='text-3xl font-bold text-gray-800'>{title}</h2>
-		{children}
-	</div>
-)
 
-export default GuideTabs
+// --- Sub-components for Layout ---
+
+function GuidePanel({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -20, scale: 0.98 }}
+      transition={{ duration: 0.5 }}
+      className="w-full"
+    >
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center lg:text-left">
+        {title}
+      </h2>
+      {children}
+    </motion.div>
+  );
+}
+
+function GuideImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative w-full h-[300px] md:h-[400px] rounded-[2.5rem] overflow-hidden mb-10 shadow-lg group">
+      <Image src={src} alt={alt} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority />
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+    </div>
+  );
+}
+
+function GuideSteps({ steps }: { steps: { title: string; desc: string }[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {steps.map((step, idx) => (
+        <div key={idx} className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-[#a3e635] hover:shadow-md transition-all group">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:bg-[#a3e635] transition-colors">
+            <span className="font-bold text-slate-900">{idx + 1}</span>
+          </div>
+          <h3 className="font-bold text-slate-900 text-lg mb-2">{step.title}</h3>
+          <p className="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  );
+}

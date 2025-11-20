@@ -1,11 +1,8 @@
+"use client";
 
-'use client';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import { Autoplay } from 'swiper/modules';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const partnerLogos = [
   '/RESIZE.png',
@@ -14,43 +11,81 @@ const partnerLogos = [
   'https://oneworldfinancials.com/ONEworldLOGO1-1.svg',
 ];
 
-const OurClients = () => {
+export default function OurClients() {
   return (
-    <div className="py-10 bg-white text-center relative pb-[50px]">
-      <div className='md:ml-[10%] md:mr-[10%] flex justify-center items-center flex-col'>
-        <h2 className="text-4xl md:text-5xl font-semibold text-[#CA8A04] my-10 mb-[70px]">Our Partners</h2>
-        <div className="relative w-full overflow-hidden">
-          <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView={3}
-            spaceBetween={30}
-            loop={true}
-            speed={6000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              320: { slidesPerView: 2 },
-              640: { slidesPerView: 3 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="w-full px-4 flex justify-center items-center"
+    <section className="relative w-full py-24 bg-white overflow-hidden">
+      
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#a3e635] bg-white mb-6 shadow-sm"
           >
-            {partnerLogos.map((logo, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center mb-10">
-                <div className="w-[150px] h-[75px] flex justify-center items-center overflow-hidden rounded-xl">
-                  <Image src={logo} alt="Partner Logo" width={150} height={75} className="object-contain" />
-                </div>
-              </SwiperSlide>
+            <motion.span
+        animate={{ x: [-10, 10, -10] }}
+        transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+       }}
+       className="text-[10px] font-bold uppercase tracking-widest text-[#a3e635] inline-block"
+   >
+      OUR NETWORK
+      </motion.span>
+
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight"
+          >
+            Trusted by industry <span className="text-[#10b981]">leaders</span>
+          </motion.h2>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="relative w-full overflow-hidden group">
+          
+          {/* Gradient Masks for smooth fade at edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Moving Track */}
+          <motion.div
+            className="flex items-center gap-16 md:gap-32 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 30, 
+              ease: "linear", 
+              repeat: Infinity 
+            }}
+          >
+            {/* We duplicate the array 4 times to ensure seamless scrolling on wide screens */}
+            {[...partnerLogos, ...partnerLogos, ...partnerLogos, ...partnerLogos].map((logo, index) => (
+              <div 
+                key={index} 
+                className="relative w-40 h-24 flex items-center justify-center opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+              >
+                <Image 
+                  src={logo} 
+                  alt={`Partner ${index}`} 
+                  width={160} 
+                  height={80} 
+                  className="object-contain w-full h-full" 
+                />
+              </div>
             ))}
-          </Swiper>
+          </motion.div>
+          
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default OurClients;
+}

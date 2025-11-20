@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { MapPin, ArrowUpRight } from "lucide-react";
 
-// Define interface for Projects
 interface Project {
   id: string;
   title: string;
@@ -65,9 +64,18 @@ function DesktopLayout() {
       <div className="w-1/2 h-screen sticky top-0 flex flex-col justify-center px-16 xl:px-24 z-20 bg-black">
         <div className="mb-12">
            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#a3e635] text-[#a3e635] mb-8">
-            <span className="text-xs font-bold uppercase tracking-widest">
-              PROJECTS · SELECT
-            </span>
+           <motion.span
+       animate={{ x: [-10, 10, -10] }}
+       transition={{
+       duration: 3,
+       repeat: Infinity,
+      ease: "easeInOut",
+      }}
+     className="text-[10px] font-bold uppercase tracking-widest text-[#a3e635] inline-block"
+   >
+    PROJECT SELECT
+    </motion.span>
+
           </div>
           <h2 className="text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-white">
             Innovative designs, <br />

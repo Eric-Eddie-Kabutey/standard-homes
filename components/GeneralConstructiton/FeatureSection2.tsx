@@ -33,8 +33,8 @@ const FeatureSection2: React.FC<Props> = ({
             <div className="lg:w-1/2">
               <div className="relative h-64 overflow-hidden rounded-lg lg:h-96">
                 <Image
-                  src={imageSrc} // Use the imageSrc prop
-                  alt={imageAlt} // Use the imageAlt prop
+                  src={imageSrc} 
+                  alt={imageAlt} 
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"

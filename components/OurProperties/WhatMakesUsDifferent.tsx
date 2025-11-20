@@ -109,7 +109,6 @@ export default function WhatMakesUsDifferent() {
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE: Content & Features */}
           <div className="flex flex-col pt-8 lg:pt-0">
             
            <motion.span
