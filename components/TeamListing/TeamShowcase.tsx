@@ -15,33 +15,33 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Lamin Dubadja",
-    role: "Founder & CEO",
-    image: "/hero-home-1.jpg", 
+    name: "Kebba Sanneh",
+    role: "CEO",
+    image: "/ceo.jpg", 
   },
   {
     id: 2,
-    name: "Fatou Jallow",
-    role: "Managing Director",
-    image: "/hero-home-2.jpg", 
+    name: "Ramatoulie Fatty",
+    role: "Sales & Marketing Manager",
+    image: "/sales-manager.jpg", 
   },
   {
     id: 3,
-    name: "Ebrima Bah",
-    role: "Director of Architecture",
-    image: "/office.jpg", 
+    name: "Kadijatou Jallow",
+    role: "Marketer",
+    image: "/marketer.jpg", 
   },
   {
     id: 4,
-    name: "Awa Touray",
-    role: "Head of Sales",
-    image: "/hero-home-1 (1).jpg", 
+    name: "Ismaila Sillah",
+    role: "Rent Manager",
+    image: "/rent-manager.jpg", 
   },
   {
     id: 5,
-    name: "Modou Njie",
-    role: "Chief Construction Officer",
-    image: "/land-layout-1.jpg", 
+    name: "Absa Njie",
+    role: "Secretary",
+    image: "/sect.jpg", 
   },
 ];
 
