@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowUp, Home, Building2, Hammer, Ruler, HardHat, Shovel } from "lucide-react";
 
-// --- Data Configuration ---
 const testimonials = [
   {
     id: 1,
@@ -26,7 +25,6 @@ const testimonials = [
   },
 ];
 
-// Mock Client Logos
 const clients = [
   { name: "RICK COMPANY", icon: Building2 },
   { name: "CONSTRUCTION", icon: Hammer },
@@ -39,13 +37,12 @@ const clients = [
 export default function ClientTestimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-rotate testimonials
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
     }, 8000);
     return () => clearInterval(timer);
-  }, [currentIndex]); // Added dependency to ensure interval resets correctly or use function update
+  }, [currentIndex]);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -58,10 +55,8 @@ export default function ClientTestimonials() {
   return (
     <section className="relative w-full bg-white py-24 overflow-hidden text-slate-900">
       
-      {/* --- 1. Rotating Badge (Top Center) --- */}
       <div className="absolute top-0 left-0 right-0 flex justify-center -translate-y-1/2 z-10">
         <div className="relative w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-sm">
-          {/* Rotating Text Ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -82,7 +77,6 @@ export default function ClientTestimonials() {
             </svg>
           </motion.div>
           
-          {/* Center Icon */}
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-slate-100">
              <div className="w-full h-full bg-slate-900 flex items-center justify-center">
                 <Home className="w-8 h-8 text-[#a3e635]" />
@@ -92,21 +86,18 @@ export default function ClientTestimonials() {
       </div>
 
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-16">
+      <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 relative pt-16">
         
-        {/* --- 2. Testimonial Carousel --- */}
         <div className="relative flex items-center justify-center min-h-[400px]">
           
-          {/* Left Arrow */}
           <button 
             onClick={handlePrev}
-            className="absolute left-0 md:left-4 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors hidden md:flex"
+            className="absolute left-0 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors hidden md:flex"
           >
             <ChevronLeft className="w-6 h-6 text-slate-900" />
           </button>
 
-          {/* Content */}
-          <div className="w-full max-w-4xl mx-auto text-center px-4">
+          <div className="w-full max-w-6xl mx-auto text-center px-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -116,7 +107,7 @@ export default function ClientTestimonials() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="flex flex-col items-center"
               >
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-slate-900 mb-8">
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-slate-900 mb-8 max-w-5xl">
                   &quot;{testimonials[currentIndex].quote}&quot;
                 </h3>
                 
@@ -132,43 +123,39 @@ export default function ClientTestimonials() {
             </AnimatePresence>
           </div>
 
-          {/* Right Arrow */}
           <button 
             onClick={handleNext}
-            className="absolute right-0 md:right-4 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors hidden md:flex"
+            className="absolute right-0 z-20 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors hidden md:flex"
           >
             <ChevronRight className="w-6 h-6 text-slate-900" />
           </button>
 
-           {/* Mobile Arrows (Bottom) */}
            <div className="absolute -bottom-0 flex gap-4 md:hidden">
               <button onClick={handlePrev} className="w-10 h-10 bg-white rounded-full shadow border border-slate-100 flex items-center justify-center"><ChevronLeft className="w-5 h-5"/></button>
               <button onClick={handleNext} className="w-10 h-10 bg-white rounded-full shadow border border-slate-100 flex items-center justify-center"><ChevronRight className="w-5 h-5"/></button>
            </div>
         </div>
 
-        {/* --- 3. Separator --- */}
         <div className="w-full h-[1px] bg-slate-200 my-16" />
 
-        {/* --- 4. Client Logos Marquee --- */}
         <div className="flex flex-col items-center">
           <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-12 text-center">
             We’re proud to partner with best-in-class clients
           </p>
           
           <div className="w-full overflow-hidden relative group">
-             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
-             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
 
              <motion.div
-               className="flex gap-16 md:gap-24 w-max"
+               className="flex gap-16 md:gap-32 w-max"
                animate={{ x: ["0%", "-50%"] }}
-               transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+               transition={{ duration: 40, ease: "linear", repeat: Infinity }}
              >
-                {[...clients, ...clients, ...clients].map((client, idx) => (
+                {[...clients, ...clients, ...clients, ...clients].map((client, idx) => (
                    <div key={idx} className="flex flex-col items-center justify-center gap-2 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer">
-                      <client.icon className="w-10 h-10 md:w-12 md:h-12 text-slate-900" strokeWidth={1.5} />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">{client.name}</span>
+                      <client.icon className="w-12 h-12 md:w-16 md:h-16 text-slate-900" strokeWidth={1.5} />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-900 mt-2">{client.name}</span>
                    </div>
                 ))}
              </motion.div>
@@ -177,7 +164,6 @@ export default function ClientTestimonials() {
 
       </div>
 
-      {/* --- 5. Floating Arrow (Bottom Right) --- */}
       <motion.div 
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
