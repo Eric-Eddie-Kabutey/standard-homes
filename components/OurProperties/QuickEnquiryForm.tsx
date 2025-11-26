@@ -31,7 +31,7 @@ export default function QuickEnquiryForm() {
   };
 
   return (
-    <section className="relative w-full py-32 flex items-center justify-center overflow-hidden">
+    <section className="relative w-full py-24 md:py-32 flex items-center justify-center overflow-hidden px-4 md:px-8">
       
       <div className="absolute inset-0 z-0">
         <Image 
@@ -43,84 +43,93 @@ export default function QuickEnquiryForm() {
         <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" />
       </div>
 
-      {/* Form Card */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="relative z-10 bg-white rounded-[3rem] shadow-2xl p-8 md:p-16 max-w-5xl w-full mx-4"
+        transition={{ duration: 0.7 }}
+        className="relative z-10 bg-white rounded-[3rem] shadow-2xl p-8 md:p-16 lg:p-20 w-full max-w-[1600px]"
       >
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-16">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#a3e635] bg-white mb-6 shadow-sm"
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#a3e635] bg-white mb-8 shadow-sm"
           >
             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-900">
-              QUICK ENQUIRY ·
+              QUICK ENQUIRY
             </span>
           </motion.div>
           
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
-            Get specialist advice for residential, <br /> commercial or property
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight max-w-5xl">
+            Get specialist advice for residential, <br className="hidden md:block" /> commercial or property
           </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name*"
-            required
-            className="w-full h-14 px-6 bg-gray-50 rounded-2xl border border-transparent focus:border-[#a3e635] focus:ring-0 outline-none transition-all"
-            onChange={handleChange}
-          />
-          
-          <input
-            type="email"
-            name="email"
-            placeholder="Email*"
-            required
-            className="w-full h-14 px-6 bg-gray-50 rounded-2xl border border-transparent focus:border-[#a3e635] focus:ring-0 outline-none transition-all"
-            onChange={handleChange}
-          />
-          
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number*"
-            required
-            className="w-full h-14 px-6 bg-gray-50 rounded-2xl border border-transparent focus:border-[#a3e635] focus:ring-0 outline-none transition-all"
-            onChange={handleChange}
-          />
-          
-          <select
-            name="inquiryType"
-            className="w-full h-14 px-6 bg-gray-50 rounded-2xl border border-transparent focus:border-[#a3e635] focus:ring-0 outline-none transition-all appearance-none text-gray-600"
-            onChange={handleChange}
-          >
-            <option>Residential Property</option>
-            <option>Commercial Project</option>
-            <option>Land Purchase</option>
-            <option>Borehole Solutions</option>
-            <option>Other</option>
-          </select>
-
-          <div className="md:col-span-2 flex flex-col items-center mt-4">
-            <button
-              type="submit"
-              disabled={status === "success"}
-              className="group w-full md:w-auto px-10 py-4 bg-[#a3e635] hover:bg-[#8cd321] text-slate-900 font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              {status === "success" ? "Success! We'll call you soon" : "Get A Call Back"}
-              {status !== "success" && <ArrowUpRight className="w-5 h-5" />}
-            </button>
+        <div className="max-w-5xl mx-auto">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name*"
+              required
+              className="w-full h-16 px-8 bg-gray-50 rounded-[2rem] border border-transparent focus:border-[#a3e635] focus:bg-white focus:ring-0 outline-none transition-all text-lg"
+              onChange={handleChange}
+            />
             
-            <p className="text-xs text-gray-400 mt-4">
-              Required fields are marked *
-            </p>
-          </div>
-        </form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email*"
+              required
+              className="w-full h-16 px-8 bg-gray-50 rounded-[2rem] border border-transparent focus:border-[#a3e635] focus:bg-white focus:ring-0 outline-none transition-all text-lg"
+              onChange={handleChange}
+            />
+            
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number*"
+              required
+              className="w-full h-16 px-8 bg-gray-50 rounded-[2rem] border border-transparent focus:border-[#a3e635] focus:bg-white focus:ring-0 outline-none transition-all text-lg"
+              onChange={handleChange}
+            />
+            
+            <div className="relative">
+                <select
+                    name="inquiryType"
+                    className="w-full h-16 px-8 bg-gray-50 rounded-[2rem] border border-transparent focus:border-[#a3e635] focus:bg-white focus:ring-0 outline-none transition-all appearance-none text-gray-600 text-lg cursor-pointer"
+                    onChange={handleChange}
+                >
+                    <option>Residential Property</option>
+                    <option>Commercial Project</option>
+                    <option>Land Purchase</option>
+                    <option>Borehole Solutions</option>
+                    <option>Other</option>
+                </select>
+                <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div className="md:col-span-2 flex flex-col items-center mt-8">
+              <button
+                type="submit"
+                disabled={status === "success"}
+                className="group w-full md:w-auto px-12 py-5 bg-[#a3e635] hover:bg-[#8cd321] text-slate-900 text-xl font-bold rounded-full transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                {status === "success" ? "Success! We'll call you soon" : "Get A Call Back"}
+                {status !== "success" && <ArrowUpRight className="w-6 h-6 group-hover:rotate-45 transition-transform" />}
+              </button>
+              
+              <p className="text-sm text-gray-400 mt-6 font-medium">
+                Required fields are marked *
+              </p>
+            </div>
+          </form>
+        </div>
 
       </motion.div>
     </section>
